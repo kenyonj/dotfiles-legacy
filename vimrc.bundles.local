@@ -1,0 +1,22 @@
+Plugin 'bogado/file-line'
+Plugin 'epmatsw/ag.vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'sickill/vim-pasta'
+Plugin 'skwp/vim-colors-solarized'
+Plugin 'tpope/vim-cucumber'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+
+" tmux
+Plugin 'jgdavey/tslime.vim'
+Plugin 'jgdavey/vim-turbux'
+Plugin 'christoomey/vim-tmux-navigator'
+
+" syntax
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'nono/vim-handlebars'
+

@@ -1,0 +1,17 @@
+*.DS_Store
+*.sw[nop]
+.bundle
+.sass-cache/
+db/*.sqlite3
+log/*.log
+rerun.txt
+tmp/**/*
+!tmp/cache/.keep
+vendor/bundler_gems
+vim/.netrwhist
+zeus.json
+.powder
+.powenv
+.env
+config/projections.json
+.agignore
