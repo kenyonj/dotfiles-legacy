@@ -6,11 +6,6 @@ HISTFILE=$HOME/.zsh_history
 # don't corrent my shizniz
 unsetopt correct_all
 
-# ImageMagick and Paperclip error
-export MAGICK_HOME="/usr/local/Cellar/imagemagick/6.8.7-7"
-export PATH=$MAGIC_HOME/bin:$PATH
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$MAGICK_HOME/lib"
-
 # Case insensitive autocomplete
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -25,3 +20,5 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+
+export PATH="/usr/local/bin:$PATH"

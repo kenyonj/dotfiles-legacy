@@ -48,6 +48,7 @@ map <Leader>r :call ToggleNumber()<cr>
 function! ToggleNumber()
   if &relativenumber
     set norelativenumber
+    set number
   else
     set relativenumber
   endif
@@ -66,3 +67,8 @@ set scrolloff=5
 
 " Never wrap
 set nowrap
+
+" Common mistypes and what they really should do
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
+cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
