@@ -1,3 +1,17 @@
+[alias]
+  l = log --pretty=colored
+  cb = checkout -b
+  db = branch -d
+  d  = diff
+  ds = diff --staged
+  fuckit = !sh -c 'git add --all && git reset --hard'
+
+[pretty]
+  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
+
 [user]
   name = Justin Kenyon
   email = kenyonj@gmail.com
+
+[github]
+  user = kenyonj

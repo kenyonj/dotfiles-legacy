@@ -1,2 +1,27 @@
-# recommended by brew doctor
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+source /Users/kenyonj/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh
+
+# history settings
+HISTFILE=$HOME/.zsh_history
+
+# don't corrent my shizniz
+unsetopt correct_all
+
+# ImageMagick and Paperclip error
+export MAGICK_HOME="/usr/local/Cellar/imagemagick/6.8.7-7"
+export PATH=$MAGIC_HOME/bin:$PATH
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$MAGICK_HOME/lib"
+
+# Case insensitive autocomplete
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Partial match highlighting
+zstyle -e ':completion:*:default' list-colors \
+  'reply=("${PREFIX:+=(#bi)($PREFIX:t)()*==34=34}:${(s.:.)LS_COLORS}")'
+
+# Vim like history search
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down

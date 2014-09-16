@@ -1,0 +1,68 @@
+" indenet the whole file
+map <Leader>i mmgg=G`m<CR>
+
+" open up our schema
+map <Leader>sc :sp db/schema.rb<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RENAME CURRENT FILE (thanks Gary Bernhardt)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <Leader>n :call RenameFile()<cr>
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
+" Send specs away
+let g:rspec_command = 'call Send_to_Tmux("be rspec {spec}\n")'
+
+" tell me off for lines more then 80
+set colorcolumn=80
+
+" custom surrounds
+autocmd FileType erb let b:surround_46 = "<% \r %>"
+autocmd FileType erb let b:surround_61 = "<%= \r %>"
+
+" pry
+map <Leader>p Obinding.pry<Esc><CR>
+
+" escape insert mode quickly
+imap jj <Esc>
+
+" Vim and OS share clipboard
+if exists("+clipboard")
+  set clipboard=unnamed
+endif
+
+" Toggle relative and non-relative line numbers
+map <Leader>r :call ToggleNumber()<cr>
+
+function! ToggleNumber()
+  if &relativenumber
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunction
+
+" Sets airline (status bar) to remove angle brackets and sets a theme
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_theme="base16"
+
+" Highlight cursor line
+set cursorline
+
+" Always have spaces above and below window
+set scrolloff=5
+
+" Never wrap
+set nowrap
