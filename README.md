@@ -1,4 +1,4 @@
-MattMSumner dotfiles
+Justin Kenyon's dotfiles
 ===============
 
 I use [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles) and
