@@ -103,3 +103,5 @@ function precmd {
 }
 
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
+
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
