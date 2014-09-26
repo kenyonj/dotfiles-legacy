@@ -59,8 +59,8 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme="base16"
 
-" Highlight cursor line
-set cursorline
+" Highlight cursor line and cursor column
+set cursorline cursorcolumn
 
 " Always have spaces above and below window
 set scrolloff=5
