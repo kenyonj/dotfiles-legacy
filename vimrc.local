@@ -37,9 +37,6 @@ map <Leader>p Obinding.pry<Esc><CR>
 " escape insert mode quickly
 imap jj <Esc>
 
-" Turn the spell checker on
-set spell
-
 " Vim and OS share clipboard
 if exists("+clipboard")
   set clipboard=unnamed
@@ -54,6 +51,17 @@ function! ToggleNumber()
     set number
   else
     set relativenumber
+  endif
+endfunction
+
+" Toggle spell check on/off
+map <Leader>sp :call ToggleSpelling()<cr>
+
+function! ToggleSpelling()
+  if &spell
+    set nospell
+  else
+    set spell
   endif
 endfunction
 
@@ -77,12 +85,6 @@ cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q')
 cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
 
 " Working with whitespace
-
-" highlight whitespace in light red
-highlight ExtraWhitespace ctermbg=blue
-
-" toggle whitespace highlighting red/blue
-map <Leader>wh :ToggleWhitespace<cr>
 
 " strip all whitespace in current file
 map <Leader>ws :StripWhitespace<cr>
