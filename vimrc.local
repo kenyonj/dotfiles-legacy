@@ -1,4 +1,4 @@
-" indenet the whole file
+" indent the whole file
 map <Leader>i mmgg=G`m<CR>
 
 " open up our schema
@@ -75,3 +75,14 @@ set nowrap
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
 cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
+
+" Working with whitespace
+
+" highlight whitespace in light red
+highlight ExtraWhitespace ctermbg=blue
+
+" toggle whitespace highlighting red/blue
+map <Leader>wh :ToggleWhitespace<cr>
+
+" strip all whitespace in current file
+map <Leader>ws :StripWhitespace<cr>
