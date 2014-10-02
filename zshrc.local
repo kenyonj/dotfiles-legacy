@@ -119,6 +119,29 @@ if [[ -f $HOME/.fasd ]]; then
   alias v='f -e vim' # quick opening files with vim
 fi
 
+# set gitconfig.local keys and define gpair() and gsolo()
+gh_name=("${(s/ /)$(echo `git config user.name`)}")
+gh_email=("${(s/@/)$(echo `git config user.email`)}")
+gh_co_domain=$(echo `git config company.domain`)
+
+# set the company email domain name in gitconfig.local, only do this once
+if [[ $gh_co_domain == "" ]]; then
+  echo "\nPlease enter your company email domain name: [thoughtbot.com] "
+  read co_domain
+
+  if [[ $co_domain == "" ]]; then
+    new_domain="thoughtbot.com"
+  else
+    new_domain=$co_domain
+  fi
+
+  git config --file ~/.gitconfig.local --add company.domain $new_domain
+  gh_co_domain=$(echo `git config company.domain`)
+fi
+
+gpair() { git commit --amend --no-edit --author "$gh_name & $1 $2 <$gh_name[1]:l+$1:l@$gh_co_domain>" }
+gsolo() { git commit --amend --no-edit --author "$gh_name <$gh_email[1]@$gh_email[2]>" }
+
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="$PATH:/usr/local/lib/node_modules"
 source $(brew --prefix nvm)/nvm.sh
