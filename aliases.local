@@ -21,6 +21,9 @@ alias bi="bundle install"
 # Tests and Specs
 alias s="rspec"
 
+# Brew Cask
+alias bca="brew cask"
+
 # Rails
 alias c="rails console"
 

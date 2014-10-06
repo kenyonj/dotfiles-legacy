@@ -1,0 +1,19 @@
+#!/bin/sh
+
+brew tap caskroom/cask
+brew install fasd
+brew install gh
+brew install brew-cask
+
+brew cask install adium
+brew cask install alfred
+brew cask install dash
+brew cask install dropbox
+brew cask install evernote
+brew cask install google-chrome
+brew cask install mactex
+brew cask install onepassword
+brew cask install slack
+brew cask install spotify
+brew cask install vagrant
+brew cask install virtualbox
