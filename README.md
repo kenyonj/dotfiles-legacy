@@ -29,7 +29,7 @@ You can safely run `rcup` multiple times to update.
 
 What's in it?
 -------------
-These are a sampling. For complete changes, please review the source.
+Here is a sampling. For a complete list of features, please review the source.
 
 ###[git](http://git-scm.com/) configuration:
   * `git` or `g` followed by:
@@ -52,6 +52,7 @@ option)
   * `gd`: `git diff`
   * `gf`: `git fetch`
   * `gl`: `git log -10 --pretty=colored`
+  * `gpf!`: `git push -f`
   * `gpr`: `hub pull-request`
   * `gr`: `git rebase`
   * `gra`: `git rebase --abort`
