@@ -29,9 +29,9 @@ You can safely run `rcup` multiple times to update.
 
 What's in it?
 -------------
-### These are a sampling. For complete changes, please review the source.
+These are a sampling. For complete changes, please review the source.
 
-[git](http://git-scm.com/) configuration:
+###[git](http://git-scm.com/) configuration:
   * `git` or `g` followed by:
     - `fuckit`: resets your current directory to it's last checked in state.
       (be careful with this command, as its name implies, this is a last case
@@ -60,34 +60,31 @@ option)
   * `gs`: `git status -s`
   * `standup`: `git standup`
 
-  functions available:
-    * `gpair()`: This can be run, followed by the first name of the person you
-      are pairing with to change the lastest commit's author and email address.
-      example:
-        If I run `gpair Bruce Wayne` it will use my `~/.gitconfig.local` to
- build this command:
-        `git commit --amend --no-edit --author "Justin Kenyon & Bruce Wayne
-<justin+bruce@thoughtbot.com>"`
+####functions available:
+  * `gpair()`: This can be run, followed by the first name of the person you
+    are pairing with to change the lastest commit's author and email address.
 
-    * `gsolo()`: This can be run with no arguments and will change the latest
-      commit to show only the current user as the author.
-      example:
-        If I run `gsolo` it will use my `~/.gitconfig.local` to build this
-command:
-        `git commit --amend --no-edit --author "Justin Kenyon
-<kenyonj@gmail.com>"`
+    Example: If I run `gpair Bruce Wayne` it will use my `~/.gitconfig.local` to build this command:
 
-[zsh](http://zsh.sourceforge.net/FAQ/zshfaq01.html) configuration and aliases:
+    `git commit --amend --no-edit --author "Justin Kenyon & Bruce Wayne <justin+bruce@thoughtbot.com>"`
+
+  * `gsolo()`: This can be run with no arguments and will change the latest
+    commit to show only the current user as the author.
+
+    Example: If I run `gsolo` it will use my `~/.gitconfig.local` to build this command:
+
+    `git commit --amend --no-edit --author "Justin Kenyon <kenyonj@gmail.com>"`
+
+###[zsh](http://zsh.sourceforge.net/FAQ/zshfaq01.html) configuration and aliases:
   * `..`: moves up 1 directory, alias of `cd ..`
   * `...`: moves up 2 directories, alias of `cd ../..`
   * `j <part of directory name>`: uses [fasd](https://github.com/clvv/fasd) to
-    jump to previously visited directories (stored in `~/.fasd`).
-    example:
-      If I execute `j local` it will `cd` into my `dotfiles-local` directory
-because it is the most recent directory I visited that matches my argument of
-`local`.
+    jump to previously visited directories (stored in `~/.fasd`). For example,
+    if I execute `j local` it will `cd` into my `dotfiles-local` directory
+    because it is the most recent directory I visited that matches my argument
+    of `local`.
 
-[tmux](http://tmux.sourceforge.net/) configuration:
+###[tmux](http://tmux.sourceforge.net/) configuration:
   * Uses `CTRL-a` for the command key
   * All of the following command keys need to be preceeded by entering command
     mode:
@@ -101,7 +98,7 @@ because it is the most recent directory I visited that matches my argument of
     - `+`: zooms in and out of current pane
     - `^C`: clears the buffer in the current pane
 
-[vim](http://vim.org/) configuration:
+###[vim](http://vim.org/) configuration:
   * Leader key (`space-bar`) followed by:
     - `i`: indent the whole file
     - `sc`: show the schema file

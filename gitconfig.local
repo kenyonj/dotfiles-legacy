@@ -1,9 +1,4 @@
 [alias]
-  l = log --pretty=colored
-  cb = checkout -b
-  db = branch -d
-  d  = diff
-  ds = diff --staged
   fuckit = !sh -c 'git add --all && git reset --hard'
 
 [pretty]
@@ -16,5 +11,4 @@
 [github]
   user = kenyonj
 [company]
-	domain = thoughtbot.com
-	domain = thoughtbot.com
+  domain = thoughtbot.com
