@@ -3,6 +3,9 @@ alias ae="vi ~/.aliases.local" #alias edit
 alias ar="source ~/.aliases.local; echo 'aliases reloaded!'"  #alias reload
 alias zr="source ~/.zshrc; echo 'zshrc reloaded!'" #reload zsh
 
+# Laptop Script
+alias update-laptop="bash <(curl -s https://raw.githubusercontent.com/thoughtbot/laptop/master/mac) 2>&1 | tee ~/laptop.log"
+
 # Unix
 alias la="ls -la"
 alias ln="ln -v"
