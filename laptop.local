@@ -26,3 +26,6 @@ brew cask install slack
 brew cask install spotify
 brew cask install vagrant
 brew cask install virtualbox
+
+gem install rubygems-bundler
+gem regenerate_binstubs
