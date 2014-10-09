@@ -145,5 +145,9 @@ gsolo() { git commit --amend --no-edit --author "$gh_name <$gh_email[1]@$gh_emai
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="$PATH:/usr/local/lib/node_modules"
 source $(brew --prefix nvm)/nvm.sh
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh --no-rehash)"
+
+# use chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+RUBIES+=(~/.rbenv/versions/*)
+chruby 2.1.2
