@@ -16,11 +16,11 @@ Install
 
 Clone into your environment:
 
-git clone git://github.com/kenyonj/dotfiles-local.git
+`cd && git clone git@github.com:kenyonj/dotfiles-local.git`
 
 Install:
 
-rcup
+`cd && cd dotfiles-local && bin.local/setup`
 
 This will create symlinks in your home (`~/`) directory for all the config files
 that you have in your `dotfiles-local` directory.

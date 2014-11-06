@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# remove exisiting zsh-syntax-highlighting directory and clone again
+rm -rf zsh-syntax-highlighting
+git clone git@github.com:zsh-users/zsh-syntax-highlighting.git
+rcup
