@@ -91,3 +91,9 @@ map <Leader>ws :StripWhitespace<cr>
 
 " remove all comments
 nmap <leader>c :%s/^\s*#.*$//g<CR>:%s/\(\n\)\n\+/\1/g<CR>:nohl<CR>gg
+
+" Rehash with 1.9 style hash syntax
+nmap <leader>rh :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
+
+" Reset tslime variables
+map <leader>tv <Plug>SetTmuxVars
