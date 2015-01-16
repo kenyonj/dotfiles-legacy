@@ -34,8 +34,8 @@ Here is a sampling. For a complete list of features, please review the source.
 ###[git](http://git-scm.com/) configuration:
   * `git` or `g` followed by:
     - `fuckit`: resets your current directory to it's last checked in state.
-      (be careful with this command, as its name implies, this is a last case
-option)
+      (be careful with this command, as its name implies, use this as a last
+resort)
   * `amend`: `git commit --amend`
   * `amendne`: `git commit --amend --no-edit`
   * `ga`: `git add`
