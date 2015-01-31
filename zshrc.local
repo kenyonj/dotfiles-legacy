@@ -146,5 +146,5 @@ gsolo() { git commit --amend --no-edit --author "$gh_name <$gh_email[1]@$gh_emai
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh --no-rehash)"
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
