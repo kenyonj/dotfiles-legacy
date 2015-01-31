@@ -144,6 +144,7 @@ gsolo() { git commit --amend --no-edit --author "$gh_name <$gh_email[1]@$gh_emai
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export DOCKER_HOST="tcp://localhost:4243"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
 source /usr/local/share/chruby/chruby.sh
