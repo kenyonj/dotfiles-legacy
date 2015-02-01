@@ -90,6 +90,12 @@ _display_current_vim_mode() {
   fi
 }
 
+_display_docker_status() {
+  if [[ -a "`pwd`/fig.yml" ]]; then
+    echo "$(_cyan "⎋")"
+  fi
+}
+
 function zle-line-init zle-keymap-select {
   VIMODE=$KEYMAP
   zle reset-prompt
@@ -102,7 +108,7 @@ function precmd {
   $(git status 2> /dev/null >! "/tmp/git-status-$$")
 }
 
-PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
+PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode)$(_display_docker_status) '
 
 if [[ -f $HOME/.fasd ]]; then
   # Initialize fasd (https://github.com/clvv/fasd)

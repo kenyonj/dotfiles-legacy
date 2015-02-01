@@ -1,9 +1,0 @@
-#!/bin/sh
-
-battery_percentage="$(pmset -g batt | sed -E '/^.*[[:space:]]([0-9]+)%.*/!d; s//\1/g')"
-
-if [ $battery_percentage -lt 20 ]; then
-  printf "#[fg=#990000]%d%%#[fg=black]" "$battery_percentage"
-else
-  printf "%d%%" "$battery_percentage"
-fi
