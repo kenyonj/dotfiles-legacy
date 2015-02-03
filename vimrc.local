@@ -97,3 +97,7 @@ nmap <leader>rh :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
 
 " Reset tslime variables
 map <leader>tv <Plug>SetTmuxVars
+
+" Use xclip for copying and pasting (for SSH connections)
+vmap "+y :!xclip -f -sel clip
+map "+p :r!xclip -o -sel clip
