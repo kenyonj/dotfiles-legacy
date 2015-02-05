@@ -155,4 +155,5 @@ export DOCKER_HOST="tcp://localhost:4243"
 export PATH="$PATH:/usr/local/lib/node_modules"
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+chruby ruby-2.2.0
 source ~/dotfiles-local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
