@@ -4,9 +4,7 @@ map <Leader>i mmgg=G`m<CR>
 " open up our schema
 map <Leader>sc :sp db/schema.rb<cr>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE (thanks Gary Bernhardt)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! RenameFile()
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
@@ -18,14 +16,29 @@ function! RenameFile()
 endfunction
 map <Leader>n :call RenameFile()<cr>
 
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
+" Toggle relative and non-relative line numbers
+function! ToggleNumber()
+  if &relativenumber
+    set norelativenumber
+    set number
+  else
+    set relativenumber
+  endif
+endfunction
+map <Leader>r :call ToggleNumber()<cr>
+
+" Toggle spell check on/off
+function! ToggleSpelling()
+  if &spell
+    set nospell
+  else
+    set spell
+  endif
+endfunction
+map <Leader>sp :call ToggleSpelling()<cr>
 
 " Send specs away
 let g:rspec_command = 'call Send_to_Tmux("be rspec {spec}\n")'
-
-" tell me off for lines more then 80
-set colorcolumn=80
 
 " custom surrounds
 autocmd FileType erb let b:surround_46 = "<% \r %>"
@@ -41,29 +54,6 @@ imap jj <Esc>
 if exists("+clipboard")
   set clipboard=unnamed
 endif
-
-" Toggle relative and non-relative line numbers
-map <Leader>r :call ToggleNumber()<cr>
-
-function! ToggleNumber()
-  if &relativenumber
-    set norelativenumber
-    set number
-  else
-    set relativenumber
-  endif
-endfunction
-
-" Toggle spell check on/off
-map <Leader>sp :call ToggleSpelling()<cr>
-
-function! ToggleSpelling()
-  if &spell
-    set nospell
-  else
-    set spell
-  endif
-endfunction
 
 " Sets airline (status bar) to remove angle brackets and sets a theme
 let g:airline_left_sep=''
@@ -83,8 +73,6 @@ set nowrap
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
 cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
-
-" Working with whitespace
 
 " strip all whitespace in current file
 map <Leader>ws :StripWhitespace<cr>

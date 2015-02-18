@@ -1,7 +1,4 @@
-# history settings
-HISTFILE=$HOME/.zsh_history
-
-# don't corrent my shizniz
+# don't correct
 unsetopt correct_all
 
 # Case insensitive autocomplete

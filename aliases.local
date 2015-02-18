@@ -1,28 +1,17 @@
 # Alias Editing
-alias ae="vi ~/.aliases.local" #alias edit
-alias ar="source ~/.aliases.local; echo 'aliases reloaded!'"  #alias reload
-alias zr="source ~/.zshrc; echo 'zshrc reloaded!'" #reload zsh
+alias ae="vi ~/.aliases.local"
+alias ar="source ~/.aliases.local; echo 'aliases reloaded!'"
 
-# Laptop Script
-alias update-laptop="bash <(curl -s https://raw.githubusercontent.com/thoughtbot/laptop/master/mac) 2>&1 | tee ~/laptop.log"
-
-# Unix
-alias la="ls -la"
-alias ln="ln -v"
-alias mkdir="mkdir -p"
-alias ...="../.."
+# ZSH
+alias zr="source ~/.zshrc; echo 'zshrc reloaded!'"
 
 # PS
 alias psa="ps aux"
 alias psag="ps aux | ag "
 
 # Bundler
-alias b="bundle"
 alias be="bundle exec"
 alias bi="bundle install"
-
-# Tests and Specs
-alias s="rspec"
 
 # Brew Cask
 alias bca="brew cask"
