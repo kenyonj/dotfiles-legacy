@@ -138,7 +138,7 @@ if [[ $gh_co_domain == "" ]]; then
     new_domain=$co_domain
   fi
 
-  git config --file ~/.gitconfig.local --add company.domain $new_domain
+  git config --file ~/.gitconfig.local --replace-all company.domain "$new_domain"
   gh_co_domain=$(echo `git config company.domain`)
 fi
 
