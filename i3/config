@@ -7,13 +7,13 @@ font pango: Monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec ~/.i3/shell.sh
 
 # kill focused window
 bindsym $mod+Mod1+Q kill
 
 # start dmenu
-bindsym $mod+d exec dmenu_run
+bindsym Mod4+space exec dmenu_run
 
 # i3 shorcuts for reload/restart/exit
 bindsym $mod+Mod1+C reload
@@ -33,10 +33,10 @@ bindsym $mod+Mod1+K move up
 bindsym $mod+Mod1+L move right
 
 # horizontal split
-#bindsym $mod+ split h
+bindsym $mod+Shift+I split h
 
 # vertical split
-bindsym $mod+Mod1+| split v
+bindsym $mod+i split v
 
 # zoom
 bindsym $mod+Mod1+Z fullscreen
@@ -107,6 +107,9 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 
+# custom window settings
+for_window [class="^URxvt$" instance="scratchpad"] border 1pixel; move scratchpad
+
 # one bar on both screens
 bar {
   colors {
@@ -134,6 +137,8 @@ exec urxvt -name scratchpad -e zsh
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/.i3/dark-pattern.jpg
 exec ~/.i3/autostart
+
+exec --no-startup-id i3msg 'workspace 10; exec chromium
 
 # Custom Keybinds
 bindsym $mod+Mod1+Shift+L exec sh ~/.i3/i3lock.sh
