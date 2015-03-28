@@ -1,15 +1,15 @@
 [alias]
-  fuckit = !sh -c 'git add --all && git reset --hard'
+fuckit = !sh -c 'git add --all && git reset --hard'
 
 [pretty]
-  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
+colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 
 [user]
-	name = Justin Kenyon
-	email = kenyonj@gmail.com
+name = Justin Kenyon
+email = kenyonj@gmail.com
 
 [github]
-	user = kenyonj
+user = kenyonj
 
 [company]
-  domain = thoughtbot.com
+domain = thoughtbot.com
