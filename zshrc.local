@@ -107,20 +107,18 @@ function precmd {
 
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode)$(_display_docker_status) '
 
-if [[ -f $HOME/.fasd ]]; then
-  # Initialize fasd (https://github.com/clvv/fasd)
-  eval "$(fasd --init auto)"
+# Initialize fasd (https://github.com/clvv/fasd)
+eval "$(fasd --init auto)"
 
-  # aliases
+# aliases
 
-  # jump to recently used items
-  alias a='fasd -a' # any
-  alias s='fasd -s' # show / search / select
-  alias d='fasd -d' # directory
-  alias f='fasd -f' # file
-  alias j='fasd_cd -d' # cd, same functionality as j in autojump
-  alias v='f -e vim' # quick opening files with vim
-fi
+# jump to recently used items
+alias a='fasd -a' # any
+alias s='fasd -s' # show / search / select
+alias d='fasd -d' # directory
+alias f='fasd -f' # file
+alias j='fasd_cd -d' # cd, same functionality as j in autojump
+alias v='f -e vim' # quick opening files with vim
 
 # set gitconfig.local keys and define gpair() and gsolo()
 gh_name=("${(s/ /)$(echo `git config user.name`)}")
@@ -150,7 +148,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export DOCKER_HOST="tcp://localhost:4243"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.2.0
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
+chruby ruby-2.2.1
 source ~/dotfiles-local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+## Desktop background color
+xsetroot -solid '#101010' &
+
+## Disable beeps
+xset -b &
+
+## DPMS monitor setting (standby -> suspend -> off) (seconds)
+xset dpms 300 600 900 &
+
+## Set LCD brightness
+xbacklight -set 90 &
+
+## Clipboard manager
+LC_ALL=C parcellite &
+
+## OSD
+dunst &
