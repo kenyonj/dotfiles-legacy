@@ -13,6 +13,9 @@ remove Control = Control_L Control_R
 remove Mod1    = Alt_R
 remove Mod5    = Scroll_Lock
 
+! reverse scrolling 
+pointer = 1 2 3 5 4 6 7 8 9 10 11 12
+
 keycode 0x09 =	Escape	NoSymbol	Escape
 keycode 0x43 =	F1	F1	F1	F1	F1	F1	XF86Switch_VT_1
 keycode 0x44 =	F2	F2	F2	F2	F2	F2	XF86Switch_VT_2
