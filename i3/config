@@ -1,7 +1,8 @@
 set $mod Control
+set $update
 
 # font for window titles. ISO 10646 = Unicode
-font pango: Monospace 8
+font pango:Ubuntu Mono 10
 
 # User Mouse+$mod to drag floating windows to a position
 floating_modifier $mod
@@ -102,6 +103,11 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# volume control
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle $update
 
 # brightness control
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
