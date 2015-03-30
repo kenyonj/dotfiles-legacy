@@ -1,69 +1,96 @@
-URxvt*font:           xft:Inconsolata:size=8
+! -------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
 
-!-*-{ Xft settings
-Xft*dpi:       96
-Xft*antialias: True
-Xft*hinting:   Full
-!-*-}
+Xft.dpi:                    96
+Xft.antialias:              false
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
 
-URxvt.scrollBar: false
+!-------------------------------------------------------------------------------
+! URxvt settings
+! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
+! More info at:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
+!-------------------------------------------------------------------------------
 
-! --- special colors ---
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            50
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
 
-*background: #0d1926
-*foreground: #d9e6f2
+! Fonts
+URxvt.allow_bold:           false
+/* URxvt.font:
+-*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
+URxvt*font: xft:Monospace:pixelsize=14
+URxvt*boldFont: xft:Monospace:pixelsize=14
 
-! --- standard colors ---
+! Fix font space
+URxvt*letterSpace: -1
 
-! black
-*color0: #000000
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
 
-! bright_black
-*color8: #262626
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.url-launcher:         chromium
 
-! red
-*color1: #b87a7a
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      true
 
-! bright_red
-*color9: #dbbdbd
+! Pointer
+URxvt.pointerBlank:         true
 
-! green
-*color2: #7ab87a
+! Base16 Default
+! Scheme: Chris Kempson (http://chriskempson.com)
 
-! bright_green
-*color10: #bddbbd
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #b8b8b8
+#define base05 #d8d8d8
+#define base06 #e8e8e8
+#define base07 #f8f8f8
+#define base08 #ab4642
+#define base09 #dc9656
+#define base0A #f7ca88
+#define base0B #a1b56c
+#define base0C #86c1b9
+#define base0D #7cafc2
+#define base0E #ba8baf
+#define base0F #a16946
 
-! yellow
-*color3: #b8b87a
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
 
-! bright_yellow
-*color11: #dbdbbd
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
 
-! blue
-*color4: #7a7ab8
-
-! bright_blue
-*color12: #bdbddb
-
-! magenta
-*color5: #b87ab8
-
-! bright_magenta
-*color13: #dbbddb
-
-! cyan
-*color6: #7ab8b8
-
-! bright_cyan
-*color14: #bddbdb
-
-! white
-*color7: #d9d9d9
-
-! bright_white
-*color15: #ffffff
-
-
-! ------------------------------------------------------------------------------
-! --- end of terminal colors section -------------------------------------------
-! ------------------------------------------------------------------------------
+*.color8:       base03
+*.color9:       base09
+*.color10:      base01
+*.color11:      base02
+*.color12:      base04
+*.color13:      base06
+*.color14:      base0F
+*.color15:      base07

@@ -109,6 +109,7 @@ bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 
 # custom window settings
 for_window [class="^URxvt$" instance="scratchpad"] border 1pixel; move scratchpad
+for_window [class="^URxvt$"] border 1pixel
 
 # one bar on both screens
 bar {
