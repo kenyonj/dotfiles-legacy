@@ -17,5 +17,8 @@ export LANG=en_US.UTF-8
 # load Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
+# load monitor settings
+xrandr --output DP1 --auto --left-of LVDS1
+
 #start i3
-exec i3
+exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1

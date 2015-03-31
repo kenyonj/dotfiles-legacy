@@ -1,0 +1,7 @@
+#!/bin/sh
+
+## Start slack windows
+i3-msg "workspace 10; append_layout ~/.i3/workspace_10.json"
+i3-msg "exec --no-startup-id google-chrome-stable --app='https://thoughtbot.slack.com'"
+i3-msg "exec --no-startup-id google-chrome-stable --app='https://kenyon.slack.com'"
+i3-msg "exec --no-startup-id google-chrome-stable --app='https://twentyeightmusic.slack.com'"
