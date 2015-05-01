@@ -1,5 +1,5 @@
 # Alias Editing
-alias ae="vi ~/.aliases.local"
+alias ae="vim ~/.aliases.local"
 alias ar="source ~/.aliases.local; echo 'aliases reloaded!'"
 
 # ZSH
@@ -46,6 +46,7 @@ alias gd="git diff"
 alias gf="git fetch"
 alias gl="git log -10 --pretty=colored"
 alias gnb="git checkout -b"
+alias gp="git push"
 alias gpf!="git push -f"
 alias gpr="hub pull-request"
 alias gr="git rebase"

@@ -148,7 +148,14 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export DOCKER_HOST="tcp://localhost:4243"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
+export PATH="/home/kenyonj/apps:$PATH"
 source /usr/share/chruby/chruby.sh
 source /usr/share/chruby/auto.sh
 chruby ruby-2.2.1
 source ~/dotfiles-local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#set xmodmap
+if [ -s ~/.xmodmap-jkarch ]; then
+  xmodmap ~/.xmodmap-jkarch
+fi
+

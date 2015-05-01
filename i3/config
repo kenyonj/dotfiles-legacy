@@ -11,6 +11,22 @@ font pango:DejaVu Sans Mono 9
 # User Mouse+$mod to drag floating windows to a position
 floating_modifier $mod
 
+# scratchpad, move and show, this is a hidden workspace where we can put windows
+bindsym $mod+m move scratchpad
+bindsym $mod+o scratchpad show
+
+# 1password
+for_window [title="^1Password*"] border 1pixel; move scratchpad
+exec google-chrome-stable --app="https://dl-web.dropbox.com/get/Everyone%201password%20Vault%20Sync/thoughtbot%20%28Everyone%29.agilekeychain/1Password.html?_subject_uid=300918779&w=AAA63XEa48YMiDbpu4CEqaR2wFRgSyXksCcI843v0mDUew#"
+bindsym $mod+Shift+1 [title="^1Password*"] scratchpad show
+
+# move workspaces
+bindsym $mod+comma move workspace to output left
+bindsym $mod+period move workspace to output right
+
+# mac like cross-hair screenshot
+bindsym --release $other+Shift+4 exec --no-startup-id import ~/images/shots/$(date +%Y-%m-%d-%k%M%S)-scrot.png
+
 # start a terminal
 bindsym $mod+Return exec ~/.i3/shell.sh
 
@@ -21,9 +37,9 @@ bindsym $mod+$other+Q kill
 bindsym $other+space exec dmenu_run
 
 # i3 shorcuts for reload/restart/exit
-bindsym $mod+$other+C reload
-bindsym $mod+$other+R restart
-bindsym $mod+$other+E exit
+bindsym $mod+$other+Shift+C reload
+bindsym $mod+$other+Shift+R restart
+bindsym $mod+$other+Shift+E exit
 
 # change focus
 bindsym $mod+h focus left
@@ -64,30 +80,42 @@ bindsym $mod+Tab workspace back_and_forth
 
 # switch to workspace
 bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
+bindsym $mod+2 workspace 2: dev
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+9 workspace 9: emails
+bindsym $mod+0 workspace 10: slacks
 
 # move focused container to workspace
 bindsym $mod+$other+1 move container to workspace 1
-bindsym $mod+$other+2 move container to workspace 2
+bindsym $mod+$other+2 move container to workspace 2: dev
 bindsym $mod+$other+3 move container to workspace 3
 bindsym $mod+$other+4 move container to workspace 4
 bindsym $mod+$other+5 move container to workspace 5
 bindsym $mod+$other+6 move container to workspace 6
 bindsym $mod+$other+7 move container to workspace 7
 bindsym $mod+$other+8 move container to workspace 8
-bindsym $mod+$other+9 move container to workspace 9
-bindsym $mod+$other+0 move container to workspace 10
+bindsym $mod+$other+9 move container to workspace 9: emails
+bindsym $mod+$other+0 move container to workspace 10: slacks
 
 # change border
 bindsym $mod+b border toggle
+
+# starter
+mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace" {
+  bindsym s exec ~/.i3/startslacks
+  bindsym i exec ~/.i3/starter
+  bindsym e exec ~/.i3/starteremails
+
+  # back to normal
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $other+Shift+R mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace"
 
 # resize window
 mode "resize" {
@@ -144,7 +172,6 @@ bar {
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/.i3/dark-pattern.jpg
 exec ~/.i3/autostart
-exec ~/.i3/startslacks
 
 # Custom Keybinds
 bindsym $mod+$other+Shift+L exec sh ~/.i3/i3lock.sh

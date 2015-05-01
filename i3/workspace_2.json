@@ -1,0 +1,108 @@
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.4,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 396,
+               "width": 636,
+               "x": 0,
+               "y": 0
+            },
+            "name": "urxvt",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+                "instance": "^urxvt$",
+                "title": "^urxvt$",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 396,
+               "width": 636,
+               "x": 0,
+               "y": 0
+            },
+            "name": "urxvt",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+                "instance": "^urxvt$",
+                "title": "^urxvt$",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.6,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1560,
+               "width": 1276,
+               "x": 1282,
+               "y": 38
+            },
+            "name": "Google - Google Chrome",
+            "percent": 0.7,
+            "swallows": [
+               {
+                "class": "^Google\\-chrome\\-stable$",
+                "instance": "^Google\\-chrome\\-stable$",
+                "transient_for": "^$",
+                "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 396,
+               "width": 636,
+               "x": 0,
+               "y": 0
+            },
+            "name": "urxvt",
+            "percent": 0.3,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+                "instance": "^urxvt$",
+                "title": "^urxvt$",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

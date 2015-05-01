@@ -1,0 +1,8 @@
+#!/bin/sh
+
+## Start starter window
+i3-msg "workspace 9: emails; append_layout ~/.i3/workspace_9.json"
+i3-msg "workspace 9: emails; exec --no-startup-id google-chrome-stable --app='http://gmail.com'"
+i3-msg "workspace 9: emails; exec --no-startup-id google-chrome-stable --app='http://mail.thoughtbot.com'"
+i3-msg "workspace 9: emails; layout stacking"
+i3-msg "mode default"
