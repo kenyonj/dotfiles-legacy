@@ -83,7 +83,7 @@ _display_current_vim_mode() {
   if [[ $VIMODE == 'vicmd' ]]; then
     echo "$(_red "✘")"
   else
-    echo "$(_cyan "✔")"
+    echo "$(_green "✔")"
   fi
 }
 
