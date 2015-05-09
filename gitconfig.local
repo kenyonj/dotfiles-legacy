@@ -9,7 +9,7 @@ name = Justin Kenyon
 email = kenyonj@gmail.com
 
 [github]
-user = kenyonj
+	user = kenyonj
 
 [company]
 domain = thoughtbot.com
