@@ -131,15 +131,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# volume control
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle $update
-
-# brightness control
-bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
-
 # custom window settings
 for_window [class="^URxvt$"] border 1pixel
 
@@ -171,7 +162,6 @@ bar {
 # autostart
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/.i3/dark-pattern.jpg
-exec ~/.i3/autostart
 
 # Custom Keybinds
 bindsym $mod+$other+Shift+L exec sh ~/.i3/i3lock.sh

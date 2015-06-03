@@ -62,7 +62,7 @@ resort)
   * `standup`: `git standup`
 
 ####functions available:
-  * `gpair()`: This can be run, followed by the first name of the person you
+  * `gpair()`: This can be run, followed by the first & last name of the person you
     are pairing with to change the lastest commit's author and email address.
 
     Example: If I run `gpair Bruce Wayne` it will use my `~/.gitconfig.local` to build this command:
