@@ -1,4 +1,4 @@
-# Mod4 = Windows Key, $mod
+# Mod4 = Windows Key, Command Key, $mod
 # Mod1 = Alt, $other
 
 set $mod Mod4
@@ -15,10 +15,14 @@ floating_modifier $mod
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
+for_window [class="nautilus"] border 1pixel; move scratchpad
+exec nautilus
+
+
 # 1password
-for_window [title="^1Password*"] border 1pixel; move scratchpad
+for_window [title="1Password"] border 1pixel; move scratchpad
 exec google-chrome-stable --app="https://dl-web.dropbox.com/get/Everyone%201password%20Vault%20Sync/thoughtbot%20%28Everyone%29.agilekeychain/1Password.html?_subject_uid=300918779&w=AAA63XEa48YMiDbpu4CEqaR2wFRgSyXksCcI843v0mDUew#"
-bindsym $mod+Shift+1 [title="^1Password*"] scratchpad show
+bindsym $mod+Shift+1 [title="1Password"] scratchpad show
 
 # move workspaces
 bindsym $mod+comma move workspace to output left
@@ -106,24 +110,25 @@ bindsym $mod+$other+0 move container to workspace 10: slacks
 bindsym $mod+b border toggle
 
 # starter
-mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace" {
+mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace | (m)onitor initialization" {
   bindsym s exec ~/.i3/startslacks
   bindsym i exec ~/.i3/starter
   bindsym e exec ~/.i3/starteremails
+  bindsym m exec ~/.i3/monitorsetup
 
   # back to normal
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-bindsym $other+Shift+R mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace"
+bindsym $other+Shift+R mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace | (m)onitor initialization"
 
 # resize window
 mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
-  bindsym h resize shrink width 10 px or 10 ppt
-  bindsym j resize grow height 10 px or 10 ppt
-  bindsym k resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
+  bindsym h resize shrink width 5 px or 5 ppt
+  bindsym j resize grow height 5 px or 5 ppt
+  bindsym k resize shrink height 5 px or 5 ppt
+  bindsym l resize grow width 5 px or 5 ppt
 
   # back to normal
   bindsym Return mode "default"

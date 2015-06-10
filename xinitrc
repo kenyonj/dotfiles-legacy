@@ -10,6 +10,7 @@ xsetroot -cursor_name left_ptr
 export LANG=en_US.UTF-8
 
 # load Xresources
+xrdb -load ~/.Xresources &
 xrdb -merge ~/.Xresources
 
 #start i3
