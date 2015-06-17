@@ -134,8 +134,8 @@ export DOCKER_HOST="tcp://localhost:4243"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
 export PATH="/home/kenyonj/apps:$PATH"
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
 chruby ruby-2.2.2
 source ~/dotfiles-local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
