@@ -15,10 +15,6 @@ floating_modifier $mod
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
-for_window [class="nautilus"] border 1pixel; move scratchpad
-exec nautilus
-
-
 # 1password
 for_window [title="1Password"] border 1pixel; move scratchpad
 exec google-chrome-stable --app="https://dl-web.dropbox.com/get/Everyone%201password%20Vault%20Sync/thoughtbot%20%28Everyone%29.agilekeychain/1Password.html?_subject_uid=300918779&w=AAA63XEa48YMiDbpu4CEqaR2wFRgSyXksCcI843v0mDUew#"
@@ -29,7 +25,7 @@ bindsym $mod+comma move workspace to output left
 bindsym $mod+period move workspace to output right
 
 # mac like cross-hair screenshot
-bindsym --release $other+Shift+4 exec --no-startup-id import ~/images/shots/$(date +%Y-%m-%d-%k%M%S)-scrot.png
+bindsym --release $other+Shift+4 exec --no-startup-id import ~/Pictures/screenshots/$(date +%Y-%m-%d-%k%M%S)-scrot.png
 
 # start a terminal
 bindsym $mod+Return exec ~/.i3/shell.sh
@@ -158,7 +154,7 @@ bar {
   }
 
   # i3bar position
-  position top
+  position bottom
 
   # using custom i3status.conf
   status_command i3status -c ~/.i3/i3status.conf
@@ -166,7 +162,6 @@ bar {
 
 # autostart
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill ~/.i3/dark-pattern.jpg
 
 # Custom Keybinds
 bindsym $mod+$other+Shift+L exec sh ~/.i3/i3lock.sh
