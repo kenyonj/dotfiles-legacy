@@ -140,3 +140,8 @@ chruby ruby-2.2.2
 source ~/dotfiles-local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="$HOME/.bin:$PATH"
+
+#set xmodmap
+if [ -s ~/.xmodmap-jkarch ]; then
+  xmodmap ~/.xmodmap-jkarch
+fi
