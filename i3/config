@@ -1,9 +1,18 @@
 # Mod4 = Windows Key, Command Key, $mod
 # Mod1 = Alt, $other
+# Mod3 = Left Control, $mod
 
 set $mod Mod4
 set $other Mod1
 set $update
+
+for_window [class="^.*"] border pixel 0
+
+#gaps config
+gaps inner 5
+gaps outer 5
+smart_borders no_gaps
+smart_gaps on
 
 # font for window titles. ISO 10646 = Unicode
 font pango:DejaVu Sans Mono 9
@@ -106,17 +115,37 @@ bindsym $mod+$other+0 move container to workspace 10: slacks
 bindsym $mod+b border toggle
 
 # starter
-mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace | (m)onitor initialization" {
+mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace | (m)onitor initialization | (k)eyboard initialization" {
   bindsym s exec ~/.i3/startslacks
   bindsym i exec ~/.i3/starter
   bindsym e exec ~/.i3/starteremails
-  bindsym m exec ~/.i3/monitorsetup
+  bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
+  bindsym k mode "(1) Initialize Poker 2"
 
   # back to normal
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-bindsym $other+Shift+R mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace | (m)onitor initialization"
+bindsym $other+Shift+R mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace | (m)onitor initialization | (k)eyboard initialization"
+
+
+mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays" {
+  bindsym 1 exec xrandr --output DP1 --auto --left-of LVDS1; mode "default"
+  bindsym 2 exec xrandr --output DP1 --auto --left-of LVDS1; mode "default"
+  bindsym 3 exec xrandr --output DP1 --off; mode "default"
+
+  # back to normal
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+mode "(1) Initialize Poker 2" {
+  bindsym 1 exec --no-startup-id setxkbmap -option ctrl:nocaps; mode "default"
+
+  # back to normal
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
 
 # resize window
 mode "resize" {
@@ -171,7 +200,9 @@ bar {
 
 # autostart
 exec --no-startup-id nm-applet
+exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id /usr/bin/feh --bg-scale '/home/kenyonj/images/mountains.png'
 
 # Custom Keybinds
 bindsym $mod+$other+Shift+L exec sh ~/.i3/i3lock.sh
-bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Downloads/screenshots/'
+bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/images/screenshots/'
