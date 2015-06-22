@@ -24,11 +24,6 @@ floating_modifier $mod
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
-# 1password
-for_window [title="^1Password*"] border 1pixel; move scratchpad
-exec google-chrome-stable --app="https://dl-web.dropbox.com/get/Everyone%201password%20Vault%20Sync/thoughtbot%20%28Everyone%29.agilekeychain/1Password.html?_subject_uid=300918779&w=AAA63XEa48YMiDbpu4CEqaR2wFRgSyXksCcI843v0mDUew#"
-bindsym $mod+Shift+1 [title="^1Password*"] scratchpad show
-
 # move workspaces
 bindsym $mod+comma move workspace to output left
 bindsym $mod+period move workspace to output right
