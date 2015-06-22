@@ -195,8 +195,7 @@ bar {
 
 # autostart
 exec --no-startup-id nm-applet
-exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id /usr/bin/feh --bg-scale '/home/kenyonj/images/mountains.png'
+exec --no-startup-id /usr/bin/feh --bg-scale '~/.i3/wallpapers/boston-skyline.jpg'
 
 # Custom Keybinds
 bindsym $mod+$other+Shift+L exec sh ~/.i3/i3lock.sh
