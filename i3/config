@@ -9,7 +9,7 @@ set $update
 for_window [class="^.*"] border pixel 0
 
 #gaps config
-gaps inner 5
+gaps inner 20
 gaps outer 5
 smart_borders no_gaps
 smart_gaps on
