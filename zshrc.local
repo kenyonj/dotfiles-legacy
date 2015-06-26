@@ -140,3 +140,6 @@ chruby ruby-2.2.2
 source ~/dotfiles-local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="$HOME/.bin:$PATH"
+
+#nvm
+source ~/.nvm/nvm.sh
