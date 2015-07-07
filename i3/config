@@ -29,7 +29,7 @@ bindsym $mod+comma move workspace to output left
 bindsym $mod+period move workspace to output right
 
 # mac like cross-hair screenshot
-bindsym --release $other+Shift+4 exec --no-startup-id import "~/images/shots/$(date +%Y-%m-%d-%k%M%S)-scrot.png"
+bindsym --release $other+Shift+4 exec --no-startup-id import ~/images/shots/$(date +%Y-%m-%d-%k%M%S)-scrot.png
 
 # start a terminal
 bindsym $mod+Return exec ~/.i3/shell.sh
