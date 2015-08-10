@@ -125,7 +125,7 @@ bindsym $other+Shift+R mode "(i)nitial dev workspace | (e)mail workspace | (s)la
 
 
 mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays" {
-  bindsym 1 exec xrandr --output DP1 --auto --left-of LVDS1; mode "default"
+  bindsym 1 exec xrandr --output DP1 --mode 2560x1440 --pos 0x0 --rotate normal --output LVDS1 --mode 1600x900 --pos 2616x792 --rotate normal; mode "default"
   bindsym 2 exec xrandr --output DP1 --auto --left-of LVDS1; mode "default"
   bindsym 3 exec xrandr --output DP1 --off; mode "default"
 
