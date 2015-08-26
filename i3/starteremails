@@ -2,7 +2,7 @@
 
 ## Start starter window
 i3-msg "workspace 9: emails; append_layout ~/.i3/workspace_9.json"
-i3-msg "workspace 9: emails; exec --no-startup-id google-chrome-stable --app='http://inbox.google.com/u/0'"
-i3-msg "workspace 9: emails; exec --no-startup-id google-chrome-stable --app='http://inbox.google.com/u/1'"
+i3-msg "workspace 9: emails; exec --no-startup-id chromium --app='http://inbox.google.com/u/0'"
+i3-msg "workspace 9: emails; exec --no-startup-id chromium --app='http://inbox.google.com/u/1'"
 i3-msg "workspace 9: emails; layout stacking"
 i3-msg "mode default"
