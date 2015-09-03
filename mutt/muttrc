@@ -1,0 +1,13 @@
+source ~/.mutt/secrets
+
+set editor=`echo \$EDITOR`
+set my_name="Justin Kenyon"
+set folder=imaps://kenyonj@imap.gmail.com/
+set spoolfile=+INBOX
+set imap_check_subscribed
+set header_cache=~/.cache/mutt
+set message_cachedir="~/.cache/mutt"
+set postponed=+[Gmail]/Drafts
+unset imap_passive
+set imap_keepalive=300
+set mail_check=60
