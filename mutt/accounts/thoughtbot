@@ -1,0 +1,10 @@
+# vim: ft=muttrc
+set from          = "justin@thoughtbot.com"
+set sendmail      = "/usr/bin/msmtp -a thoughtbot"
+set mbox          = "+thoughtbot/archive"
+set postponed     = "+thoughtbot/drafts"
+
+macro index ,c "<change-folder>+gmail/INBOX<enter>" "change accounts"
+macro index ,z "<shell-escape>mbsync --pull-new thoughtbot-inbox<enter>" "sync IMAP"
+macro index D "<save-message>+thoughtbot/trash<enter>" "move message to the trash"
+macro index S "<save-message>+thoughtbot/spam<enter>"  "mark message as spam"

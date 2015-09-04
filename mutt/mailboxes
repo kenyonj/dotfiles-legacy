@@ -1,0 +1,3 @@
+mailboxes \
+  "+gmail/INBOX" \
+  "+thoughtbot/INBOX"

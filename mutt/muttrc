@@ -1,13 +1,54 @@
-source ~/.mutt/secrets
+# vim: ft=muttrc
 
-set editor=`echo \$EDITOR`
-set my_name="Justin Kenyon"
-set folder=imaps://kenyonj@imap.gmail.com/
-set spoolfile=+INBOX
-set imap_check_subscribed
-set header_cache=~/.cache/mutt
-set message_cachedir="~/.cache/mutt"
-set postponed=+[Gmail]/Drafts
-unset imap_passive
-set imap_keepalive=300
-set mail_check=60
+  set askcc
+unset confirmappend
+  set delete
+  set edit_headers
+  set editor            = "vim +:silent+?^$"
+  set fast_reply
+  set folder            = ~/mail
+  set forward_format    = "Fwd: %s"
+  set forward_quote
+  set header_cache      = ~/.mutt/cache
+unset help
+  set include
+  set index_format      = "%3C %Z %[!%m/%d] %-17.17F %s"
+  set mail_check        = 0
+  set mailcap_path      = ~/.mutt/mailcap
+unset mark_old
+unset markers
+  set mbox_type         = Maildir
+  set menu_scroll
+  set pager_context     = 5
+  set pager_index_lines = 10
+  set pager_stop
+  set pipe_decode
+  set realname          = "Justin Kenyon"
+unset record
+  set reply_to
+  set reverse_name
+  set signature         = ~/.mutt/signature
+  set sort              = threads
+  set sort_aux          = reverse-last-date-received
+  set spoolfile         = "+gmail/INBOX"
+  set status_format     = "-%r- %f%?t? Tagged:%t?%?p? Drafts:%p? -%>-"
+  set strict_threads
+  set thorough_search
+  set tilde
+  set timeout           = 3
+  set tmpdir            = ~/.mutt/temp
+
+alternates .*@justinkenyon\.com .*@thejpk\.com
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+ignore *
+unignore from: to: cc: date: subject:
+hdr_order from: to: cc: date: subject:
+
+source ~/.mutt/colors
+source ~/.mutt/mailboxes
+source ~/.mutt/bindings
+source ~/.mutt/macros
+source ~/.mutt/hooks
