@@ -59,7 +59,7 @@ Channel gmail-rest
 IMAPAccount thoughtbot
 Host imap.gmail.com
 User justin@thoughtbot.com
-PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mutt/msmtp-thoughtbot.gpg"
+PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mutt/tbpass.asc"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
