@@ -3,3 +3,15 @@
 macro index ,i      "<change-folder>!<enter>"  "go to inbox"
 macro index ,p      "<pipe-message>cat > ~/"   "save message as"
 macro index <space> "<collapse-thread>"        "[un]collapse thread"
+
+macro index ,s "\
+  <enter-command>\
+    set my_old_wait_key=\$wait_key \
+    nowait_key \
+  <enter>\
+  <shell-escape>notmuch-mutt --prompt search<enter>\
+  <change-folder-readonly>~/.cache/notmuch/mutt/results<enter>\
+  <enter-command>\
+    set wait_key=\$my_old_wait_key \
+  <enter>" \
+  "search"
