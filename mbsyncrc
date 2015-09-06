@@ -7,7 +7,7 @@ SyncState *
 IMAPAccount gmail
 Host imap.gmail.com
 User kenyonj@gmail.com
-PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mutt/msmtp-gmail.gpg"
+PassCmd "/home/kenyonj/.local/bin/getnetrc kenyonj@gmail.com"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -59,7 +59,7 @@ Channel gmail-rest
 IMAPAccount thoughtbot
 Host imap.gmail.com
 User justin@thoughtbot.com
-PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mutt/tbpass.asc"
+PassCmd "/home/kenyonj/.local/bin/getnetrc justin@thoughtbot.com"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
