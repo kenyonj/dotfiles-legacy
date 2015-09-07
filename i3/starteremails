@@ -1,7 +1,6 @@
 #!/bin/sh
 
 ## Start starter window
-i3-msg "workspace 9: emails; exec --no-startup-id chromium --app='http://inbox.google.com/u/0' --user-data-dir=/home/kenyonj/.config/chromium/Profile\ 1"
-i3-msg "workspace 9: emails; exec --no-startup-id chromium --app='http://inbox.google.com/u/1' --user-data-dir=/home/kenyonj/.config/chromium/Profile\ 1"
-i3-msg "workspace 9: emails; layout stacking"
+i3-msg "workspace 9:; exec --no-startup-id termite -e mutt"
+i3-msg "workspace 9:; layout stacking"
 i3-msg "mode default"

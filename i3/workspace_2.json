@@ -19,9 +19,9 @@
             "percent": 0.5,
             "swallows": [
                {
-                "class": "^URxvt$",
-                "instance": "^urxvt$",
-                "title": "^urxvt$",
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "^termite$",
                 "transient_for": "^$"
                }
             ],
@@ -41,9 +41,9 @@
             "percent": 0.5,
             "swallows": [
                {
-                "class": "^URxvt$",
-                "instance": "^urxvt$",
-                "title": "^urxvt$",
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "^termite$",
                 "transient_for": "^$"
                }
             ],
@@ -90,13 +90,13 @@
                "x": 0,
                "y": 0
             },
-            "name": "urxvt",
+            "name": "termite",
             "percent": 0.3,
             "swallows": [
                {
-                "class": "^URxvt$",
-                "instance": "^urxvt$",
-                "title": "^urxvt$",
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "^termite$",
                 "transient_for": "^$"
                }
             ],

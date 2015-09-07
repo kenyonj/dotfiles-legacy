@@ -1,9 +1,9 @@
 #!/bin/sh
 
 ## Start starter window
-i3-msg "workspace 2: dev; append_layout ~/.i3/workspace_2.json"
-i3-msg "workspace 2: dev; exec --no-startup-id google-chrome-stable"
-i3-msg "workspace 2: dev; exec ~/.i3/shell.sh"
-i3-msg "workspace 2: dev; exec ~/.i3/shell.sh"
-i3-msg "workspace 2: dev; exec ~/.i3/shell.sh; workspace 2: dev"
+i3-msg "workspace 2:; append_layout ~/.i3/workspace_2.json"
+i3-msg "workspace 2:; exec --no-startup-id chromium"
+i3-msg "workspace 2:; exec ~/.i3/shell.sh"
+i3-msg "workspace 2:; exec ~/.i3/shell.sh"
+i3-msg "workspace 2:; exec ~/.i3/shell.sh"
 i3-msg "mode default"

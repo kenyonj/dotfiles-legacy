@@ -34,7 +34,7 @@ bindsym $mod+period move workspace to output right
 bindsym --release $other+Shift+4 exec --no-startup-id import ~/images/shots/$(date +%Y-%m-%d-%k%M%S)-scrot.png
 
 # start a terminal
-bindsym $mod+Return exec ~/.i3/shell.sh
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+$other+Q kill
@@ -94,7 +94,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9:
-bindsym $mod+0 workspace 10:
+bindsym $mod+0 workspace 10:
 
 # move focused container to workspace
 bindsym $mod+$other+1 move container to workspace 1:
@@ -106,16 +106,16 @@ bindsym $mod+$other+6 move container to workspace 6
 bindsym $mod+$other+7 move container to workspace 7
 bindsym $mod+$other+8 move container to workspace 8
 bindsym $mod+$other+9 move container to workspace 9:
-bindsym $mod+$other+0 move container to workspace 10:
+bindsym $mod+$other+0 move container to workspace 10:
 
 # change border
 bindsym $mod+b border toggle
 
 # starter
 mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace | (m)onitor initialization | (k)eyboard initialization" {
-  bindsym s exec ~/.i3/startslacks
   bindsym i exec ~/.i3/starter
   bindsym e exec ~/.i3/starteremails
+  bindsym s exec ~/.i3/startslacks
   bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
   bindsym k mode "(1) Initialize Poker 2"
 
@@ -168,7 +168,7 @@ bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 
 # custom window settings
-for_window [class="^URxvt$"] border 1pixel
+for_window [class="^termite$"] border 1pixel
 
 # Jump to urgent window
 bindsym $mod+x [urgent=latest] focus

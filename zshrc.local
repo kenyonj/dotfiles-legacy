@@ -143,3 +143,5 @@ export PATH="$HOME/.bin:$PATH"
 
 #nvm
 source ~/.nvm/nvm.sh
+
+eval $(dircolors ~/.dircolors)

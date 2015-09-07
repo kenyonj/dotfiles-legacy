@@ -18,8 +18,8 @@ map <Leader>n :call RenameFile()<cr>
 
 " Color scheme
 syntax enable
-set background=dark
-colorscheme solarized
+colorscheme base16-default
+let base16colorspace=256
 
 " Toggle relative and non-relative line numbers
 function! ToggleNumber()
