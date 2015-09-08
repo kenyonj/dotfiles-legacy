@@ -181,7 +181,7 @@ bar {
 
 # autostart
 exec --no-startup-id nm-applet
-exec --no-startup-id /usr/bin/feh --bg-scale ~/dotfiles-local/wallpapers/boston-skyline.jpg
+exec --no-startup-id /usr/bin/feh --bg-scale ~/dotfiles-local/wallpapers/hawaii.jpg
 
 # Custom Keybinds
 bindsym $mod+$other+Shift+L exec ~/.i3/i3exit
