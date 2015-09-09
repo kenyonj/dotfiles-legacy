@@ -43,7 +43,7 @@ unset record
 alternates .*@justinkenyon\.com .*@thejpk\.com
 
 auto_view text/html
-alternative_order text/html text/enriched text/plain
+alternative_order text/plain text/enriched text/html
 
 ignore *
 unignore from: to: cc: date: subject:
