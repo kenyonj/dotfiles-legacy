@@ -42,6 +42,9 @@ function! ToggleSpelling()
 endfunction
 map <Leader>sp :call ToggleSpelling()<cr>
 
+" Set mail settings
+au FileType mail setlocal fo+=aw
+
 " Send specs away
 let g:rspec_command = 'call Send_to_Tmux("be rspec {spec}\n")'
 

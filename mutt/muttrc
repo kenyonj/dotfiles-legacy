@@ -34,6 +34,7 @@ unset record
   set spoolfile         = "+gmail/INBOX"
   set status_format     = "-%r- %f%?t? Tagged:%t?%?p? Drafts:%p? -%>-"
   set strict_threads
+  set text_flowed       = yes
   set thorough_search
   set tilde
   set timeout           = 3
