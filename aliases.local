@@ -56,3 +56,7 @@ alias grc="git rebase --continue"
 alias gri="git rebase -i"
 alias gs="git status -s"
 alias standup="git standup"
+
+# arch
+alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
+alias pacman-update="yaourt -Syua"
