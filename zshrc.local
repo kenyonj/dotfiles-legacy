@@ -137,7 +137,8 @@ export PATH="/home/kenyonj/apps:$PATH"
 source /usr/share/chruby/chruby.sh
 source /usr/share/chruby/auto.sh
 chruby ruby-2.2.3
-source ~/dotfiles-local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/completion/git-remote-branch.plugin.zsh
 
 export PATH="$HOME/.bin:$PATH"
 
