@@ -1,10 +1,10 @@
 # vim: ft=muttrc
 
-macro index ,i      "<change-folder>!<enter>"  "go to inbox"
-macro index ,p      "<pipe-message>cat > ~/"   "save message as"
-macro index <space> "<collapse-thread>"        "[un]collapse thread"
-macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
-macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index ,i      "<change-folder>!<enter>"           "go to inbox"
+macro index ,p      "<pipe-message>cat > ~/"            "save message as"
+macro index <space> "<collapse-thread>"                 "[un]collapse thread"
+macro index C       "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M       "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
 macro index ,s "\
   <enter-command>\
