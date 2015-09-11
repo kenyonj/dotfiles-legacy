@@ -60,3 +60,4 @@ alias standup="git standup"
 # arch
 alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
 alias pacman-update="yaourt -Syua"
+alias powertop="sudo powertop"
