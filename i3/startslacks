@@ -1,8 +1,5 @@
 #!/bin/sh
 
 ## Start slack windows
-i3-msg "workspace 10:; append_layout ~/.i3/workspace_10.json"
-i3-msg "workspace 10:; exec --no-startup-id chromium --app='https://thoughtbot.slack.com' --user-data-dir=/home/kenyonj/.config/chromium/Profile\ 1"
-i3-msg "workspace 10:; exec --no-startup-id chromium --app='https://kenyon.slack.com' --user-data-dir=/home/kenyonj/.config/chromium/Profile\ 1"
-i3-msg "workspace 10:; exec --no-startup-id chromium --app='https://twentyeightmusic.slack.com' --user-data-dir=/home/kenyonj/.config/chromium/Profile\ 1"
+i3-msg "workspace 10:; exec --no-startup-id termite -e weechat"
 i3-msg "mode default"
