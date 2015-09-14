@@ -22,13 +22,24 @@ browser = chromium
 # Base16 Default
 # Scheme: Chris Kempson (http://chriskempson.com)
 
+#black #181818
+#red #ab4642
+#green a1b56c
+#orange #f7ca88
+#blue 7cafc2
+#purple #ba8baf
+#lightblue #ba8baf
+#gray #d8d8d8
+#darkgrey #585858
+
+
 foreground      = #d8d8d8
 foreground_bold = #d8d8d8
 cursor          = #d8d8d8
 background      = #181818
 
 # 16 color space
-color0  = #181818
+color0  = #181818 
 color1  = #ab4642
 color2  = #a1b56c
 color3  = #f7ca88

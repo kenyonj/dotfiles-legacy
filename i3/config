@@ -175,6 +175,10 @@ bindsym $mod+x [urgent=latest] focus
 
 # one bar on both screens
 bar {
+  colors {
+    background #181818
+  }
+
   status_command i3blocks -c ~/.i3/i3blocks.conf
   strip_workspace_numbers yes
 }
