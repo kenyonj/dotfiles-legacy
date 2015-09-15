@@ -159,9 +159,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # volume control
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle $update
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle $update && pkill --signal RTMIN+2 i3blocks
+
+
+# player control
+bindsym XF86AudioPlay exec mpc toggle && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioPause exec mpc toggle && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioNext exec mpc next && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioPrev exec mpc prev && pkill --signal RTMIN+2 i3blocks
 
 # brightness control
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
