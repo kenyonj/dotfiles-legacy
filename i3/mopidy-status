@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Author: Raphael P. Ribeiro <raphaelpr01@gmail.com> 
+# Author: Raphael P. Ribeiro <raphaelpr01@gmail.com>
 
 MPCSTAT=$(mpc | grep -v '^volume:')
 if [ -z "${MPCSTAT}" ]; then # if not playing, exit
@@ -11,9 +11,13 @@ else
         PLAY=""
         PAUSE=""
         [ "$MPCSTAT2" = "playing" ] && echo $PLAY || echo $PAUSE
-    else # else, show what's playing
+    else
         PLAYING=$(echo "${MPCSTAT}" | sed 's,  *, ,g; 1h;1d;2G' | paste -d' ' -s - | cut -d ')' -f2)
         TIME=`echo "${MPCSTAT}" | sed 's,  *, ,g; 1h;1d;2G' | paste -d' ' -s - | head -n1 | cut -d ' ' -f3`
         echo "$PLAYING ($TIME)"
     fi
 fi
+
+case $BLOCK_BUTTON in
+  1) mpc toggle ;; # left click play/pause
+esac
