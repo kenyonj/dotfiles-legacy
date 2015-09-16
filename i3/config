@@ -112,10 +112,11 @@ bindsym $mod+$other+0 move container to workspace 10:
 bindsym $mod+b border toggle
 
 # starter
-mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace | (m)onitor initialization | (k)eyboard initialization" {
+mode "(i)nitial dev workspace | (e)mail workspace | (w)eechat workspace | (n)cmpcpp workspace | (m)onitor initialization | (k)eyboard initialization" {
   bindsym i exec ~/.i3/starter
-  bindsym e exec ~/.i3/starteremails
-  bindsym s exec ~/.i3/startslacks
+  bindsym e exec ~/.i3/startmutt
+  bindsym w exec ~/.i3/startweechat
+  bindsym n exec ~/.i3/startncmpcpp
   bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
   bindsym k mode "(1) Initialize Poker 2"
 
@@ -123,7 +124,7 @@ mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace | (m)onito
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-bindsym $other+Shift+R mode "(i)nitial dev workspace | (e)mail workspace | (s)lack workspace | (m)onitor initialization | (k)eyboard initialization"
+bindsym $other+Shift+R mode "(i)nitial dev workspace | (e)mail workspace | (w)eechat workspace | (n)cmpcpp workspace | (m)onitor initialization | (k)eyboard initialization"
 
 
 mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays" {

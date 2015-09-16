@@ -1,0 +1,5 @@
+#!/bin/sh
+
+## Start slack windows
+i3-msg "workspace 1:; exec --no-startup-id termite -e ncmpcpp"
+i3-msg "mode default"
