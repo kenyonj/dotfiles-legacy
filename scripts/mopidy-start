@@ -1,0 +1,8 @@
+#!/bin/sh
+
+start_mopidy() {
+  local password="$(~/.local/bin/getnetrc kenyonj@spotify.com)"
+  /usr/bin/mopidy -o "spotify/password=$password"
+}
+
+start_mopidy
