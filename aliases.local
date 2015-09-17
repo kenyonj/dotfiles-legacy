@@ -61,3 +61,6 @@ alias standup="git standup"
 alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
 alias pacman-update="yaourt -Syua"
 alias powertop="sudo powertop"
+
+# ssh-agent customization
+alias startx="ssh-agent startx"
