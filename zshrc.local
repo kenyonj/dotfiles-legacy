@@ -146,3 +146,4 @@ export PATH="$HOME/.bin:$PATH"
 source ~/.nvm/nvm.sh
 
 eval $(dircolors ~/.dircolors)
+eval $(keychain --eval -Q --quiet id_rsa)
