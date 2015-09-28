@@ -7,4 +7,4 @@ Type=simple
 ExecStart=/home/kenyonj/.scripts/mopidy-start
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

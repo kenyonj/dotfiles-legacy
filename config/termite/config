@@ -11,7 +11,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Source Code Pro 9.5
+font = Source Code Pro 16
 scrollback_lines = 10000
 search_wrap = true
 cursor_blink = system
@@ -38,7 +38,7 @@ cursor          = #d8d8d8
 background      = #181818
 
 # 16 color space
-color0  = #181818 
+color0  = #181818
 color1  = #ab4642
 color2  = #a1b56c
 color3  = #f7ca88
