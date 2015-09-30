@@ -3,6 +3,7 @@
 # pbrisbin 2013 - record screen area as a gif. Requires ffcast (for
 # xrectsel) and byzanz (for the actual recording).
 #
+# modified by Justin Kenyon 2015
 ###
 set -e
 

@@ -35,7 +35,20 @@ bindsym $mod+period move workspace to output right
 bindsym --release $other+Shift+4 exec --no-startup-id import ~/pictures/screenshots/$(date +%Y-%m-%d-%k%M%S)-scrot-targeted.png
 
 # record animated gif
-bindsym $other+Shift+5 exec --no-startup-id termite -e "~/.local/bin/gifcast ~/pictures/screenshots/animated-gifs/$(date +%Y-%m-%d-%k%M%S)-animated.gif"
+for_window [title="^gifcast$"] floating enable
+for_window [title="^gifcast$"] border pixel 1
+no_focus [title="^gifcast$"]
+assign [title="^gifcast$"] → scratchpad
+bindsym $other+Shift+5 mode "Make (s)election for recording."
+
+mode "Make (s)election for recording." {
+  bindsym s exec --no-startup-id termite -t gifcast -e ~/.scripts/capture-gif; mode "Recording GIF... Press Escape to stop recording."
+  bindsym Escape [title="^gifcast$"] kill; mode "default"
+}
+
+mode "Recording GIF... Press Escape to stop recording." {
+  bindsym Escape [title="^gifcast$"] kill; mode "default"
+}
 
 # start a terminal
 bindsym $mod+Return exec termite
@@ -118,15 +131,15 @@ bindsym $mod+b border toggle
 # starter
 mode "(i)nitial dev | (e)mail | (w)eechat | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization" {
   bindsym i exec ~/.i3/starter
-    bindsym e exec ~/.i3/startmutt
-    bindsym w exec ~/.i3/startweechat
-    bindsym n exec ~/.i3/startncmpcpp
-    bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
-    bindsym k mode "(1) Initialize Poker 2"
+  bindsym e exec ~/.i3/startmutt
+  bindsym w exec ~/.i3/startweechat
+  bindsym n exec ~/.i3/startncmpcpp
+  bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
+  bindsym k mode "(1) Initialize Poker 2"
 
 # back to normal
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 bindsym $other+Shift+R mode "(i)nitial dev | (e)mail | (w)eechat | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization"
 

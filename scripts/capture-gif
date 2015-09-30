@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+~/.local/bin/gifcast ~/pictures/screenshots/$(date +%Y-%m-%d-%k%M%S)-animated.gif
