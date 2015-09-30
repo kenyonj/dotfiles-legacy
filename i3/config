@@ -184,29 +184,30 @@ for_window [class="^termite$"] border 1pixel
 # Jump to urgent window
 bindsym $mod+x [urgent=latest] focus
 
-# one bar on both screens
+# bottom bar
 bar {
   colors {
-    background         #ffffff
-    focused_workspace  #000000 #ffffff #181818
-    active_workspace   #000000 #ffffff #181818
-    inactive_workspace #ffffff #ffffff #181818
-    urgent_workspace   #ff0000 #ffffff #ff0000
+    background         #d3d3d3
+    focused_workspace  #000000 #d3d3d3 #181818
+    active_workspace   #000000 #d3d3d3 #181818
+    inactive_workspace #d3d3d3 #d3d3d3 #181818
+    urgent_workspace   #ff0000 #d3d3d3 #ff0000
   }
 
+  binding_mode_indicator no
   font pango: FontAwesome 12, Terminus 12
   strip_workspace_numbers yes
   tray_output primary
-  binding_mode_indicator no
 }
 
+# top bar
 bar {
   colors {
     background         #181818
   }
 
-  position top
   font pango: FontAwesome 12, Terminus 12
+  position top
   status_command i3blocks -c ~/.i3/i3blocks.conf
   tray_output none
   workspace_buttons no
@@ -226,6 +227,7 @@ exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id parcellite
 exec --no-startup-id compton
+exec --no-startup-id volumeicon
 
 # set wallpaper
 exec --no-startup-id nitrogen --restore

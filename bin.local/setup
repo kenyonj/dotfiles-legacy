@@ -5,13 +5,6 @@ rm -rf zsh-syntax-highlighting
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 rcup
 
-# remove exisiting wee-slack directory and clone again
-rm -rf scripts/wee-slack
-git clone git://github.com/rawdigits/wee-slack.git scripts/wee-slack
-rm ~/.weechat/python/autoload/wee_slack.py
-rcup
-ln -s ~/.scripts/wee-slack/wee_slack.py ~/.weechat/python/autoload/wee_slack.py
-
 # get/set gitconfig details
 if [[ $(echo `git config user.name`) == "" ]]; then
   echo "\nPlease enter your full name (this will show on git commits): "
