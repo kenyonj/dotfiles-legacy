@@ -187,16 +187,29 @@ bindsym $mod+x [urgent=latest] focus
 # one bar on both screens
 bar {
   colors {
-    background #181818
-
-      focused_workspace  #d8d8d8 #181818 #a1b56c
-      active_workspace   #181818 #181818 #86c1b9
-      inactive_workspace #181818 #181818 #f7ca88
-      urgent_workspace   #ab4642 #181818 #ab4642
+    background         #ffffff
+    focused_workspace  #000000 #ffffff #181818
+    active_workspace   #000000 #ffffff #181818
+    inactive_workspace #ffffff #ffffff #181818
+    urgent_workspace   #ff0000 #ffffff #ff0000
   }
 
+  font pango: FontAwesome 12, Terminus 12
+  strip_workspace_numbers yes
+  tray_output primary
+  binding_mode_indicator no
+}
+
+bar {
+  colors {
+    background         #181818
+  }
+
+  position top
+  font pango: FontAwesome 12, Terminus 12
   status_command i3blocks -c ~/.i3/i3blocks.conf
-    strip_workspace_numbers yes
+  tray_output none
+  workspace_buttons no
 }
 
 # Custom Keybinds
@@ -208,10 +221,11 @@ bindsym Print exec scrot "%Y-%m-%d-%T_$wx$h_scrot.png" -e "mv $f ~/images/screen
 exec --no-startup-id ~/.i3/autostart.sh
 
 # start daemons
+exec --no-startup-id cbatticon -i notification
+exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id parcellite
 exec --no-startup-id compton
-exec --no-startup-id pasystray
 
 # set wallpaper
 exec --no-startup-id nitrogen --restore
