@@ -57,7 +57,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+$other+Q kill
 
 # start dmenu
-bindsym $other+space exec j4-dmenu-desktop --dmenu="dmenu -i -p 'Start:' -fn 'Source Code Pro-10' -b -nb '#262626' -nf '#ffffff' -sb '#ab4642' -sf '#000000'" --term="termite"
+bindsym $other+space exec j4-dmenu-desktop --dmenu="dmenu -i -p 'Start:' -fn 'Source Code Pro-16' -b -nb '#262626' -nf '#ffffff' -sb '#ab4642' -sf '#000000'" --term="termite"
 
 # i3 shorcuts for reload/restart/exit
 bindsym $mod+$other+Shift+C reload
@@ -98,32 +98,44 @@ bindsym $mod+space focus mode_toggle
 
 # next/previous workspace
 bindsym $other+Tab focus right
-bindsym $other+Shift+Tab focus left
+bindsym $other+Shift+Tab focus l4eft
 bindsym $mod+Tab workspace back_and_forth
 
-# switch to workspace
-bindsym $mod+1 workspace 1:
-bindsym $mod+2 workspace 2:
-bindsym $mod+3 workspace 3:
-bindsym $mod+4 workspace 4:
-bindsym $mod+5 workspace 5:
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9:
-bindsym $mod+0 workspace 10:
+# set workspace labels
+set $w1 1:
+set $w2 2:
+set $w3 3:
+set $w4 4:
+set $w5 5:
+set $w6 6
+set $w7 7
+set $w8 8
+set $w9 9:
+set $w0 10:
+
+# open workspace
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5
+bindsym $mod+6 workspace $w6
+bindsym $mod+7 workspace $w7
+bindsym $mod+8 workspace $w8
+bindsym $mod+9 workspace $w9
+bindsym $mod+0 workspace $w0
 
 # move focused container to workspace
-bindsym $mod+$other+1 move container to workspace 1:
-bindsym $mod+$other+2 move container to workspace 2:
-bindsym $mod+$other+3 move container to workspace 3:
-bindsym $mod+$other+4 move container to workspace 4:
-bindsym $mod+$other+5 move container to workspace 5:
-bindsym $mod+$other+6 move container to workspace 6
-bindsym $mod+$other+7 move container to workspace 7
-bindsym $mod+$other+8 move container to workspace 8
-bindsym $mod+$other+9 move container to workspace 9:
-bindsym $mod+$other+0 move container to workspace 10:
+bindsym $mod+$other+1 move container to workspace $w1
+bindsym $mod+$other+2 move container to workspace $w2
+bindsym $mod+$other+3 move container to workspace $w3
+bindsym $mod+$other+4 move container to workspace $w4
+bindsym $mod+$other+5 move container to workspace $w5
+bindsym $mod+$other+6 move container to workspace $w6
+bindsym $mod+$other+7 move container to workspace $w7
+bindsym $mod+$other+8 move container to workspace $w8
+bindsym $mod+$other+9 move container to workspace $w9
+bindsym $mod+$other+0 move container to workspace $w0
 
 # change border
 bindsym $mod+b border toggle
