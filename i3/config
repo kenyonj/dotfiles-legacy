@@ -8,13 +8,11 @@ set $mod Mod4
 set $other Mod1
 set $update
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
 
 #gaps config
 gaps inner 20
 gaps outer 5
-smart_borders no_gaps
-smart_gaps on
 
 # font for window titles. ISO 10646 = Unicode
 # font pango: Source Code Pro 16
@@ -206,11 +204,26 @@ bindsym XF86AudioPrev exec mpc prev && pkill --signal RTMIN+2 i3blocks
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 
-# custom window settings
-for_window [class="^termite$"] border 1pixel
-
 # Jump to urgent window
 bindsym $mod+x [urgent=latest] focus
+
+# color defines for zenburn styled i3
+set $bg #2c2c2e
+set $fg #9f9f9f
+set $hi #efef8f
+set $ac #a0afa0
+set $tx #040404
+set $ia #8f8f8f
+set $be #8faf9f
+set $yw #ccdc90
+set $gn #88b090
+set $rd #e89393
+
+# set some nice colors  brd bkg txt
+client.focused          $ac $ac $tx
+client.unfocused        $bg $bg $ia
+client.focused_inactive $bg $bg $ac
+client.urgent           $rd $rd $tx
 
 # bottom bar
 bar {
