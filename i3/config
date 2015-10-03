@@ -263,7 +263,6 @@ bindsym Print exec scrot '%Y-%m-%d-%k%M%S-scrot-fullscreen.png' -e 'mv $f ~/pict
 exec --no-startup-id ~/.i3/autostart.sh
 
 # start daemons
-exec --no-startup-id cbatticon -i notification
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id parcellite
