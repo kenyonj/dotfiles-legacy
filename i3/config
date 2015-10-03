@@ -77,10 +77,10 @@ bindsym $mod+$other+K move up
 bindsym $mod+$other+L move right
 
 # horizontal split
-bindsym $mod+Shift+I split h
+bindsym $mod+Shift+H split h
 
 # vertical split
-bindsym $mod+i split v
+bindsym $mod+Shift+V split v
 
 # zoom
 bindsym $mod+$other+Z fullscreen
