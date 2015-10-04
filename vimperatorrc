@@ -1,0 +1,20 @@
+" vimperator
+
+nnoremap K <gt>
+nnoremap J <gT>
+set gui=tabs
+set animations
+colorscheme indigo
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+
+hi CompItem font-family: source code pro;
+hi CmdLine>* font-family: source code pro;
+hi CompTitle font-family: source code pro; background: -moz-linear-gradient(19% 75% 90deg, #2c2c2f, #2a2a2f, #2f2f2f 100%);
+hi Title color: orchid; background: #1c1c1c; font-family:source code pro;
+hi StatusLine color: #555555; background: transparent; font-family: source code pro; padding-right: 6px;
+hi CompMsg margin-left: 16px; font-family: source code pro;
+hi ModeMsg color: #555555; background: #1c1c1c; font-family: source code pro; padding-left: 4px;
+hi ErrorMsg color: #ffffff; background: #440000; font-family: source code pro;
+hi InfoMsg color: #d0d0d0; background: #1c1c1c; font-family: source code pro;
+hi CmdLine -append font-size:16px;
+hi CompDesc -append font-size:16px;

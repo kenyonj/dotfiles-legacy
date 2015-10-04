@@ -16,8 +16,6 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-export PATH="/usr/local/bin:$PATH"
-
 _git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
   if [ -n $ref ]; then
@@ -103,24 +101,7 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-function precmd {
-  $(git status 2> /dev/null >! "/tmp/git-status-$$")
-}
-
-PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode)$(_set_cursor_shape) '
-
-# Initialize fasd (https://github.com/clvv/fasd)
-eval "$(fasd --init auto)"
-
-# aliases
-
-# jump to recently used items
-alias a='fasd -a' # any
-alias s='fasd -s' # show / search / select
-alias d='fasd -d' # directory
-alias f='fasd -f' # file
-alias j='fasd_cd -d' # cd, same functionality as j in autojump
-alias v='f -e vim' # quick opening files with vim
+precmd() { $(git status 2> /dev/null >! "/tmp/git-status-$$") }
 
 # set gitconfig.local keys and define gpair() and gsolo()
 gh_name=("${(s/ /)$(echo `git config user.name`)}")
@@ -130,23 +111,30 @@ gh_co_domain=$(echo `git config company.domain`)
 gpair() { git commit --amend --no-edit --author "$gh_name & $1 $2 <$gh_name[1]:l+$1:l@$gh_co_domain>" }
 gsolo() { git commit --amend --no-edit --author "$gh_name <$gh_email[1]@$gh_email[2]>" }
 
-### Added by the Heroku Toolbelt
+# function for running sudo with my current environment (ex. esudo passenger start)
+esudo() { sudo -E bash -c "$*"; }
+
+export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
-export DOCKER_HOST="tcp://localhost:4243"
-
 export PATH="$PATH:/usr/local/lib/node_modules"
-export PATH="/home/kenyonj/apps:$PATH"
-source /usr/share/chruby/chruby.sh
-source /usr/share/chruby/auto.sh
-chruby ruby-2.2.3
-source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/completion/git-remote-branch.plugin.zsh
-
 export PATH="$HOME/.bin:$PATH"
 
+source "$HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOME/.zsh/completion/git-remote-branch.plugin.zsh"
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
+
 #nvm
-export NVM_DIR="/home/kenyonj/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 eval $(dircolors ~/.dircolors)
+eval "$(fasd --init auto)"
 eval $(keychain --eval -Q --quiet id_rsa)
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+chruby ruby-2.2.3
+PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode)$(_set_cursor_shape) '

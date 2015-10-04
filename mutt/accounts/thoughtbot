@@ -16,3 +16,5 @@ macro index S       "<save-message>+thoughtbot/spam<enter>" \
                     "mark message as spam"
 macro index,pager y "<save-message>+thoughtbot/archive<enter>" \
                     "Archive"
+set query_command = "docker run --rm --volumes-from gc-config \
+  pbrisbin/google-contacts mutt-query justin@thoughtbot.com '%s'"

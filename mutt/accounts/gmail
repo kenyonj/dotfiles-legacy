@@ -18,3 +18,5 @@ macro index,pager y "<save-message>+gmail/archive<enter>" \
                     "Archive"
 macro index ,D      "<tag-pattern>all<enter><tag-prefix><save-message>+gmail/trash<enter>" \
                     "delete all"
+set query_command = "docker run --rm --volumes-from gc-config \
+  pbrisbin/google-contacts mutt-query kenyonj@gmail.com '%s'"

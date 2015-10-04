@@ -42,11 +42,6 @@ Channel gmail-trash
 Master :gmail-remote:[Gmail]/Trash
 Slave :gmail-local:trash
 
-Channel gmail-rest
-Master :gmail-remote:
-Slave :gmail-local:
-Patterns * ![Gmail]* !archive !drafts !sent !spam !trash
-
 Group gmail
 Channel gmail-inbox
 Channel gmail-archive
@@ -54,7 +49,6 @@ Channel gmail-drafts
 Channel gmail-sent
 Channel gmail-spam
 Channel gmail-trash
-Channel gmail-rest
 
 IMAPAccount thoughtbot
 Host imap.gmail.com
@@ -94,11 +88,6 @@ Channel thoughtbot-trash
 Master :thoughtbot-remote:[Gmail]/Trash
 Slave :thoughtbot-local:trash
 
-Channel thoughtbot-rest
-Master :thoughtbot-remote:
-Slave :thoughtbot-local:
-Patterns * ![Gmail]* !archive !drafts !sent !spam !trash
-
 Group thoughtbot
 Channel thoughtbot-inbox
 Channel thoughtbot-archive
@@ -106,4 +95,3 @@ Channel thoughtbot-drafts
 Channel thoughtbot-sent
 Channel thoughtbot-spam
 Channel thoughtbot-trash
-Channel thoughtbot-rest

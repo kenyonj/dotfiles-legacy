@@ -14,7 +14,7 @@ clickable_url = true
 font = Source Code Pro 18
 scrollback_lines = 10000
 search_wrap = true
-browser = chromium
+browser = firefox
 
 [colors]
 # Base16 Default

@@ -11,12 +11,19 @@ set $update
 for_window [class="^.*"] border pixel 3
 
 #gaps config
-gaps inner 20
-gaps outer 5
+gaps inner 10
+gaps outer 10
 
 # font for window titles. ISO 10646 = Unicode
 # font pango: Source Code Pro 16
-font pango: FontAwesome 12, Terminus 12
+font pango:FontAwesome 11, Source Code Pro 14
+
+# TODO List
+exec --no-startup-id termite -t 'todo-list' -e 'vim /home/kenyonj/tmp/stuff-to-do.md'
+for_window [title="todo-list"] move scratchpad
+
+# don't follow mouse for window focus
+focus_follows_mouse no
 
 # User Mouse+$mod to drag floating windows to a position
 floating_modifier $mod
@@ -36,7 +43,7 @@ bindsym --release $other+Shift+4 exec --no-startup-id import ~/pictures/screensh
 for_window [title="^gifcast$"] floating enable
 for_window [title="^gifcast$"] border pixel 1
 no_focus [title="^gifcast$"]
-assign [title="^gifcast$"] → scratchpad
+assign [title="^gifcast$"] scratchpad
 bindsym $other+Shift+5 mode "Make (s)election for recording."
 
 mode "Make (s)election for recording." {
@@ -54,13 +61,13 @@ bindsym $mod+Return exec termite
 # kill focused window
 bindsym $mod+$other+Q kill
 
-# start dmenu
-bindsym $other+space exec j4-dmenu-desktop --dmenu="dmenu -i -p 'Start:' -fn 'Source Code Pro-16' -b -nb '#262626' -nf '#ffffff' -sb '#ab4642' -sf '#000000'" --term="termite"
+# start rofi
+bindsym $other+space exec rofi -show run -font "Source Code Pro 15" -fg "#ecedee" -bg "#121212" -hlfg "#95C7AE" -hlbg "#000000" -o 100
 
 # i3 shorcuts for reload/restart/exit
 bindsym $mod+$other+Shift+C reload
 bindsym $mod+$other+Shift+R restart
-bindsym $mod+$other+Shift+E exit
+bindsym $mod+$other+Shift+E exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # change focus
 bindsym $mod+h focus left
@@ -96,96 +103,94 @@ bindsym $mod+space focus mode_toggle
 
 # next/previous workspace
 bindsym $other+Tab focus right
-bindsym $other+Shift+Tab focus l4eft
+bindsym $other+Shift+Tab focus left
 bindsym $mod+Tab workspace back_and_forth
 
 # set workspace labels
-set $w1 1:
-set $w2 2:
-set $w3 3:
-set $w4 4:
-set $w5 5:
-set $w6 6
-set $w7 7
-set $w8 8
-set $w9 9:
-set $w0 10:
+set $WS1  "1:"
+set $WS2  "2:"
+set $WS3  "3:"
+set $WS4  "4:"
+set $WS5  "5:"
+set $WS6  "6"
+set $WS7  "7"
+set $WS8  "8"
+set $WS9  "9:"
+set $WS10 "10:"
+
+assign [class="Firefox"] $WS3
+assign [title="ncmpcpp"] $WS1
+assign [title="mutt"] $WS9
+assign [title="weechat"] $WS10
 
 # open workspace
-bindsym $mod+1 workspace $w1
-bindsym $mod+2 workspace $w2
-bindsym $mod+3 workspace $w3
-bindsym $mod+4 workspace $w4
-bindsym $mod+5 workspace $w5
-bindsym $mod+6 workspace $w6
-bindsym $mod+7 workspace $w7
-bindsym $mod+8 workspace $w8
-bindsym $mod+9 workspace $w9
-bindsym $mod+0 workspace $w0
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
 
 # move focused container to workspace
-bindsym $mod+$other+1 move container to workspace $w1
-bindsym $mod+$other+2 move container to workspace $w2
-bindsym $mod+$other+3 move container to workspace $w3
-bindsym $mod+$other+4 move container to workspace $w4
-bindsym $mod+$other+5 move container to workspace $w5
-bindsym $mod+$other+6 move container to workspace $w6
-bindsym $mod+$other+7 move container to workspace $w7
-bindsym $mod+$other+8 move container to workspace $w8
-bindsym $mod+$other+9 move container to workspace $w9
-bindsym $mod+$other+0 move container to workspace $w0
+bindsym $mod+$other+1 move container to workspace $WS1
+bindsym $mod+$other+2 move container to workspace $WS2
+bindsym $mod+$other+3 move container to workspace $WS3
+bindsym $mod+$other+4 move container to workspace $WS4
+bindsym $mod+$other+5 move container to workspace $WS5
+bindsym $mod+$other+6 move container to workspace $WS6
+bindsym $mod+$other+7 move container to workspace $WS7
+bindsym $mod+$other+8 move container to workspace $WS8
+bindsym $mod+$other+9 move container to workspace $WS9
+bindsym $mod+$other+0 move container to workspace $WS10
 
 # change border
 bindsym $mod+b border toggle
 
 # starter
-mode "(i)nitial dev | (e)mail | (w)eechat | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization" {
-  bindsym i exec ~/.i3/starter
-  bindsym e exec ~/.i3/startmutt
-  bindsym w exec ~/.i3/startweechat
-  bindsym n exec ~/.i3/startncmpcpp
+mode "(e)mail | (w)eechat | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization" {
+  bindsym e exec termite -t "mutt" -e mutt; mode "default"
+  bindsym w exec termite -t "weechat" -e weechat; mode "default"
+  bindsym n exec termite -t "ncmpcpp" -e ncmpcpp; mode "default"
   bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
   bindsym k mode "(1) Initialize Poker 2"
 
-# back to normal
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-bindsym $other+Shift+R mode "(i)nitial dev | (e)mail | (w)eechat | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization"
+bindsym $other+Shift+R mode "(e)mail | (w)eechat | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization"
 
 
 mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays" {
-    bindsym 1 exec --no-startup-id ~/.screenlayout/external-dp-left-of-open-laptop.sh; mode "default"
-    bindsym 2 exec --no-startup-id ~/.screenlayout/no-external.sh; mode "default"
-    bindsym 3 exec --no-startup-id ~/.screenlayout/mirror-laptop-display; mode "default"
+  bindsym 1 exec --no-startup-id ~/.screenlayout/external-dp-left-of-open-laptop.sh; mode "default"
+  bindsym 2 exec --no-startup-id ~/.screenlayout/no-external.sh; mode "default"
+  bindsym 3 exec --no-startup-id ~/.screenlayout/mirror-laptop-display; mode "default"
 
-# back to normal
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym XF86Display mode "default"
-
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym XF86Display mode "default"
 }
 bindsym XF86Display mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
 
 mode "(1) Initialize Poker 2" {
   bindsym 1 exec --no-startup-id setxkbmap -option ctrl:nocaps; mode "default"
 
-# back to normal
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 # resize window
 mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
   bindsym h resize shrink width 5 px or 5 ppt
-    bindsym j resize grow height 5 px or 5 ppt
-    bindsym k resize shrink height 5 px or 5 ppt
-    bindsym l resize grow width 5 px or 5 ppt
+  bindsym j resize grow height 5 px or 5 ppt
+  bindsym k resize shrink height 5 px or 5 ppt
+  bindsym l resize grow width 5 px or 5 ppt
 
-# back to normal
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -207,67 +212,69 @@ bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 # Jump to urgent window
 bindsym $mod+x [urgent=latest] focus
 
-# color defines for zenburn styled i3
-set $bg #2c2c2e
-set $fg #9f9f9f
-set $hi #efef8f
-set $ac #a0afa0
-set $tx #040404
-set $ia #8f8f8f
-set $be #8faf9f
-set $yw #ccdc90
-set $gn #88b090
-set $rd #e89393
+set $Locker ~/.i3/i3lock.sh && sleep 1
 
-# set some nice colors  brd bkg txt
-client.focused          $ac $ac $tx
-client.unfocused        $bg $bg $ia
-client.focused_inactive $bg $bg $ac
-client.urgent           $rd $rd $tx
+set $mode_system (l)ock, (h)ibernate, (r)eboot, (S)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
-# bottom bar
-bar {
-  colors {
-    background         #d3d3d3
-    focused_workspace  #000000 #d3d3d3 #181818
-    active_workspace   #000000 #d3d3d3 #181818
-    inactive_workspace #d3d3d3 #d3d3d3 #181818
-    urgent_workspace   #ff0000 #d3d3d3 #ff0000
-  }
-
-  binding_mode_indicator no
-  font pango: FontAwesome 12, Terminus 12
-  strip_workspace_numbers yes
-  tray_output primary
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
-# top bar
+bindsym $mod+$other+Shift+L mode "$mode_system"
+
+# class                 border  backgr. text    indicator
+client.focused          #A52A2A #A52A2A #ffffff #A52A2A
+client.focused_inactive #000000 #000000 #ffffff #ffffff
+client.unfocused        #000000 #000000 #ffffff #ffffff
+client.urgent           #000000 #000000 #ffffff #ffffff
+
+hide_edge_borders both
+new_window pixel 5
+workspace_auto_back_and_forth yes
+
 bar {
   colors {
-    background         #181818
+    background #181818
+    separator #ffffff
+
+    focused_workspace  #181818 #181818 #7cafc2
+    active_workspace   #181818 #181818 #ffffff
+    inactive_workspace #181818 #181818 #ffffff
+    urgent_workspace   #181818 #181818 #ff0000
   }
 
-  font pango: FontAwesome 12, Terminus 12
-  position top
+  height 30
   status_command i3blocks -c ~/.i3/i3blocks.conf
-  tray_output none
-  workspace_buttons no
+  # status_command conky -c $HOME/.i3/conky/conkyrc
+  mode dock
+  position top
+  font pango:FontAwesome 11, Source Code Pro 14
+  strip_workspace_numbers yes
 }
 
 # Custom Keybinds
-bindsym $mod+$other+Shift+L exec ~/.i3/i3exit
 bindsym XF86ScreenSaver exec ~/.i3/i3lock.sh
 bindsym Print exec scrot '%Y-%m-%d-%k%M%S-scrot-fullscreen.png' -e 'mv $f ~/pictures/screenshots/'
 
 # autostart
-exec --no-startup-id ~/.i3/autostart.sh
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id xautolock -time 15 -locker '~/.i3/i3lock.sh' &
+exec --no-startup-id termite -t "mutt" -e mutt
+exec --no-startup-id termite -t "weechat" -e weechat
+exec --no-startup-id termite -t "ncmpcpp" -e ncmpcpp
 
 # start daemons
+exec --no-startup-id dunst -conf ~/.config/dunstrc
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id parcellite
-exec --no-startup-id compton -bc -r 3 -l -4 -t -4 --shadow-exclude '_GTK_FRAME_EXTENTS@:c'
-exec --no-startup-id volumeicon
-
-# set wallpaper
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id xflux -z 02478
+exec --no-startup-id compton --config ~/.config/compton.conf
+exec --no-startup-id feh --bg-scale ~/.wallpapers/records.jpg

@@ -6,26 +6,23 @@ alias ar="source ~/.aliases.local; echo 'aliases reloaded!'"
 alias zr="source ~/.zshrc; echo 'zshrc reloaded!'"
 alias ls="ls --color=auto"
 
-# PS
-alias psa="ps aux"
-alias psag="ps aux | ag "
+# FASD jump to recently used items
+alias a="fasd -a" # any
+alias s="fasd -s" # show / search / select
+alias d="fasd -d" # directory
+alias f="fasd -f" # file
+alias j="fasd_cd -d" # cd, same functionality as j in autojump
+alias v="f -e vim" # quick opening files with vim
 
 # Bundler
 alias be="bundle exec"
 alias bi="bundle install"
-
-# Brew Cask
-alias bca="brew cask"
 
 # Rails
 alias c="rails console"
 
 # Open ports
 alias open_ports="lsof -i -P | grep -i 'listen'"
-
-# tmux
-alias tat="tmux attach -t"
-alias tns="tmux new -s"
 
 # git
 alias amend="git commit --amend"
@@ -60,4 +57,3 @@ alias standup="git standup"
 # arch
 alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
 alias pacman-update="yaourt -Syua"
-alias powertop="sudo powertop"
