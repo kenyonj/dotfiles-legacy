@@ -6,7 +6,7 @@ scroll_on_output = false
 scroll_on_keystroke = true
 audible_bell = false
 visible_bell = true
-mouse_autohide = false
+mouse_autohide = true
 allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
@@ -14,8 +14,6 @@ clickable_url = true
 font = Source Code Pro 18
 scrollback_lines = 10000
 search_wrap = true
-cursor_blink = system
-cursor_shape = ibeam
 browser = chromium
 
 [colors]
@@ -34,7 +32,6 @@ browser = chromium
 
 foreground      = #d8d8d8
 foreground_bold = #d8d8d8
-cursor          = #d8d8d8
 background      = #181818
 
 # 16 color space

@@ -87,9 +87,11 @@ _display_current_vim_mode() {
   fi
 }
 
-_display_docker_status() {
-  if [[ -a "`pwd`/fig.yml" ]]; then
-    echo "$(_cyan "⎋")"
+_set_cursor_shape() {
+  if [[ $VIMODE == 'vicmd' ]]; then
+    echo -e -n "\x1b[\x32 q"
+  else
+    echo -e -n "\x1b[\x33 q"
   fi
 }
 
@@ -105,7 +107,7 @@ function precmd {
   $(git status 2> /dev/null >! "/tmp/git-status-$$")
 }
 
-PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode)$(_display_docker_status) '
+PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode)$(_set_cursor_shape) '
 
 # Initialize fasd (https://github.com/clvv/fasd)
 eval "$(fasd --init auto)"
