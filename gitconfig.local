@@ -1,5 +1,6 @@
 [alias]
 fuckit = !sh -c 'git add --all && git reset --hard'
+co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
 
 [pretty]
 colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
