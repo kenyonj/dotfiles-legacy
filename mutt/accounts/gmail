@@ -8,6 +8,8 @@ macro index gi      "<change-folder>+gmail/INBOX<enter>" \
                     "go to the INBOX"
 macro index gt      "<change-folder>+thoughtbot/INBOX<enter>" \
                     "next account"
+macro index,pager a "<change-folder>+gmail/archive<enter>" \
+                    "go to the archive"
 macro index \Cr     "<shell-escape>mbsync --pull-new gmail-inbox<enter>" \
                     "sync IMAP"
 macro index D       "<save-message>+gmail/trash<enter>" \
