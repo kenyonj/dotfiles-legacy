@@ -1,8 +1,40 @@
 " vimperator
 
+" remap capital Q for closing tabs
+nnoremap Q q
+
+" capital K and J to switch tabs
 nnoremap K <gt>
 nnoremap J <gT>
-set gui=tabs
+
+" scroll three times as fast
+nnoremap j 3j
+nnoremap k 3k
+nnoremap h 3h
+nnoremap l 3l
+
+" show link destination in status line
+set showstatuslinks=1
+
+" hide stuff in the GUI
+set toolbars=noaddons,nobookmarks,nomenu,navigation,tabs
+
+" enable pipelining
+set! network.http.pipelining=true
+set! network.http.pipelining.abtest=false
+set! network.http.pipelining.aggressive=true
+set! network.http.pipelining.max-optimistic-requests=3
+set! network.http.pipelining.maxrequests=12
+set! network.http.pipelining.maxsize=300000
+set! network.http.pipelining.read-timeout=60000
+set! network.http.pipelining.reschedule-on-timeout=true
+set! network.http.pipelining.reschedule-timeout=15000
+set! network.http.max-connections=256
+set! network.http.max-connections-per-server=6
+
+" new tab page is about:blank
+set! browser.newtab.url=about:blank
+
 set animations
 colorscheme indigo
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
