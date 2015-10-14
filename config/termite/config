@@ -1,20 +1,20 @@
 # vim: ft=dosini cms=#%s
 
 [options]
-resize_grip = false
-scroll_on_output = false
-scroll_on_keystroke = true
-audible_bell = false
-visible_bell = true
-mouse_autohide = true
 allow_bold = true
-dynamic_title = true
-urgent_on_bell = true
+audible_bell = false
+browser = firefox
 clickable_url = true
+dynamic_title = true
 font = Source Code Pro 18
+mouse_autohide = true
+resize_grip = false
+scroll_on_keystroke = true
+scroll_on_output = false
 scrollback_lines = 10000
 search_wrap = true
-browser = firefox
+urgent_on_bell = true
+visible_bell = true
 
 [colors]
 # Base16 Default
