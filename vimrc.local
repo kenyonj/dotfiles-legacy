@@ -1,8 +1,9 @@
 " set cursor shape based on modes
-let &t_ti = "\<Esc>[2 q"
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+if &term == 'xterm-termite'
+  let &t_SI = "\<Esc>[6 q"
+  let &t_SR = "\<Esc>[4 q"
+  let &t_EI = "\<Esc>[2 q"
+endif
 
 " indent the whole file
 map <Leader>i mmgg=G`m<CR>
