@@ -81,11 +81,13 @@ bindsym $mod+$other+J move down
 bindsym $mod+$other+K move up
 bindsym $mod+$other+L move right
 
-# horizontal split
+# horizontal split (left/right)
 bindsym $mod+Shift+H split h
+bindsym $mod+Shift+$other+H split h; exec termite
 
-# vertical split
+# vertical split (up/down)
 bindsym $mod+Shift+V split v
+bindsym $mod+Shift+$other+V split v; exec termite
 
 # zoom
 bindsym $mod+$other+Z fullscreen
