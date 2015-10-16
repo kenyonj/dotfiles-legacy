@@ -1,6 +1,9 @@
 # don't correct
 unsetopt correct_all
 
+# jj to enter vim-mode
+bindkey jj vi-cmd-mode
+
 # Case insensitive autocomplete
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
