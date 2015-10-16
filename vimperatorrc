@@ -1,4 +1,6 @@
+" vim: ft=vimperator
 " vimperator
+colorscheme twily
 
 " remap capital Q for closing tabs
 nnoremap Q q
@@ -12,6 +14,12 @@ nnoremap j 3j
 nnoremap k 3k
 nnoremap h 3h
 nnoremap l 3l
+
+set maxitems=20
+set titlestring=
+
+map <silent> <C-F9> :emenu Tools.Web Developer.Web Console<CR>
+map <silent> <C-F8> :js toggle_bottombar()<CR>
 
 " show link destination in status line
 set showstatuslinks=1
@@ -36,7 +44,6 @@ set! network.http.max-connections-per-server=6
 set! browser.newtab.url=about:blank
 
 set animations
-colorscheme indigo
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
 
 hi CompItem font-family: source code pro;
@@ -50,3 +57,13 @@ hi ErrorMsg color: #ffffff; background: #440000; font-family: source code pro;
 hi InfoMsg color: #d0d0d0; background: #1c1c1c; font-family: source code pro;
 hi CmdLine -append font-size:16px;
 hi CompDesc -append font-size:16px;
+
+:js << EOF
+function toggle_bottombar() {
+    var bb = document.getElementById('liberator-bottombar');
+    if (!bb)
+        return;
+    bb.style.height = (bb.style.height == '') ? '0px' : '';
+    bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
+    }
+EOF
