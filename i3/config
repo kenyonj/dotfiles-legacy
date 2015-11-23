@@ -155,7 +155,7 @@ bindsym $mod+b border toggle
 # starter
 mode "(e)mail | (w)eechat | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization" {
   bindsym e exec termite -t "mutt" -e mutt; mode "default"
-  bindsym w exec termite -t "weechat" -e weechat; mode "default"
+  bindsym w exec termite -t "weechat" -e ~/.i3/start-weechat; mode "default"
   bindsym n exec termite -t "ncmpcpp" -e ncmpcpp; mode "default"
   bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
   bindsym k mode "(1) Initialize Poker 2"
