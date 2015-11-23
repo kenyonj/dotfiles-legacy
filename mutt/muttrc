@@ -5,7 +5,7 @@
 unset confirmappend
   set delete
   set edit_headers
-  set editor            = "vim +:silent+?^$"
+  set editor            = "vim -c 'set filetype=mail' +'norm 1}' +'normal o' +startinsert"
   set fast_reply
   set folder            = ~/mail
   set forward_format    = "Fwd: %s"
@@ -28,6 +28,7 @@ unset markers
 unset record
   set reply_to
   set reverse_name
+unset sig_dashes
   set sig_on_top        = yes
   set signature         = ~/.mutt/signature
   set sort              = threads
