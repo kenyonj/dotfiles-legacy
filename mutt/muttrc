@@ -28,6 +28,7 @@ unset markers
 unset record
   set reply_to
   set reverse_name
+  set sig_on_top        = yes
   set signature         = ~/.mutt/signature
   set sort              = threads
   set sort_aux          = reverse-last-date-received
@@ -54,3 +55,4 @@ source ~/.mutt/mailboxes
 source ~/.mutt/bindings
 source ~/.mutt/macros
 source ~/.mutt/hooks
+source ~/.mutt/aliases
