@@ -232,7 +232,7 @@ mode "$mode_system" {
 bindsym $mod+$other+Shift+L mode "$mode_system"
 
 # class                 border  backgr. text    indicator
-client.focused          #A52A2A #A52A2A #ffffff #A52A2A
+client.focused          #F7CA88 #F7CA88 #ffffff #F7CA88
 client.focused_inactive #000000 #000000 #ffffff #ffffff
 client.unfocused        #000000 #000000 #ffffff #ffffff
 client.urgent           #000000 #000000 #ffffff #ffffff
