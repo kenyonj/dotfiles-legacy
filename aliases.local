@@ -57,3 +57,6 @@ alias standup="git standup"
 # arch
 alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
 alias pacman-update="yaourt -Syua"
+
+# HiDPI aliases
+alias spotify="spotify --force-device-scale-factor=1.5"

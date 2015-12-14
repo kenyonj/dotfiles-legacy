@@ -269,7 +269,7 @@ bindsym Print exec scrot '%Y-%m-%d-%k%M%S-scrot-fullscreen.png' -e 'mv $f ~/pict
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xautolock -time 15 -locker '~/.i3/i3lock.sh' &
 exec --no-startup-id termite -t "mutt" -e mutt
-exec --no-startup-id termite -t "weechat" -e weechat
+exec --no-startup-id termite -t "weechat" -e ~/.i3/start-weechat
 exec --no-startup-id termite -t "ncmpcpp" -e ncmpcpp
 
 # start daemons
