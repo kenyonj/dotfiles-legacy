@@ -1,6 +1,5 @@
 " vim: ft=vimperator
 " vimperator
-colorscheme twily
 
 " remap capital Q for closing tabs
 nnoremap Q q
