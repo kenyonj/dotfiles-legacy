@@ -66,7 +66,7 @@ bindsym $other+space exec rofi -show run -font "Source Code Pro 15" -fg "#ecedee
 
 # i3 shorcuts for reload/restart/exit
 bindsym $mod+$other+Shift+C reload
-bindsym $mod+$other+Shift+R restart
+bindsym $mod+$other+Shift+R restart; exec feh --bg-scale ~/.wallpapers/records.jpg
 bindsym $mod+$other+Shift+E exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # change focus
