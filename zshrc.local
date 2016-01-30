@@ -121,6 +121,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:/usr/local/lib/node_modules"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 source "$HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/completion/git-remote-branch.plugin.zsh"
