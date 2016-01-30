@@ -124,8 +124,8 @@ export PATH="$HOME/.bin:$PATH"
 
 source "$HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/completion/git-remote-branch.plugin.zsh"
-source /usr/share/chruby/chruby.sh
-source /usr/share/chruby/auto.sh
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 #nvm
 export NVM_DIR="$HOME/.nvm"
