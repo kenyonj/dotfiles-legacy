@@ -28,7 +28,6 @@ syntax enable
 set background=dark
 colorscheme base16-default
 let base16colorspace=256
-" set t_Co=256
 
 " Toggle relative and non-relative line numbers
 function! ToggleNumber()
