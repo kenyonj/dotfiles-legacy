@@ -64,7 +64,7 @@ _git_prompt_color() {
 
 _color() {
   if [ -n "$1" ]; then
-    echo "%{$fg_bold[$2]%}$1%{$reset_color%}"
+    echo "%B%F{$2}$1%b%f"
   fi
 }
 
@@ -141,4 +141,4 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 chruby ruby-2.2.3
-PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode)$(_set_cursor_shape) '
+PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
