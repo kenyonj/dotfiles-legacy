@@ -1,6 +1,6 @@
 Plug 'DataWraith/auto_mkdir'
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'bogado/file-line'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'garbas/vim-snipmate'
