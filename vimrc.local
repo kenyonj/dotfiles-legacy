@@ -26,6 +26,7 @@ map <Leader>n :call RenameFile()<cr>
 " Color scheme
 syntax enable
 let base16colorspace=256
+set background=dark
 colorscheme base16-flat
 
 " Toggle relative and non-relative line numbers
