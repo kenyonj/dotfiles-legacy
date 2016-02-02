@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-source "$HOME/code/personal/weechat/venv/bin/activate"
-weechat
