@@ -139,5 +139,5 @@ eval $(keychain --eval -Q --quiet id_rsa)
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-chruby ruby-2.2.3
+chruby ruby-2.2.4
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode)$(_set_cursor_shape) '
