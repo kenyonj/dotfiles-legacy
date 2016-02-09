@@ -54,6 +54,10 @@ alias gri="git rebase -i"
 alias gs="git status -s"
 alias standup="git standup"
 
+gbd() {
+  git branch -d $1 && git push origin :$1;
+}
+
 # arch
 alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
 alias pacman-update="yaourt -Syua"
