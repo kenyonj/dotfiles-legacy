@@ -61,7 +61,10 @@ autocmd FileType erb let b:surround_46 = "<% \r %>"
 autocmd FileType erb let b:surround_61 = "<%= \r %>"
 
 " pry
-map <Leader>p Obinding.pry<Esc><CR>
+map <Leader>pr Obinding.pry<Esc><CR>
+
+" save and open page
+map <Leader>po Osave_and_open_page<Esc><CR>
 
 " escape insert mode quickly
 imap jj <Esc>
