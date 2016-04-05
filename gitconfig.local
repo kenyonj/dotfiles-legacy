@@ -8,6 +8,7 @@ colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [user]
 name = Justin Kenyon
 email = kenyonj@gmail.com
+signingkey = 2538E93E
 
 [github]
 	user = kenyonj
