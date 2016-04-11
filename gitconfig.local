@@ -14,7 +14,7 @@ signingkey = 2538E93E
 gpgsign = true
 
 [github]
-user = kenyonj
+	user = kenyonj
 
 [company]
 domain = thoughtbot.com

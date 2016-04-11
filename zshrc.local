@@ -129,12 +129,11 @@ source /usr/share/chruby/chruby.sh
 source /usr/share/chruby/auto.sh
 
 #nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+source /usr/share/nvm/init-nvm.sh
 
 eval $(dircolors ~/.dircolors)
 eval "$(fasd --init auto)"
-eval $(keychain --nogui --quiet --agents ssh,gpg --eval -Q id_rsa 2538E93E)
+eval $(keychain --nogui --quiet --agents ssh,gpg --eval id_rsa 2538E93E)
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
@@ -142,3 +141,4 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 
 chruby ruby-2.3.0
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
+export BROWSER="vivaldi-beta"
