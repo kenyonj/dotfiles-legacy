@@ -10,8 +10,11 @@ name = Justin Kenyon
 email = kenyonj@gmail.com
 signingkey = 2538E93E
 
+[commit]
+gpgsign = true
+
 [github]
-	user = kenyonj
+user = kenyonj
 
 [company]
 domain = thoughtbot.com
