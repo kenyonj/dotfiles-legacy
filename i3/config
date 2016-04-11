@@ -1,0 +1,280 @@
+# vim:filetype=i3
+
+# Mod4 = Windows Key, Command Key, $mod
+# Mod1 = Alt, $other
+# Mod3 = Left Control, $mod
+
+set $mod Mod4
+set $other Mod1
+set $update
+
+for_window [class="^.*"] border pixel 3
+for_window [title="^Authy$"] floating enable
+
+#gaps config
+gaps inner 10
+gaps outer 10
+
+# font for window titles. ISO 10646 = Unicode
+# font pango: Source Code Pro 16
+font pango:FontAwesome 11, Source Code Pro 14
+
+# TODO List
+exec --no-startup-id termite -t 'todo-list' -e 'vim /home/kenyonj/tmp/stuff-to-do.md'
+for_window [title="todo-list"] move scratchpad
+
+# don't follow mouse for window focus
+focus_follows_mouse no
+
+# User Mouse+$mod to drag floating windows to a position
+floating_modifier $mod
+
+# scratchpad, move and show, this is a hidden workspace where we can put windows
+bindsym $mod+m move scratchpad
+bindsym $mod+o scratchpad show
+
+# move workspaces
+bindsym $mod+comma move workspace to output left
+bindsym $mod+period move workspace to output right
+
+# mac like cross-hair screenshot
+bindsym --release $other+Shift+4 exec --no-startup-id import ~/pictures/screenshots/$(date +%Y-%m-%d-%k%M%S)-scrot-targeted.png
+
+# full screen screenshot
+bindsym Print exec scrot '%Y-%m-%d-%k%M%S-scrot-fullscreen.png' -e 'mv $f ~/pictures/screenshots/'
+
+# record animated gif
+for_window [title="^gifcast$"] floating enable
+for_window [title="^gifcast$"] border pixel 1
+no_focus [title="^gifcast$"]
+assign [title="^gifcast$"] scratchpad
+bindsym $other+Shift+5 mode "Make (s)election for recording."
+
+mode "Make (s)election for recording." {
+  bindsym s exec --no-startup-id termite -t gifcast -e ~/.scripts/capture-gif; mode "Recording GIF... Press Escape to stop recording."
+  bindsym Escape [title="^gifcast$"] kill; mode "default"
+}
+
+mode "Recording GIF... Press Escape to stop recording." {
+  bindsym Escape [title="^gifcast$"] kill; mode "default"
+}
+
+# start a terminal
+bindsym $mod+Return exec termite
+
+# kill focused window
+bindsym $mod+$other+Q kill
+
+# start rofi
+bindsym $other+space exec rofi -show run -font "Source Code Pro 15" -fg "#ecedee" -bg "#121212" -hlfg "#95C7AE" -hlbg "#000000" -o 100
+
+# i3 shorcuts for reload/restart/exit
+bindsym $mod+$other+Shift+C reload
+bindsym $mod+$other+Shift+R restart
+bindsym $mod+$other+Shift+W exec feh --bg-scale ~/.wallpapers/records.jpg
+bindsym $mod+$other+Shift+E exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+$other+H move left
+bindsym $mod+$other+J move down
+bindsym $mod+$other+K move up
+bindsym $mod+$other+L move right
+
+# horizontal split (left/right)
+bindsym $mod+Shift+H split h
+bindsym $mod+Shift+$other+H split h; exec termite
+
+# vertical split (up/down)
+bindsym $mod+Shift+V split v
+bindsym $mod+Shift+$other+V split v; exec termite
+
+# zoom
+bindsym $mod+$other+Z fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# toggle tiling/floating
+bindsym $mod+$other+space floating toggle
+
+# change focus between tiling/floating windows
+bindsym $mod+space focus mode_toggle
+
+# next/previous workspace
+bindsym $other+Tab focus right
+bindsym $other+Shift+Tab focus left
+bindsym $mod+Tab workspace back_and_forth
+
+# set workspace labels
+set $WS1  "1:"
+set $WS2  "2:"
+set $WS3  "3:"
+set $WS4  "4:"
+set $WS5  "5:"
+set $WS6  "6"
+set $WS7  "7"
+set $WS8  "8"
+set $WS9  "9:"
+set $WS10 "10:"
+
+assign [class="vivaldi-preview"] $WS3
+assign [title="ncmpcpp"] $WS1
+assign [title="mutt"] $WS9
+assign [title="^Slack.*"] $WS10
+
+# open workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+
+# move focused container to workspace
+bindsym $mod+$other+1 move container to workspace $WS1
+bindsym $mod+$other+2 move container to workspace $WS2
+bindsym $mod+$other+3 move container to workspace $WS3
+bindsym $mod+$other+4 move container to workspace $WS4
+bindsym $mod+$other+5 move container to workspace $WS5
+bindsym $mod+$other+6 move container to workspace $WS6
+bindsym $mod+$other+7 move container to workspace $WS7
+bindsym $mod+$other+8 move container to workspace $WS8
+bindsym $mod+$other+9 move container to workspace $WS9
+bindsym $mod+$other+0 move container to workspace $WS10
+
+# change border
+bindsym $mod+b border toggle
+
+# starter
+mode "(e)mail | (s)lack | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization" {
+  bindsym e exec termite -t "mutt" -e mutt; mode "default"
+  bindsym s exec slack; mode "default"
+  bindsym n exec termite -t "ncmpcpp" -e ncmpcpp; mode "default"
+  bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
+  bindsym k mode "(1) Initialize Poker 2"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $other+Shift+R mode "(e)mail | (s)lack | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization"
+
+
+mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays" {
+  bindsym 1 exec --no-startup-id ~/.screenlayout/external-dp-left-of-open-laptop.sh; mode "default"
+  bindsym 2 exec --no-startup-id ~/.screenlayout/no-external.sh; mode "default"
+  bindsym 3 exec --no-startup-id ~/.screenlayout/mirror-laptop-display; mode "default"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym XF86Display mode "default"
+}
+bindsym XF86Display mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
+
+mode "(1) Initialize Poker 2" {
+  bindsym 1 exec --no-startup-id setxkbmap -option ctrl:nocaps; mode "default"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+# resize window
+mode "resize" {
+  bindsym h resize shrink width 5 px or 5 ppt
+  bindsym j resize grow height 5 px or 5 ppt
+  bindsym k resize shrink height 5 px or 5 ppt
+  bindsym l resize grow width 5 px or 5 ppt
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# volume control
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle $update && pkill --signal RTMIN+2 i3blocks
+
+# player control
+bindsym XF86AudioPlay exec mpc toggle && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioPause exec mpc toggle && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioNext exec mpc next && pkill --signal RTMIN+2 i3blocks
+bindsym XF86AudioPrev exec mpc prev && pkill --signal RTMIN+2 i3blocks
+
+# brightness control
+bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+
+# Jump to urgent window
+bindsym $mod+x [urgent=latest] focus
+
+set $Locker ~/.i3/i3lock.sh && sleep 1
+
+set $mode_system (l)ock, (h)ibernate, (r)eboot, (S)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+$other+Shift+L mode "$mode_system"
+
+# class                 border  backgr. text    indicator
+client.focused          #F7CA88 #F7CA88 #ffffff #F7CA88
+client.focused_inactive #000000 #000000 #ffffff #ffffff
+client.unfocused        #000000 #000000 #ffffff #ffffff
+client.urgent           #000000 #000000 #ffffff #ffffff
+
+hide_edge_borders both
+new_window pixel 5
+workspace_auto_back_and_forth yes
+
+bar {
+  colors {
+    background #181818
+    separator #ffffff
+
+    focused_workspace  #181818 #181818 #7cafc2
+    active_workspace   #181818 #181818 #ffffff
+    inactive_workspace #181818 #181818 #ffffff
+    urgent_workspace   #181818 #181818 #ff0000
+  }
+
+  height 30
+  status_command i3blocks -c ~/.i3/i3blocks.conf
+  mode dock
+  position top
+  font pango:FontAwesome 11, Source Code Pro 14
+  strip_workspace_numbers yes
+}
+
+# autostart
+exec --no-startup-id "setxkbmap -option ctrl:nocaps"
+exec --no-startup-id "xautolock -time 15 -locker '~/.i3/i3lock.sh' &"
+
+# start daemons
+exec --no-startup-id "dunst -conf ~/.config/dunstrc"
+exec --no-startup-id "pasystray"
+exec --no-startup-id "nm-applet"
+exec --no-startup-id "parcellite"
+exec --no-startup-id "xflux -z 02478"
+exec --no-startup-id "compton --config ~/.config/compton.conf"
+exec --no-startup-id "feh --bg-scale ~/.wallpapers/records.jpg"
+exec --no-startup-id "devmon --no-gui"
