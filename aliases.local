@@ -60,7 +60,8 @@ gbd() {
 
 # arch
 alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
-alias pacman-update="yaourt -Syua"
+alias pacman-update="sudo pacman -Syu && pacaur -Syyua"
+alias updatemirrors="sudo rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup | sudo tee /etc/pacman.d/mirrorlist >/dev/null"
 
 # HiDPI aliases
 alias spotify="spotify --force-device-scale-factor=1.5"
