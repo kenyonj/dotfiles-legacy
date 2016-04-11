@@ -104,3 +104,6 @@ nmap <leader>rh :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
 
 " ES6 highlighting
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
+" Elm mappings
+let g:elm_format_autosave = 1
