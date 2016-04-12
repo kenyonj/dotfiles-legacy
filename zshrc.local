@@ -133,7 +133,7 @@ source /usr/share/nvm/init-nvm.sh
 
 eval $(dircolors ~/.dircolors)
 eval "$(fasd --init auto)"
-eval $(keychain --nogui --quiet --agents ssh,gpg --eval id_rsa 2538E93E)
+eval $(keychain --nogui --quiet --agents ssh,gpg --eval -Q id_rsa 2538E93E)
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
