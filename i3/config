@@ -9,9 +9,13 @@ set $other Mod1
 set $update
 
 for_window [class="^.*"] border pixel 3
-for_window [title="^Authy$"] floating enable
 
-#gaps config
+# Floating windows
+for_window [title="^Authy$"] floating enable
+for_window [title="^vimprobable2$"] floating enable
+for_window [title="^Image Viewer$"] floating enable
+
+# gaps config
 gaps inner 10
 gaps outer 10
 

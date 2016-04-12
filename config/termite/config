@@ -3,7 +3,7 @@
 [options]
 allow_bold = true
 audible_bell = false
-browser = firefox
+browser = vivaldi-beta
 clickable_url = true
 dynamic_title = true
 font = Source Code Pro 11

@@ -1,0 +1,97 @@
+# vim: ft=cfg:
+
+Create Slave
+Expunge Both
+SyncState *
+
+IMAPAccount gmail
+Host imap.gmail.com
+User kenyonj@gmail.com
+PassCmd "/home/kenyonj/.local/bin/getnetrc kenyonj@gmail.com"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/INBOX
+
+Channel gmail-inbox
+Master :gmail-remote:INBOX
+Slave :gmail-local:INBOX
+
+Channel gmail-archive
+Master ":gmail-remote:[Gmail]/All Mail"
+Slave :gmail-local:archive
+
+Channel gmail-drafts
+Master :gmail-remote:[Gmail]/Drafts
+Slave :gmail-local:drafts
+
+Channel gmail-sent
+Master ":gmail-remote:[Gmail]/Sent Mail"
+Slave :gmail-local:sent
+
+Channel gmail-spam
+Master :gmail-remote:[Gmail]/Spam
+Slave :gmail-local:spam
+
+Channel gmail-trash
+Master :gmail-remote:[Gmail]/Trash
+Slave :gmail-local:trash
+
+Group gmail
+Channel gmail-inbox
+Channel gmail-archive
+Channel gmail-drafts
+Channel gmail-sent
+Channel gmail-spam
+Channel gmail-trash
+
+IMAPAccount thoughtbot
+Host imap.gmail.com
+User justin@thoughtbot.com
+PassCmd "/home/kenyonj/.local/bin/getnetrc justin@thoughtbot.com"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore thoughtbot-remote
+Account thoughtbot
+
+MaildirStore thoughtbot-local
+Path ~/.mail/thoughtbot/
+Inbox ~/.mail/thoughtbot/INBOX
+
+Channel thoughtbot-inbox
+Master :thoughtbot-remote:INBOX
+Slave :thoughtbot-local:INBOX
+
+Channel thoughtbot-archive
+Master ":thoughtbot-remote:[Gmail]/All Mail"
+Slave :thoughtbot-local:archive
+
+Channel thoughtbot-drafts
+Master :thoughtbot-remote:[Gmail]/Drafts
+Slave :thoughtbot-local:drafts
+
+Channel thoughtbot-sent
+Master ":thoughtbot-remote:[Gmail]/Sent Mail"
+Slave :thoughtbot-local:sent
+
+Channel thoughtbot-spam
+Master :thoughtbot-remote:[Gmail]/Spam
+Slave :thoughtbot-local:spam
+
+Channel thoughtbot-trash
+Master :thoughtbot-remote:[Gmail]/Trash
+Slave :thoughtbot-local:trash
+
+Group thoughtbot
+Channel thoughtbot-inbox
+Channel thoughtbot-archive
+Channel thoughtbot-drafts
+Channel thoughtbot-sent
+Channel thoughtbot-spam
+Channel thoughtbot-trash

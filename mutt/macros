@@ -1,0 +1,18 @@
+# vim: ft=muttrc
+
+macro index ,p      "<pipe-message>cat > ~/"            "save message as"
+macro index <space> "<collapse-thread>"                 "[un]collapse thread"
+macro index C       "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M       "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+macro index ,s "\
+  <enter-command>\
+    set my_old_wait_key=\$wait_key \
+    nowait_key \
+  <enter>\
+  <shell-escape>notmuch-mutt --prompt search<enter>\
+  <change-folder-readonly>~/.cache/notmuch/mutt/results<enter>\
+  <enter-command>\
+    set wait_key=\$my_old_wait_key \
+  <enter>" \
+  "search"
