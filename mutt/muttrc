@@ -52,10 +52,11 @@ auto_view text/html
 alternative_order text/calendar text/plain text/enriched text/html
 
 ignore *
-unignore from: to: cc: date: subject:
-hdr_order from: to: cc: date: subject:
+unignore from: to: cc: date: subject: X-Label:
+hdr_order from: to: cc: date: subject: X-Label:
 
 source ~/.mutt/colors
+source ~/.mutt/labels
 source ~/.mutt/mailboxes
 source ~/.mutt/bindings
 source ~/.mutt/macros
