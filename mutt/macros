@@ -1,11 +1,34 @@
 # vim: ft=muttrc
 
-macro index ,p      "<pipe-message>cat > ~/"            "save message as"
-macro index <space> "<collapse-thread>"                 "[un]collapse thread"
-macro index C       "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
-macro index M       "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index         ,p      "<pipe-message>cat > ~/" \
+                            "save message as"
+macro index         <space> "<collapse-thread>" \
+                            "[un]collapse thread"
+macro index         C       "<copy-message>?<toggle-mailboxes>" \
+                            "copy a message to a mailbox"
+macro index         M       "<save-message>?<toggle-mailboxes>" \
+                            "move a message to a mailbox"
+
+macro index         ,s      "<enter-command>set my_old_wait_key=\$wait_key \
+                            nowait_key<enter> \
+                            <shell-escape>notmuch-mutt --prompt search<enter> \
+                            <change-folder-readonly>~/.cache/notmuch/mutt/results<enter> \
+                            <enter-command>set wait_key=\$my_old_wait_key<enter>" \
+                            "search"
+
+macro index,pager   \cU     "<enter-command>set my_old_pipe_decode=\$pipe_decode \
+                            nopipe_decode<enter> \
+                            <pipe-message>ghu<enter> \
+                            <enter-command>set pipe_decode=\$my_old_pipe_decode<enter> \
+                            E<sync-mailbox>" \
+                            "Unsubscribe from any email with a List-Unsubscribe header \
+                            and archive the thread"
+
 macro pager         \cB     "<pipe-entry>'urlview'<enter>" \
                             "Follow links with urlview"
+
+macro index,pager   \cV     "v/html<enter><return>q" \
+                            "view HTML version of the message"
 
 macro generic,pager ,m      ":source $HOME/.mutt/muttrc\r" \
                             "Resource .muttrc without restart"

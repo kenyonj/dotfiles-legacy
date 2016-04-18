@@ -3,20 +3,21 @@ set from          = "justin@thoughtbot.com"
 set sendmail      = "/usr/bin/muttdown -c /home/kenyonj/.mutt/muttdown.thoughtbot.yaml"
 set mbox          = "+thoughtbot/archive"
 set postponed     = "+thoughtbot/drafts"
+set record        = "+thoughtbot/sent"
 
-macro index gi      "<change-folder>+thoughtbot/INBOX<enter>" \
-                    "go to the INBOX"
-macro index gt      "<change-folder>+gmail/INBOX<enter>" \
-                    "next account"
-macro index,pager a "<change-folder>+thoughtbot/archive<enter>" \
-                    "go to the archive"
-macro index \Cr     "<shell-escape>mbsync --pull-new thoughtbot-inbox<enter>" \
-                    "sync IMAP"
-macro index D       "<save-message>+thoughtbot/trash<enter>" \
-                    "move message to the trash"
-macro index S       "<save-message>+thoughtbot/spam<enter>" \
-                    "mark message as spam"
-macro index,pager y "<save-message>+thoughtbot/archive<enter>" \
-                    "Archive"
-set query_command = "docker run --rm --volumes-from gc-config \
-  pbrisbin/google-contacts mutt-query justin@thoughtbot.com '%s'"
+macro index       gi  "<change-folder>+thoughtbot/INBOX<enter>" \
+                      "go to the INBOX"
+macro index       gt  "<change-folder>+gmail/INBOX<enter>" \
+                      "next account"
+macro index       ga  "<change-folder>+thoughtbot/archive<enter>" \
+                      "go to the archive"
+macro index       gs  "<change-folder>+thoughtbot/sent<enter>" \
+                      "go to sent mail"
+macro index,pager \#  "<save-message>+thoughtbot/trash<enter>" \
+                      "move message to the trash"
+macro index,pager !   "<save-message>+thoughtbot/spam<enter>" \
+                      "mark message as spam"
+macro index,pager e   "<save-message>+thoughtbot/archive<enter>" \
+                      "Archive the message"
+macro index,pager E   "<tag-thread>;s+thoughtbot/archive<enter>" \
+                      "Archive the thread"

@@ -60,6 +60,8 @@ macro index,pager A "<pipe-message>pycard-import<enter>" "add sender address to 
 set query_command = "/home/kenyonj/.pyenv/shims/pc_query -m '%s'"
 bind editor <Tab> complete-query
 
+bind index,pager <esc>k noop
+
 source ~/.mutt/colors
 source ~/.mutt/labels
 source ~/.mutt/mailboxes
