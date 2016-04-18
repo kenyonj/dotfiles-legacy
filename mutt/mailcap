@@ -3,6 +3,4 @@ text/html                ; /usr/bin/vimprobable2 %s ; test=test -n "$DISPLAY" ; 
 text/html                ; /usr/bin/w3m -I %{charset} -T text/html            ; copiousoutput;
 application/pdf          ; /usr/bin/zathura %s                                  ; copiousoutput;
 image/*                  ; /usr/bin/gpicview %s                                 ; copiousoutput;
-audio/*                  ; /usr/bin/mplayer %s                                ; copiousoutput;
-video/*                  ; /usr/bin/mplayer %s                                ; copiousoutput;
-text/calendar            ; ~/.mutt/icalview.rb                                ; copiousoutput;
+text/calendar            ; /home/kenyonj/.local/bin/mutt-ics                    ; copiousoutput;

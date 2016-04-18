@@ -49,6 +49,7 @@ unset sig_dashes
 alternates ^justin@kenyon\.me .*@justinkenyon\.com .*@thejpk\.com
 
 auto_view text/html
+auto_view text/calendar
 alternative_order text/calendar text/plain text/enriched text/html
 
 ignore *
