@@ -1,6 +1,6 @@
 # vim: ft=muttrc
 set from          = "justin@thoughtbot.com"
-set sendmail      = "/usr/bin/msmtp -a thoughtbot"
+set sendmail      = "/usr/bin/muttdown -c /home/kenyonj/.mutt/muttdown.thoughtbot.yaml"
 set mbox          = "+thoughtbot/archive"
 set postponed     = "+thoughtbot/drafts"
 
