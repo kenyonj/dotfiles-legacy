@@ -4,6 +4,8 @@
   set beep_new
 unset confirmappend
   set delete
+  set date_format       = "%R - %a %e %b %Y"
+  set display_filter    = ~/.mutt/plugins/display_filter.sh
   set edit_headers
   set editor            = "vim -c 'set filetype=mail' +'norm 1}' +'normal o' +startinsert"
   set fast_reply
@@ -13,7 +15,7 @@ unset confirmappend
   set header_cache      = ~/.mutt/cache
 unset help
   set include
-  set index_format      = "%3C %Z %[!%m/%d] %-17.17F %s"
+  set index_format      = "[%Z]  %D  %-20.20F [%?y?%-8.8y&--------?] %s"
   set mail_check        = 0
   set mailcap_path      = ~/.mutt/mailcap
 unset mark_old
@@ -35,7 +37,8 @@ unset sig_dashes
   set sort              = threads
   set sort_aux          = reverse-last-date-received
   set spoolfile         = "+gmail/INBOX"
-  set status_format     = "-%r- %f%?t? Tagged:%t?%?p? Drafts:%p? -%>-"
+  set status_chars      = " *%A"
+  set status_format     = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
   set strict_threads
   set text_flowed       = yes
   set thorough_search
