@@ -84,6 +84,9 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+# don't move to another screen when changing focus
+force_focus_wrapping yes
+
 # move focused window
 bindsym $mod+$other+H move left
 bindsym $mod+$other+J move down
