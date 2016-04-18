@@ -5,6 +5,15 @@ git submodule init
 git submodule update
 rcup
 
+# copy systemd templates, unfortunately symbolic links can not be used.
+for file in $HOME/.config/systemd-templates/**/*.template; do
+  filename=${file##*/}
+
+  if [ ! -f $HOME/.config/systemd/user/${filename%.template} ]; then
+    cp $file $HOME/.config/systemd/user/${filename%.template}
+  fi
+done
+
 # get/set gitconfig details
 if [[ $(echo `git config user.name`) == "" ]]; then
   echo "\nPlease enter your full name (this will show on git commits): "

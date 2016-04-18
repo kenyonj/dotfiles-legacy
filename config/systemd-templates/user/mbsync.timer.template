@@ -1,0 +1,8 @@
+[Unit]
+Description=mbsync timer
+
+[Timer]
+OnCalendar=*:0/2
+
+[Install]
+WantedBy=timers.target
