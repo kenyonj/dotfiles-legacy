@@ -7,7 +7,8 @@ unset confirmappend
   set date_format       = "%R - %a %e %b %Y"
   set display_filter    = ~/.mutt/plugins/display_filter.sh
   set edit_headers
-  set editor            = "vim -c 'set filetype=mail' +'norm 1}' +'normal o' +startinsert"
+  set editor            = "vim +/^$ ++1 -c 'set tw=76 expandtab nosmartindent spell'"
+  set envelope_from
   set fast_reply
   set folder            = ~/.mail
   set forward_format    = "Fwd: %s"
