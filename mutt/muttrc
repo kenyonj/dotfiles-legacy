@@ -55,6 +55,11 @@ ignore *
 unignore from: to: cc: date: subject: X-Label:
 hdr_order from: to: cc: date: subject: X-Label:
 
+macro index,pager A "<pipe-message>pycard-import<enter>" "add sender address to pycardsyncer"
+
+set query_command = "/home/kenyonj/.pyenv/shims/pc_query -m '%s'"
+bind editor <Tab> complete-query
+
 source ~/.mutt/colors
 source ~/.mutt/labels
 source ~/.mutt/mailboxes
@@ -62,4 +67,3 @@ source ~/.mutt/bindings
 source ~/.mutt/macros
 source ~/.mutt/gpg
 source ~/.mutt/hooks
-source ~/.mutt/aliases
