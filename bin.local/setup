@@ -27,7 +27,7 @@ if [[ $(echo `git config user.email`) == "" ]]; then
   git config --file ~/.gitconfig.local --replace-all user.email "$git_user_email"
 fi
 
-if [[ $(echo `git config github.username`) == "" ]]; then
+if [[ $(echo `git config github.user`) == "" ]]; then
   echo "\nPlease enter your github username: "
   read git_github_username
   git config --file ~/.gitconfig.local --replace-all github.user "$git_github_username"
