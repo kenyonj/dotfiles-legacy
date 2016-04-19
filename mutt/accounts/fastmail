@@ -1,0 +1,25 @@
+# vim: ft=muttrc
+set from          = "justin@kenyon.me"
+set sendmail      = "/usr/bin/muttdown -c /home/kenyonj/.mutt/muttdown.fastmail.yaml"
+set mbox          = "+fastmail/archive"
+set postponed     = "+fastmail/drafts"
+set record        = "+fastmail/sent"
+
+macro index       gi  "<change-folder>+fastmail/INBOX<enter>" \
+                      "go to the INBOX"
+macro index       gT  "<change-folder>+thoughtbot/INBOX<enter>" \
+                      "previous account"
+macro index       gt  "<change-folder>+gmail/INBOX<enter>" \
+                      "next account"
+macro index       ga   "<change-folder>+fastmail/archive<enter>" \
+                      "go to the archive"
+macro index       gs  "<change-folder>+fastmail/sent<enter>" \
+                      "go to sent mail"
+macro index,pager \#  "<save-message>+fastmail/trash<enter>" \
+                      "move message to the trash"
+macro index,pager !   "<save-message>+fastmail/spam<enter>" \
+                      "mark message as spam"
+macro index,pager e   "<save-message>+fastmail/archive<enter>" \
+                      "Archive the message"
+macro index,pager E   "<tag-thread>;s+fastmail/archive<enter>" \
+                      "Archive the thread"

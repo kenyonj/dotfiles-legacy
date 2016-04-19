@@ -95,3 +95,50 @@ Channel thoughtbot-drafts
 Channel thoughtbot-sent
 Channel thoughtbot-spam
 Channel thoughtbot-trash
+
+IMAPAccount fastmail
+Host mail.messagingengine.com
+Port 992
+User jpk@fastmail.com
+PassCmd "/home/kenyonj/.local/bin/getnetrc jpk@fastmail.com"
+SSLType IMAPS
+SSLVersions TLSv1.2
+
+IMAPStore fastmail-remote
+Account fastmail
+
+MaildirStore fastmail-local
+Path ~/.mail/fastmail/
+Inbox ~/.mail/fastmail/INBOX
+
+Channel fastmail-inbox
+Master :fastmail-remote:INBOX
+Slave :fastmail-local:INBOX
+
+Channel fastmail-archive
+Master ":fastmail-remote:Archive"
+Slave :fastmail-local:archive
+
+Channel fastmail-drafts
+Master :fastmail-remote:Drafts
+Slave :fastmail-local:drafts
+
+Channel fastmail-sent
+Master ":fastmail-remote:Sent"
+Slave :fastmail-local:sent
+
+Channel fastmail-spam
+Master :fastmail-remote:Spam
+Slave :fastmail-local:spam
+
+Channel fastmail-trash
+Master :fastmail-remote:Trash
+Slave :fastmail-local:trash
+
+Group fastmail
+Channel fastmail-inbox
+Channel fastmail-archive
+Channel fastmail-drafts
+Channel fastmail-sent
+Channel fastmail-spam
+Channel fastmail-trash

@@ -7,7 +7,9 @@ set record        = "+thoughtbot/sent"
 
 macro index       gi  "<change-folder>+thoughtbot/INBOX<enter>" \
                       "go to the INBOX"
-macro index       gt  "<change-folder>+gmail/INBOX<enter>" \
+macro index       gT  "<change-folder>+gmail/INBOX<enter>" \
+                      "previous account"
+macro index       gt  "<change-folder>+fastmail/INBOX<enter>" \
                       "next account"
 macro index       ga  "<change-folder>+thoughtbot/archive<enter>" \
                       "go to the archive"
