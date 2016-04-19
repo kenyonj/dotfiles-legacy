@@ -136,6 +136,7 @@ assign [class="vivaldi-preview"] $WS3
 assign [title="ncmpcpp"] $WS1
 assign [title="mutt"] $WS9
 assign [title="^Slack.*"] $WS10
+assign [title="weechat"] $WS10
 
 # open workspace
 bindsym $mod+1 workspace $WS1
@@ -165,9 +166,11 @@ bindsym $mod+$other+0 move container to workspace $WS10
 bindsym $mod+b border toggle
 
 # starter
-mode "(e)mail | (s)lack | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization" {
+set $starter_menu (e)mail | (s)lack | (w)eechat | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization
+mode "$starter_menu" {
   bindsym e exec termite -t "mutt" -e mutt; mode "default"
   bindsym s exec slack; mode "default"
+  bindsym w exec termite -t "weechat" -e weechat; mode "default"
   bindsym n exec termite -t "ncmpcpp" -e ncmpcpp; mode "default"
   bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
   bindsym k mode "(1) Initialize Poker 2"
@@ -175,7 +178,7 @@ mode "(e)mail | (s)lack | (n)cmpcpp | (m)onitor initialization | (k)eyboard init
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-bindsym $other+Shift+R mode "(e)mail | (s)lack | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization"
+bindsym $other+Shift+R mode "$starter_menu"
 
 
 mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays" {
