@@ -7,3 +7,6 @@
 [submodule "muttdown"]
 	path = muttdown
 	url = https://github.com/Roguelazer/muttdown.git
+[submodule "wee-slack"]
+	path = wee-slack
+	url = https://github.com/rawdigits/wee-slack
