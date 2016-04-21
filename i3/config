@@ -2,7 +2,6 @@
 
 # Mod4 = Windows Key, Command Key, $mod
 # Mod1 = Alt, $other
-# Mod3 = Left Control, $mod
 
 set $mod Mod4
 set $other Mod1
@@ -165,15 +164,18 @@ bindsym $mod+$other+0 move container to workspace $WS10
 # change border
 bindsym $mod+b border toggle
 
-# starter
+# modes
 set $starter_menu (e)mail | (s)lack | (w)eechat | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization
+set $keyboard_menu (1) Poker 2
+
+# starter
 mode "$starter_menu" {
   bindsym e exec termite -t "mutt" -e mutt; mode "default"
   bindsym s exec slack; mode "default"
   bindsym w exec termite -t "weechat" -e weechat; mode "default"
   bindsym n exec termite -t "ncmpcpp" -e ncmpcpp; mode "default"
   bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
-  bindsym k mode "(1) Initialize Poker 2"
+  bindsym k mode "$keyboard_menu"
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -192,7 +194,7 @@ mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays" {
 }
 bindsym XF86Display mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
 
-mode "(1) Initialize Poker 2" {
+mode "$keyboard_menu" {
   bindsym 1 exec --no-startup-id setxkbmap -option ctrl:nocaps; mode "default"
 
   bindsym Return mode "default"
