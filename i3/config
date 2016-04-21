@@ -228,10 +228,14 @@ bindsym XF86AudioPrev exec mpc prev && pkill --signal RTMIN+2 i3blocks
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 
+
 # Jump to urgent window
 bindsym $mod+x [urgent=latest] focus
 
 set $Locker i3lock-fancy -pf Source-Code-Pro-Light
+
+# HHKB power key
+bindsym XF86PowerOff exec $Locker
 
 set $mode_system (l)ock, (h)ibernate, (r)eboot, (S)hutdown
 mode "$mode_system" {
