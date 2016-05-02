@@ -142,3 +142,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 
 chruby ruby-2.3.0
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_VERSION="2.7.8"
+eval "$(pyenv init -)"
