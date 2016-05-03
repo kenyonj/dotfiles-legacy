@@ -5,6 +5,7 @@ alias ar="source ~/.aliases.local; echo 'aliases reloaded!'"
 # ZSH
 alias zr="source ~/.zshrc; echo 'zshrc reloaded!'"
 alias ls="ls --color=auto"
+alias dirsize="du -sch"
 
 # FASD jump to recently used items
 alias a="fasd -a" # any
