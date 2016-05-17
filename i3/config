@@ -40,27 +40,8 @@ bindsym $mod+o scratchpad show
 bindsym $mod+comma move workspace to output left
 bindsym $mod+period move workspace to output right
 
-# mac like cross-hair screenshot
-bindsym --release $other+Shift+4 exec --no-startup-id import ~/pictures/screenshots/$(date +%Y-%m-%d-%k%M%S)-scrot-targeted.png
-
-# full screen screenshot
-bindsym Print exec scrot '%Y-%m-%d-%k%M%S-scrot-fullscreen.png' -e 'mv $f ~/pictures/screenshots/'
-
-# record animated gif
-for_window [title="^gifcast$"] floating enable
-for_window [title="^gifcast$"] border pixel 1
-no_focus [title="^gifcast$"]
-assign [title="^gifcast$"] scratchpad
-bindsym $other+Shift+5 mode "Make (s)election for recording."
-
-mode "Make (s)election for recording." {
-  bindsym s exec --no-startup-id termite -t gifcast -e ~/.scripts/capture-gif; mode "Recording GIF... Press Escape to stop recording."
-  bindsym Escape [title="^gifcast$"] kill; mode "default"
-}
-
-mode "Recording GIF... Press Escape to stop recording." {
-  bindsym Escape [title="^gifcast$"] kill; mode "default"
-}
+# screenshots/screencasts
+bindsym $mod+Shift+4 exec --no-startup-id teiler
 
 # start a terminal
 bindsym $mod+Return exec termite
@@ -69,7 +50,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+$other+Q kill
 
 # start rofi
-bindsym $other+space exec rofi -show run -font "Source Code Pro 15" -fg "#ecedee" -bg "#121212" -hlfg "#95C7AE" -hlbg "#000000" -o 100
+bindsym $mod+space exec rofi -show run
 
 # i3 shorcuts for reload/restart/exit
 bindsym $mod+$other+Shift+C reload
