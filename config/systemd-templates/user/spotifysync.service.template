@@ -1,0 +1,6 @@
+[Unit]
+Description=Spotify Playlist Syncer
+
+[Service]
+Type=oneshot
+ExecStart=/home/kenyonj/.scripts/spotifysyncer

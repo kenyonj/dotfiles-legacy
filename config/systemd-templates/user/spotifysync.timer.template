@@ -1,0 +1,9 @@
+[Unit]
+Description=Spotify Playlist Syncer
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+
+[Install]
+WantedBy=timers.target
