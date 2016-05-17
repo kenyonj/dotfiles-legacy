@@ -1,0 +1,49 @@
+// vim:ts=4:sw=4:et
+{
+    // this is a manually added container to restore the vertical split
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "name": "ncmpcpp",
+            "percent": 0.65,
+            "swallows": [
+                {
+                    "title": "^ncmpcpp$"
+                }
+            ],
+            "type": "con"
+        },
+
+        {
+            // splith split container with 2 children
+            "layout": "splith",
+            "percent": 0.35,
+            "type": "con",
+            "nodes": [
+                {
+                    "name": "visualizer",
+                    "percent": 0.80,
+                    "swallows": [
+                        {
+                            "title": "^visualizer$"
+                        }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "name": "albumart",
+                    "percent": 0.20,
+                    "swallows": [
+                        {
+                            "title": "^albumart$"
+                        }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+
+    ]
+}

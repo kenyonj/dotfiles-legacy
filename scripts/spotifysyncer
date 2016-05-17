@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sync_spotify() {
+  local spotify_password="$(~/.local/bin/getnetrc kenyonj@spotify.com)"
+  /home/kenyonj/.pyenv/shims/spotify-ripper -u kenyonj -p $spotify_password --cover-file cover.jpg --playlist-m3u --playlist-sync /home/kenyonj/.spotify-ripper/playlists
+}
+
+sync_spotify
