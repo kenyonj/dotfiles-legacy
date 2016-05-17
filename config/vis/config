@@ -1,0 +1,4 @@
+mpd.fifo.path=/tmp/mpd.fifo
+visualizer.spectrum.bar.width=1
+visualizer.spectrum.bar.spacing=1
+visualizer.spectrum.smoothing.mode=monstercat
