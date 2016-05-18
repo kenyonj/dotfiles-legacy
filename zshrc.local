@@ -146,10 +146,13 @@ eval $(keychain --nogui --quiet --agents ssh,gpg --eval -Q id_rsa 2538E93E)
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-chruby ruby-2.3.0
+chruby ruby-2.3.1
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PYENV_VERSION="2.7.8"
 eval "$(pyenv init -)"
+
+# remove .git/safe/../../bin from PATH
+export PATH=$(echo "$PATH" | sed -e 's/\.git\/safe\/\.\.\/\.\.\/bin//')
