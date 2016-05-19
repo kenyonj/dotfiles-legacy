@@ -1,0 +1,13 @@
+#!/bin/sh
+
+start_mopidy() {
+  local spotify_password="$(~/.local/bin/getnetrc kenyonj@spotify.com)"
+  local gmusic_password="$(~/.local/bin/getnetrc kenyonj@gmail.com)"
+  local soundcloud_auth_token="$(~/.local/bin/getnetrc justin@soundcloud.com)"
+  /usr/bin/mopidy \
+    -o "spotify/password=$spotify_password" \
+    -o "gmusic/password=$gmusic_password" \
+    -o "soundcloud/auth_token=$soundcloud_auth_token"
+}
+
+start_mopidy
