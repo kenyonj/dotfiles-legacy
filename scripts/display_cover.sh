@@ -5,4 +5,4 @@ while :; do
   wait 1
 done
 
-feh --title albumart --geometry 300x300 --zoom fill --reload 1 /tmp/cover.jpg
+feh --title albumart --geometry 100x100 --zoom fill --reload 1 /tmp/cover.jpg
