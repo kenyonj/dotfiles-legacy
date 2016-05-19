@@ -145,7 +145,7 @@ bindsym $mod+$other+0 move container to workspace $WS10
 bindsym $mod+b border toggle
 
 # modes
-set $starter_menu (e)mail | (s)lack | (w)eechat | (n)cmpcpp | (m)onitor initialization | (k)eyboard initialization
+set $starter_menu (e)mail | (s)lack | (w)eechat | (m)usic | (d)isplay initialization | (k)eyboard initialization
 set $keyboard_menu (1) Poker 2
 
 # starter
@@ -153,8 +153,8 @@ mode "$starter_menu" {
   bindsym e exec termite -t "mutt" -e mutt; mode "default"
   bindsym s exec slack; mode "default"
   bindsym w exec termite -t "weechat" -e weechat; mode "default"
-  bindsym n exec termite -t "ncmpcpp" -e ncmpcpp; mode "default"
-  bindsym m mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
+  bindsym m exec termite -t "music" -e ~/.scripts/load_music_layout; mode "default"
+  bindsym d mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
   bindsym k mode "$keyboard_menu"
 
   bindsym Return mode "default"
@@ -273,3 +273,4 @@ exec --no-startup-id "xflux -z 02478"
 exec --no-startup-id "compton --config ~/.config/compton.conf"
 exec --no-startup-id "feh --bg-scale ~/.wallpapers/records.jpg"
 exec --no-startup-id "devmon --no-gui"
+exec --no-startup-id "~/.scripts/display_cover.sh"
