@@ -111,8 +111,7 @@ set $WS8  "8"
 set $WS9  "9:"
 set $WS10 "10:"
 
-assign [class="vivaldi-preview"] $WS3
-assign [title="ncmpcpp"] $WS1
+assign [class="qutebrowser"] $WS3
 assign [title="mutt"] $WS9
 assign [title="^Slack.*"] $WS10
 assign [title="weechat"] $WS10
