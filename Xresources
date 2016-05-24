@@ -12,7 +12,7 @@ Xft.rgba:       rgb
 ! ------------------------------------------------------------------------------
 rofi.width:                           50
 rofi.lines:                           5
-rofi.font:                            Source Code Pro 15
+rofi.font:                            Knack NF 15
 rofi.color-normal:                    argb:00000000, #1aa, argb:11FFFFFF, #1aa,#333
 rofi.color-urgent:                    argb:00000000, #f99, argb:11FFFFFF, #f99,#333
 rofi.color-active:                    argb:00000000, #aa1, argb:11FFFFFF, #aa1,#333

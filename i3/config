@@ -19,7 +19,7 @@ gaps outer 10
 
 # font for window titles. ISO 10646 = Unicode
 # font pango: Source Code Pro 16
-font pango:FontAwesome 11, Source Code Pro 14
+font pango:Knack NF, Regular 16
 
 # TODO List
 exec --no-startup-id termite -t 'todo-list' -e 'vim /home/kenyonj/tmp/stuff-to-do.md'
@@ -256,7 +256,7 @@ bar {
   status_command i3blocks -c ~/.i3/i3blocks.conf
   mode dock
   position top
-  font pango:FontAwesome 11, Source Code Pro 14
+  font pango:Knack NF, Regular 14
   strip_workspace_numbers yes
 }
 
