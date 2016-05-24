@@ -3,4 +3,4 @@ Description=PyCardDav Syncer
 
 [Service]
 Type=oneshot
-ExecStart=/home/kenyonj/.pyenv/shims/pycardsyncer
+ExecStart=/usr/bin/pycardsyncer
