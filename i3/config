@@ -145,16 +145,17 @@ bindsym $mod+$other+0 move container to workspace $WS10
 bindsym $mod+b border toggle
 
 # modes
-set $starter_menu (e)mail | (s)lack | (w)eechat | (m)usic | (d)isplay initialization | (k)eyboard initialization
-set $keyboard_menu (1) Poker 2
+set $starter_menu (e)mail | (w)eechat | mu(s)ic | (m)onitor initialization | (k)eyboard initialization
+set $monitor_menu (1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays
+set $keyboard_menu (1) Swap CAPS for CONTROL
+set $mode_system (l)ock | (s)uspend | (h)ibernate | (r)eboot | (S)hutdown
 
 # starter
 mode "$starter_menu" {
   bindsym e exec termite -t "mutt" -e mutt; mode "default"
-  bindsym s exec slack; mode "default"
   bindsym w exec termite -t "weechat" -e weechat; mode "default"
-  bindsym m exec termite -t "music" -e ~/.scripts/load_music_layout; mode "default"
-  bindsym d mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
+  bindsym s exec termite -t "music" -e ~/.scripts/load_music_layout; mode "default"
+  bindsym m mode "$monitor_menu"
   bindsym k mode "$keyboard_menu"
 
   bindsym Return mode "default"
@@ -163,7 +164,7 @@ mode "$starter_menu" {
 bindsym $mod+Shift+R mode "$starter_menu"
 
 
-mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays" {
+mode "$monitor_menu" {
   bindsym 1 exec --no-startup-id ~/.screenlayout/external-dp-left-of-open-laptop.sh; mode "default"
   bindsym 2 exec --no-startup-id ~/.screenlayout/no-external.sh; mode "default"
   bindsym 3 exec --no-startup-id ~/.screenlayout/mirror-laptop-display; mode "default"
@@ -172,7 +173,7 @@ mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays" {
   bindsym Escape mode "default"
   bindsym XF86Display mode "default"
 }
-bindsym XF86Display mode "(1) DP1 left of LVDS1 | (2) No external connected | (3) Mirror displays"
+bindsym XF86Display mode "$monitor_menu"
 
 mode "$keyboard_menu" {
   bindsym 1 exec --no-startup-id setxkbmap -option ctrl:nocaps; mode "default"
@@ -217,19 +218,17 @@ set $Locker i3lock-fancy -pf Source-Code-Pro-Light
 # HHKB power key
 bindsym XF86PowerOff exec $Locker
 
-set $mode_system (l)ock, (h)ibernate, (r)eboot, (S)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym l exec --no-startup-id $Locker; mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend; mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate; mode "default"
+    bindsym r exec --no-startup-id systemctl reboot; mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i; mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
 bindsym $mod+$other+Shift+L mode "$mode_system"
 
 # class                 border  backgr. text    indicator
