@@ -12,6 +12,7 @@ for_window [class="^.*"] border pixel 3
 # Floating windows
 for_window [title="^Authy$"] floating enable
 for_window [title="^Image Viewer$"] floating enable
+for_window [title="^Web Inspector.*"] floating enable
 
 # gaps config
 gaps inner 10
