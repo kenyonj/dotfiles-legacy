@@ -2,4 +2,4 @@ smtp_host: mail.messagingengine.com
 smtp_port: 465
 smtp_ssl: true
 smtp_username: jpk@fastmail.com
-smtp_password_command: /home/kenyonj/.local/bin/getnetrc jpk@fastmail.com
+smtp_password_command: $HOME/.local/bin/getnetrc jpk@fastmail.com

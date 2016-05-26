@@ -12,7 +12,7 @@
 #
 
 [database]
-path=/home/kenyonj/.mail
+path=$HOME/.mail
 
 # User configuration
 #

@@ -2,7 +2,7 @@
 
 sync_spotify() {
   local spotify_password="$(~/.local/bin/getnetrc kenyonj@spotify.com)"
-  /usr/bin/spotify-ripper -u kenyonj -p $spotify_password --playlist-m3u --playlist-sync /home/kenyonj/.spotify-ripper/playlists
+  /usr/bin/spotify-ripper -u kenyonj -p $spotify_password --playlist-m3u --playlist-sync $HOME/.spotify-ripper/playlists
 }
 
 sync_spotify

@@ -1,6 +1,6 @@
 # vim: ft=muttrc
 set from          = "kenyonj@gmail.com"
-set sendmail      = "/usr/bin/muttdown -c /home/kenyonj/.mutt/muttdown.gmail.yaml"
+set sendmail      = "/usr/bin/muttdown -c $HOME/.mutt/muttdown.gmail.yaml"
 set mbox          = "+gmail/archive"
 set postponed     = "+gmail/drafts"
 set record        = "+gmail/sent"

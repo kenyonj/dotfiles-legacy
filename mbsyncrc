@@ -7,7 +7,7 @@ SyncState *
 IMAPAccount gmail
 Host imap.gmail.com
 User kenyonj@gmail.com
-PassCmd "/home/kenyonj/.local/bin/getnetrc kenyonj@gmail.com"
+PassCmd "$HOME/.local/bin/getnetrc kenyonj@gmail.com"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -53,7 +53,7 @@ Channel gmail-trash
 IMAPAccount thoughtbot
 Host imap.gmail.com
 User justin@thoughtbot.com
-PassCmd "/home/kenyonj/.local/bin/getnetrc justin@thoughtbot.com"
+PassCmd "$HOME/.local/bin/getnetrc justin@thoughtbot.com"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -100,7 +100,7 @@ IMAPAccount fastmail
 Host mail.messagingengine.com
 Port 992
 User jpk@fastmail.com
-PassCmd "/home/kenyonj/.local/bin/getnetrc jpk@fastmail.com"
+PassCmd "$HOME/.local/bin/getnetrc jpk@fastmail.com"
 SSLType IMAPS
 SSLVersions TLSv1.2
 

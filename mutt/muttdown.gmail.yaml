@@ -2,4 +2,4 @@ smtp_host: smtp.gmail.com
 smtp_port: 587
 smtp_ssl: false
 smtp_username: kenyonj@gmail.com
-smtp_password_command: /home/kenyonj/.local/bin/getnetrc kenyonj@gmail.com
+smtp_password_command: $HOME/.local/bin/getnetrc kenyonj@gmail.com

@@ -1,6 +1,6 @@
 # vim: ft=muttrc
 set from          = "justin@kenyon.me"
-set sendmail      = "/usr/bin/muttdown -c /home/kenyonj/.mutt/muttdown.fastmail.yaml"
+set sendmail      = "/usr/bin/muttdown -c $HOME/.mutt/muttdown.fastmail.yaml"
 set mbox          = "+fastmail/archive"
 set postponed     = "+fastmail/drafts"
 set record        = "+fastmail/sent"

@@ -23,7 +23,7 @@ gaps outer 10
 font pango:Knack NF, Regular 16
 
 # TODO List
-exec --no-startup-id termite -t 'todo-list' -e 'vim /home/kenyonj/tmp/stuff-to-do.md'
+exec --no-startup-id termite -t 'todo-list' -e 'vim $HOME/tmp/stuff-to-do.md'
 for_window [title="todo-list"] move scratchpad
 
 # don't follow mouse for window focus

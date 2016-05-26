@@ -2,4 +2,4 @@ smtp_host: smtp.gmail.com
 smtp_port: 587
 smtp_ssl: false
 smtp_username: justin@thoughtbot.com
-smtp_password_command: /home/kenyonj/.local/bin/getnetrc justin@thoughtbot.com
+smtp_password_command: $HOME/.local/bin/getnetrc justin@thoughtbot.com
