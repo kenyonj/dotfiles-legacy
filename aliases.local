@@ -63,4 +63,3 @@ gbd() {
 # arch
 alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
 alias pacman-update="sudo pacman -Syu && pacaur -Syyua"
-alias updatemirrors="sudo rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup | sudo tee /etc/pacman.d/mirrorlist >/dev/null"
