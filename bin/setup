@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+# get submodules and update
+git submodule init
+git submodule foreach git checkout master && git pull
+git submodule update
+
+export RCRC="$HOME/dotfiles/host-$(hostname)/rcrc"
+rcup
+
+# reload new zshrc
+source ~/.zshrc

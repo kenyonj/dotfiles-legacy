@@ -1,8 +1,0 @@
-application/octet-stream ; echo %s "can be anything..."                                                     ; copiousoutput;
-text/html                ; mv %s %s.html && qutebrowser --qt-name mutthtml %s.html >/dev/null 2>/dev/null   ; needsterminal;
-text/html                ; /usr/bin/w3m -I %{charset} -T text/html                                          ; copiousoutput;
-application/pdf          ; /usr/bin/zathura %s                                                              ; copiousoutput;
-image/*                  ; /usr/bin/gpicview %s                                                             ; copiousoutput;
-audio/*                  ; /usr/bin/mplayer %s                                                              ; copiousoutput;
-video/*                  ; /usr/bin/mplayer %s                                                              ; copiousoutput;
-text/calendar            ; $HOME/.local/bin/mutt-ics                                                ; copiousoutput;

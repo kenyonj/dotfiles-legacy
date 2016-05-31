@@ -1,0 +1,72 @@
+# Alias Editing
+alias ae="vim ~/.aliases"
+alias ar="source ~/.aliases; echo 'aliases reloaded!'"
+
+# ZSH
+alias zr="source ~/.zshrc; echo 'zshrc reloaded!'"
+alias ls="ls --color=auto"
+alias mkdir="mkdir -p"
+alias dirsize="du -sch"
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+
+# FASD jump to recently used items
+alias a="fasd -a" # any
+alias s="fasd -s" # show / search / select
+alias d="fasd -d" # directory
+alias f="fasd -f" # file
+alias j="fasd_cd -d" # cd, same functionality as j in autojump
+alias v="f -e vim" # quick opening files with vim
+
+# Bundler
+alias b="bundle"
+alias be="bundle exec"
+alias bi="bundle install"
+
+# Rails
+alias c="rails console"
+alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
+alias s="rspec"
+
+# Open ports
+alias open_ports="lsof -i -P | grep -i 'listen'"
+
+# git
+alias amend="git commit --amend"
+alias amendne="git commit --amend --no-edit"
+alias ga="git add"
+alias gs="git status -s"
+alias gall="git add -A"
+alias gap="git add -p"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gbrn="git branch -m"
+alias gc="git commit"
+alias gcl="git clone"
+alias hc="hub clone"
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gcp="git cherry-pick"
+alias gd="git diff"
+alias gf="git fetch"
+alias gl="git log -10 --pretty=colored"
+alias gm="git merge"
+alias gnb="git checkout -b"
+alias gp="git push"
+alias gpf!="git push --force-with-lease"
+alias gpr="hub pull-request"
+alias gr="git rebase"
+alias gra="git rebase --abort"
+alias grc="git rebase --continue"
+alias gri="git rebase -i"
+alias gs="git status -s"
+alias standup="git standup"
+
+gbd() {
+  git branch -d $1 && git push origin :$1;
+}
+
+# arch
+alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
+alias pacman-update="sudo pacman -Syu && pacaur -Syyua"

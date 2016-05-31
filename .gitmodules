@@ -1,12 +1,12 @@
 [submodule "zsh-syntax-highlighting"]
-	path = zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "config/base16-shell"]
-	path = config/base16-shell
-	url = https://github.com/chriskempson/base16-shell
+	path = tag-zsh/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
 [submodule "muttdown"]
-	path = muttdown
-	url = https://github.com/Roguelazer/muttdown.git
+	path = tag-mail-sender/muttdown
+	url = git@github.com:Roguelazer/muttdown.git
 [submodule "wee-slack"]
-	path = wee-slack
-	url = https://github.com/rawdigits/wee-slack
+	path = tag-weechat/wee-slack
+	url = git@github.com:rawdigits/wee-slack.git
+[submodule "tag-terminal/config/base16-shell"]
+	path = tag-terminal/config/base16-shell
+	url = git@github.com:chriskempson/base16-shell.git
