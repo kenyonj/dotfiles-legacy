@@ -5,5 +5,8 @@ xrdb -merge ~/.Xresources
 #load xmodmap
 xmodmap ~/.Xmodmap
 
+#create i3 config
+~/.i3/create_config
+
 #start i3
 exec i3
