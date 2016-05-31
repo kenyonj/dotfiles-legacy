@@ -1,3 +1,6 @@
+# Host specific env vars
+[[ -f ~/.env.local ]] && source ~/.env.local
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -193,13 +196,8 @@ export PATH="/opt/android-sdk/platform-tools:$PATH"
 source "$HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/completion/git-remote-branch.plugin.zsh"
 
-if [ -f "/usr/share/chruby/chruby.sh" ]; then
-  source /usr/share/chruby/chruby.sh
-  source /usr/share/chruby/auto.sh
-else
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-fi
+source "$CHRUBY_LOCATION/chruby/chruby.sh"
+source "$CHRUBY_LOCATION/chruby/auto.sh"
 
 #nvm
 source /usr/share/nvm/init-nvm.sh
@@ -214,6 +212,3 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 
 chruby ruby-2.3.1
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
-
-# remove .git/safe/../../bin from PATH
-export PATH=$(echo "$PATH" | sed -e 's/\.git\/safe\/\.\.\/\.\.\/bin//')

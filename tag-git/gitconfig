@@ -1,52 +1,50 @@
-[init]
-  templatedir = ~/.git_template
-
-[core]
-  excludesfile = ~/.gitignore
-  autocrlf = input
-
-[push]
-  default = current
-
-[merge]
-  ff = only
-
-[commit]
-  template = ~/.gitmessage
-
-[fetch]
-  prune = true
-
-[rebase]
-  autosquash = true
-
-[color]
-  ui = auto
-
 [alias]
-  fuckit = !sh -c 'git add --all && git reset --hard'
-  co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
   aa = add --all
   ap = add --patch
   branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
   ci = commit -v
   co = checkout
+  co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
+  fuckit = !sh -c 'git add --all && git reset --hard'
   pf = push --force-with-lease
   st = status
 
+[init]
+  templatedir = ~/.git_template
+
+[color]
+  ui = auto
+
+[commit]
+  gpgsign = true
+  template = ~/.gitmessage
+
+[company]
+  domain = thoughtbot.com
+
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+
+[fetch]
+  prune = true
+
+[github]
+  user = kenyonj
+
+[merge]
+  ff = only
+
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
+
+[push]
+  default = current
+
+[rebase]
+  autosquash = true
 
 [user]
   name = Justin Kenyon
   email = kenyonj@gmail.com
   signingkey = 2538E93E
-
-[commit]
-  gpgsign = true
-
-[github]
-  user = kenyonj
-
-[company]
-  domain = thoughtbot.com

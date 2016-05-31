@@ -25,7 +25,7 @@ paste_ul=ix
 
 # Screencast options
 # Resolution to change to when recording in fullscreen
-res=2560x1440
+# res=2560x1440
 
 # If you use a custom rate for X, set it here. 
 # rate=120
