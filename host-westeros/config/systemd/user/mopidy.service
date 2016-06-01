@@ -1,0 +1,10 @@
+[Unit]
+Description=Mopidy music server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/justin/.scripts/mopidy-start
+
+[Install]
+WantedBy=multi-user.target
