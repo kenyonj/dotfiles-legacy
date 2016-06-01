@@ -1,32 +1,6 @@
 Justin Kenyon's dotfiles
 ===============
 
-I use [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles) and
-kenyonj/dotfiles-local together using the `*.local` convention described in
-thoughtbot/dotfiles.
-
-Requirements
-------------
-
-These dotfiles are meant to work in conjunction with the [thoughtbot/dotfiles]
-(https://github.com/thoughtbot/dotfiles). Please install those first.
-
-Install
--------
-
-Clone into your environment:
-
-`cd && git clone git@github.com:kenyonj/dotfiles-local.git`
-
-Install:
-
-`cd && cd dotfiles-local && bin.local/setup`
-
-This will create symlinks in your home (`~/`) directory for all the config files
-that you have in your `dotfiles-local` directory.
-
-You can safely run `rcup` multiple times to update.
-
 What's in it?
 -------------
 Here is a sampling. For a complete list of features, please review the source.
@@ -117,4 +91,3 @@ resort)
     - `:Q`: `:q`
     - `:Wq`: `:wq`
     - `jj`: `ESC`
-
