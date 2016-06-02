@@ -1,6 +1,3 @@
-# Host specific env vars
-[[ -f ~/.env.local ]] && source ~/.env.local
-
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
