@@ -1,0 +1,3 @@
+audio.sources=pulse
+audio.pulse.source=1
+colors.scheme=rainbow
