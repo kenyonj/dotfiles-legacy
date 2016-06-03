@@ -1,0 +1,47 @@
+colorscheme simple
+let mapleader=','
+set maxitems=20
+set titlestring=
+
+map <silent> <C-F9> :emenu Tools.Web Developer.Web Console<CR>
+map <silent> <C-F8> :js toggle_bottombar()<CR>
+
+:js << EOF
+function toggle_bottombar() {
+    var bb = document.getElementById('liberator-bottombar');
+    if (!bb)
+        return;
+    bb.style.height = (bb.style.height == '') ? '0px' : '';
+    bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
+    }
+EOF
+
+" === Hints ===
+
+" Only use characters that don't suck to press.
+set hintchars="qwertasdfguophjk;"
+
+" default search/suggest engine: google
+set defsearch=google
+set suggestengines=google
+
+" tab operation {{{2
+noremap <C-h> gT
+noremap <C-l> gt
+noremap <C-p> :tabmove! -1<CR>
+noremap <C-n> :tabmove! +1<CR>
+
+" all type pages are opened in new tab
+" addons + downloads + help + javascript + prefs
+set newtab=all
+
+" show tabbar only
+set gui=none,tabs,addons
+
+" Eliminate annoying mappings.
+map gf <Nop>
+map <C-j> <Nop>
+map <C-k> <Nop>
+
+" sourcing .vimperatorrc
+noremap <Leader>r :source ~/.vimperatorrc<CR>
