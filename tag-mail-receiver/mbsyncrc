@@ -15,8 +15,8 @@ IMAPStore gmail-remote
 Account gmail
 
 MaildirStore gmail-local
-Path ~/.mail/gmail/
-Inbox ~/.mail/gmail/INBOX
+Path ~/mail/gmail/
+Inbox ~/mail/gmail/INBOX
 
 Channel gmail-inbox
 Master :gmail-remote:INBOX
@@ -61,8 +61,8 @@ IMAPStore thoughtbot-remote
 Account thoughtbot
 
 MaildirStore thoughtbot-local
-Path ~/.mail/thoughtbot/
-Inbox ~/.mail/thoughtbot/INBOX
+Path ~/mail/thoughtbot/
+Inbox ~/mail/thoughtbot/INBOX
 
 Channel thoughtbot-inbox
 Master :thoughtbot-remote:INBOX
@@ -108,8 +108,8 @@ IMAPStore fastmail-remote
 Account fastmail
 
 MaildirStore fastmail-local
-Path ~/.mail/fastmail/
-Inbox ~/.mail/fastmail/INBOX
+Path ~/mail/fastmail/
+Inbox ~/mail/fastmail/INBOX
 
 Channel fastmail-inbox
 Master :fastmail-remote:INBOX
