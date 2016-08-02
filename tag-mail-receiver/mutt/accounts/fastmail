@@ -5,6 +5,8 @@ set mbox          = "+fastmail/archive"
 set postponed     = "+fastmail/drafts"
 set record        = "+fastmail/sent"
 
+macro index       G   "<shell-escape>mbsync fastmail<enter>" \
+                      "refresh mailbox"
 macro index       gi  "<change-folder>+fastmail/INBOX<enter>" \
                       "go to the INBOX"
 macro index       gT  "<change-folder>+thoughtbot/INBOX<enter>" \

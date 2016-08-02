@@ -5,6 +5,8 @@ set mbox          = "+gmail/archive"
 set postponed     = "+gmail/drafts"
 set record        = "+gmail/sent"
 
+macro index       G   "<shell-escape>mbsync gmail<enter>" \
+                      "refresh mailbox"
 macro index       gi  "<change-folder>+gmail/INBOX<enter>" \
                       "go to the INBOX"
 macro index       gT  "<change-folder>+fastmail/INBOX<enter>" \

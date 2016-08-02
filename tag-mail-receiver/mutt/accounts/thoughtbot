@@ -5,6 +5,8 @@ set mbox          = "+thoughtbot/archive"
 set postponed     = "+thoughtbot/drafts"
 set record        = "+thoughtbot/sent"
 
+macro index       G   "<shell-escape>mbsync thoughtbot<enter>" \
+                      "refresh mailbox"
 macro index       gi  "<change-folder>+thoughtbot/INBOX<enter>" \
                       "go to the INBOX"
 macro index       gT  "<change-folder>+gmail/INBOX<enter>" \
