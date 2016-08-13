@@ -70,3 +70,6 @@ gbd() {
 # arch
 alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
 alias pacman-update="sudo pacman -Syu && pacaur -Syyua"
+
+# steam
+alias steam="find ~/.steam/root/ \( -name 'libgcc_s.so*' -o -name 'libstdc++.so*' -o -name 'libxcb.so*' \) -print -delete && steam"
