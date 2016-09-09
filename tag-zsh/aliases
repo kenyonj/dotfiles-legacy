@@ -70,6 +70,7 @@ gbd() {
 # arch
 alias pacman-cleanup="sudo pacman -Rns \$(pacman -Qtdq)"
 alias pacman-update="sudo pacman -Syu && pacaur -Syyua"
+alias pacman-mirror-update="sudo rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup | sudo tee /etc/pacman.d/mirrorlist >/dev/null"
 
 # steam
 alias steam="find ~/.steam/root/ \( -name 'libgcc_s.so*' -o -name 'libstdc++.so*' -o -name 'libxcb.so*' \) -print -delete && steam"
