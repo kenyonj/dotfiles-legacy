@@ -2,7 +2,7 @@
 
 export WS1="1:"
 
-i3-msg "workspace $WS1; append_layout ~/.workspaces/music.json"
-i3-msg "workspace $WS1; exec termite -t "ncmpcpp" -e ncmpcpp"
-i3-msg "workspace $WS1; exec termite -t "visualizer" -e vis"
-i3-msg "workspace $WS1; exec ~/.scripts/display_cover.sh"
+i3-msg "workspace 1:; append_layout ~/.workspaces/music.json"
+i3-msg "workspace 1:; exec termite -t 'ncmpcpp' -e ncmpcpp"
+i3-msg "workspace 1:; exec termite -t 'visualizer' -e vis"
+i3-msg "workspace 1:; exec ~/.scripts/display_cover.sh"
