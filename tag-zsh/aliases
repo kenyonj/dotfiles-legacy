@@ -1,5 +1,5 @@
 # Alias Editing
-alias ae="vim ~/.aliases"
+alias ae="nvim ~/.aliases"
 alias ar="source ~/.aliases; echo 'aliases reloaded!'"
 
 # ZSH
@@ -17,7 +17,7 @@ alias s="fasd -s" # show / search / select
 alias d="fasd -d" # directory
 alias f="fasd -f" # file
 alias j="fasd_cd -d" # cd, same functionality as j in autojump
-alias v="f -e vim" # quick opening files with vim
+alias v="f -e nvim" # quick opening files with neovim
 
 # Bundler
 alias b="bundle"
@@ -74,3 +74,6 @@ alias pacman-mirror-update="sudo rankmirrors -n 6 /etc/pacman.d/mirrorlist.backu
 
 # steam
 alias steam="find ~/.steam/root/ \( -name 'libgcc_s.so*' -o -name 'libstdc++.so*' -o -name 'libxcb.so*' \) -print -delete && steam"
+
+# neovim
+alias vim="nvim"
