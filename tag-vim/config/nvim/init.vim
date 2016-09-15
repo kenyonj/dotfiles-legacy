@@ -259,6 +259,7 @@ autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 let g:elm_format_autosave = 1
 
 " Neomake
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 autocmd! BufWritePost,BufEnter * Neomake
 
 let g:neomake_serialize = 1
@@ -271,4 +272,4 @@ let g:neomake_elixir_mix_maker = {
   \ '%f:%l: warning: %m'
   \ }
 
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+let g:neomake_ruby_enabled_makers = ['rubocop']
