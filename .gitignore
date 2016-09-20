@@ -3,3 +3,7 @@ weechat/logs/
 weechat/sec.conf
 weechat/script/plugins.xml.gz
 venv
+tag-terminal/config/base16-shell
+tag-weechat/wee-slack
+tag-zsh/zsh-syntax-highlighting
+tag-mail-sender/muttdown

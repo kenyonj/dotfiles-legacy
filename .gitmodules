@@ -4,9 +4,9 @@
 [submodule "muttdown"]
 	path = tag-mail-sender/muttdown
 	url = git@github.com:Roguelazer/muttdown.git
-[submodule "wee-slack"]
-	path = tag-weechat/wee-slack
-	url = git@github.com:rawdigits/wee-slack.git
 [submodule "tag-terminal/config/base16-shell"]
 	path = tag-terminal/config/base16-shell
 	url = git@github.com:chriskempson/base16-shell.git
+[submodule "tag-weechat/wee-slack"]
+	path = tag-weechat/wee-slack
+	url = git@github.com:rawdigits/wee-slack.git
