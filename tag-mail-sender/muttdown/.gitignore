@@ -1,6 +1,0 @@
-*.pyc
-env/
-build/
-dist/
-sdist/
-*.egg-info/
