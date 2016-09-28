@@ -28,7 +28,7 @@
   separator_color = frame
   startup_notification = false
   dmenu = /usr/bin/rofi -p dunst:
-  browser = /usr/bin/firefox
+  browser = /usr/bin/google-chrome-stable
   icon_position = off
   icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 [frame]
