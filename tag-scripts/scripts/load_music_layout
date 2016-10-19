@@ -1,5 +1,7 @@
 #!/bin/bash
 
+systemctl --user restart mopidy
+
 export WS1="1:"
 
 i3-msg "workspace 1:; append_layout ~/.workspaces/music.json"
