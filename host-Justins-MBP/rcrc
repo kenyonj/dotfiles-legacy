@@ -1,0 +1,4 @@
+EXCLUDES="README.md"
+DOTFILES_DIRS="$HOME/dotfiles"
+TAGS="git gpg i3 js music psql ruby scripts terminal tmux turses vim zsh"
+HOSTNAME="Justins-MBP"
