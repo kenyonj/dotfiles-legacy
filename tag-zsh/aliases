@@ -4,7 +4,7 @@ alias ar="source ~/.aliases; echo 'aliases reloaded!'"
 
 # ZSH
 alias zr="source ~/.zshrc; echo 'zshrc reloaded!'"
-alias ls="ls --color=auto"
+# alias ls="ls --color=auto"
 alias mkdir="mkdir -p"
 alias dirsize="du -sch"
 
