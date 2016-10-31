@@ -1,0 +1,2 @@
+# Host specific env vars
+[[ -f ~/.env.local ]] && source ~/.env.local
