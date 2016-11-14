@@ -1,26 +1,26 @@
 #!/bin/env ruby
 
 class Configuration
-  GIT_PREFIX = "git@github.com:"
   DEPENDENCIES = {
     "base16-shell" => {
       "repo_location" => "chriskempson/base16-shell.git",
       "tag" => "tag-terminal",
-      "base_path" => "config"
+      "base_path" => "config",
     },
     "muttdown" => {
       "repo_location" => "Roguelazer/muttdown.git",
-      "tag" => "tag-mail-sender"
+      "tag" => "tag-mail-sender",
     },
     "wee-slack" => {
       "repo_location" => "rawdigits/wee-slack.git",
-      "tag" => "tag-weechat"
+      "tag" => "tag-weechat",
     },
     "zsh-syntax-highlighting" => {
       "repo_location" => "zsh-users/zsh-syntax-highlighting.git",
-      "tag" => "tag-zsh"
+      "tag" => "tag-zsh",
     },
-  }
+  }.freeze
+  GIT_PREFIX = "git@github.com:".freeze
 
   def self.load
     new.run
