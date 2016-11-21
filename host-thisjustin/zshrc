@@ -208,5 +208,5 @@ eval $(keychain --nogui --quiet --agents ssh,gpg -Q --eval id_rsa 2538E93E)
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-chruby ruby-2.3.2
+chruby ruby-2.3.3
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
