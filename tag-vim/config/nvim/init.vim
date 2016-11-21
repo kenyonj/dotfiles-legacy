@@ -225,7 +225,7 @@ map <Leader>po Osave_and_open_page<Esc><CR>
 imap jj <Esc>
 
 " Vim and OS share clipboard
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 " Sets airline (status bar) to remove angle brackets and sets a theme
 let g:airline_left_sep=''
