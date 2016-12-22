@@ -7,6 +7,14 @@ class Configuration
       "tag" => "tag-terminal",
       "base_path" => "config",
     },
+    "menu-calc" => {
+      "repo_location" => "onespaceman/menu-calc.git",
+      "tag" => "tag-i3",
+      "copy" => {
+        "filename" => "=",
+        "destination_path" => "tag-scripts/local/bin",
+      },
+    },
     "muttdown" => {
       "repo_location" => "Roguelazer/muttdown.git",
       "tag" => "tag-mail-sender",

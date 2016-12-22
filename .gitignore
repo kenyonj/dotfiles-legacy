@@ -8,3 +8,5 @@ tag-weechat/wee-slack
 tag-weechat/weechat/python/autoload/wee_slack.py
 tag-zsh/zsh-syntax-highlighting
 tag-mail-sender/muttdown
+tag-scripts/local/bin/=
+tag-i3/menu-calc
