@@ -1,37 +1,7 @@
 #!/bin/env ruby
+require "yaml"
 
 class Configuration
-  DEPENDENCIES = {
-    "base16-shell" => {
-      "repo_location" => "chriskempson/base16-shell.git",
-      "tag" => "tag-terminal",
-      "base_path" => "config",
-    },
-    "menu-calc" => {
-      "repo_location" => "onespaceman/menu-calc.git",
-      "tag" => "tag-i3",
-      "copy" => {
-        "filename" => "=",
-        "destination_path" => "tag-scripts/local/bin",
-      },
-    },
-    "muttdown" => {
-      "repo_location" => "Roguelazer/muttdown.git",
-      "tag" => "tag-mail-sender",
-    },
-    "wee-slack" => {
-      "repo_location" => "rawdigits/wee-slack.git",
-      "tag" => "tag-weechat",
-      "copy" => {
-        "filename" => "wee_slack.py",
-        "destination_path" => "tag-weechat/weechat/python/autoload",
-      },
-    },
-    "zsh-syntax-highlighting" => {
-      "repo_location" => "zsh-users/zsh-syntax-highlighting.git",
-      "tag" => "tag-zsh",
-    },
-  }.freeze
   GIT_PREFIX = "git@github.com:".freeze
 
   def self.load
@@ -45,8 +15,12 @@ class Configuration
 
   private
 
+  def dependencies
+    YAML.load_file([dotfiles_root, "dependencies.yml"].join("/"))
+  end
+
   def load_dependencies
-    DEPENDENCIES.each do |name, details|
+    dependencies["git_repositories"].each do |name, details|
       base_path = details.dig("base_path")
       repo_location = details.dig("repo_location")
       tag = details.dig("tag")
