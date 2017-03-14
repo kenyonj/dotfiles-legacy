@@ -4,3 +4,6 @@ Description=PyCardDav Syncer
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/pycardsyncer
+
+[Install]
+WantedBy=default.target

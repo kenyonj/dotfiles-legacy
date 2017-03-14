@@ -4,3 +4,6 @@ Description=Spotify Playlist Syncer
 [Service]
 Type=oneshot
 ExecStart=$HOME/.scripts/spotifysyncer
+
+[Install]
+WantedBy=default.target
