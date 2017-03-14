@@ -1,1 +1,2 @@
+eval $(keychain --nogui --quiet --agents ssh,gpg --eval id_rsa 2538E93E)
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

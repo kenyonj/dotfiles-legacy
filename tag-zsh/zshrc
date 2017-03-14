@@ -178,7 +178,6 @@ source "$CHRUBY_LOCATION/chruby/chruby.sh"
 source "$CHRUBY_LOCATION/chruby/auto.sh"
 
 eval "$(fasd --init auto)"
-eval $(keychain --nogui --quiet --agents ssh,gpg -Q --eval id_rsa 2538E93E)
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
