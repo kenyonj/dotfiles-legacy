@@ -1,25 +1,3 @@
-# encrypting pdfs with password
-if ! command -v pdftk >/dev/null; then
-  echo "Please install pdftk"
-else
-  encryptpdf() {
-    if [[ "$1" == "" ]]; then
-      echo "Usage: encryptpdf [file_name] [password]"
-    else
-      if [[ "$2" == "" ]]; then
-        echo"\nPlease enter a password: "
-        read password_for_pdf
-      else
-        password_for_pdf="$2"
-      fi
-
-      pdf_to_encrypt="$1"
-    fi
-
-    pdftk "$pdf_to_encrypt" output "$pdf_to_encrypt.encrypted.pdf" user_pw $password_for_pdf allow printing
-  }
-fi
-
 export ANDROID_HOME="/home/kenyonj/Android/Sdk"
 export PATH="$PATH:`yarn global bin`"
 
