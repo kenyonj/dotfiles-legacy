@@ -9,9 +9,7 @@ macro index       G   "<shell-escape>mbsync gmail<enter>" \
                       "refresh mailbox"
 macro index       gi  "<change-folder>+gmail/INBOX<enter>" \
                       "go to the INBOX"
-macro index       gT  "<change-folder>+fastmail/INBOX<enter>" \
-                      "previous account"
-macro index       gt  "<change-folder>+thoughtbot/INBOX<enter>" \
+macro index       gt  "<change-folder>+fastmail/INBOX<enter>" \
                       "next account"
 macro index       ga   "<change-folder>+gmail/archive<enter>" \
                       "go to the archive"

@@ -2,5 +2,4 @@ mailboxes \
   "+gmail/INBOX" \
   "+gmail/Band Email" \
   "+gmail/Receipts" \
-  "+gmail/Shipped Items" \
-  "+thoughtbot/INBOX"
+  "+gmail/Shipped Items"

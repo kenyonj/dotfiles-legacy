@@ -33,7 +33,7 @@
 [user]
 name=Justin Kenyon
 primary_email=kenyonj@gmail.com
-other_email=justin@thoughtbot.com;justin@kenyon.me;jpk@fastmail.com;
+other_email=justin@kenyon.me;jpk@fastmail.com;
 
 # Configuration for "notmuch new"
 #

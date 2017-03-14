@@ -7,3 +7,6 @@ After=network.target
 Type=oneshot
 ExecStart=/usr/bin/mbsync -Va
 TimeoutStartSec=90s
+
+[Install]
+WantedBy=default.target

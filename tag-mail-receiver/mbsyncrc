@@ -50,52 +50,6 @@ Channel gmail-sent
 Channel gmail-spam
 Channel gmail-trash
 
-IMAPAccount thoughtbot
-Host imap.gmail.com
-User justin@thoughtbot.com
-PassCmd "$HOME/.local/bin/getnetrc justin@thoughtbot.com"
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-IMAPStore thoughtbot-remote
-Account thoughtbot
-
-MaildirStore thoughtbot-local
-Path ~/mail/thoughtbot/
-Inbox ~/mail/thoughtbot/INBOX
-
-Channel thoughtbot-inbox
-Master :thoughtbot-remote:INBOX
-Slave :thoughtbot-local:INBOX
-
-Channel thoughtbot-archive
-Master ":thoughtbot-remote:[Gmail]/All Mail"
-Slave :thoughtbot-local:archive
-
-Channel thoughtbot-drafts
-Master :thoughtbot-remote:[Gmail]/Drafts
-Slave :thoughtbot-local:drafts
-
-Channel thoughtbot-sent
-Master ":thoughtbot-remote:[Gmail]/Sent Mail"
-Slave :thoughtbot-local:sent
-
-Channel thoughtbot-spam
-Master :thoughtbot-remote:[Gmail]/Spam
-Slave :thoughtbot-local:spam
-
-Channel thoughtbot-trash
-Master :thoughtbot-remote:[Gmail]/Trash
-Slave :thoughtbot-local:trash
-
-Group thoughtbot
-Channel thoughtbot-inbox
-Channel thoughtbot-archive
-Channel thoughtbot-drafts
-Channel thoughtbot-sent
-Channel thoughtbot-spam
-Channel thoughtbot-trash
-
 IMAPAccount fastmail
 Host mail.messagingengine.com
 Port 992

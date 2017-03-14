@@ -1,5 +1,5 @@
 # vim: ft=muttrc:
-source /usr/share/doc/mutt-patched/samples/gpg.rc
+source /usr/share/doc/mutt/samples/gpg.rc
 
 set pgp_sign_as = 2538E93E
 set pgp_use_gpg_agent = yes
