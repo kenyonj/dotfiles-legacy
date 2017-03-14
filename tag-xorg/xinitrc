@@ -11,6 +11,5 @@ xmodmap ~/.Xmodmap
 # Host specific env vars
 [[ -f ~/.env.local ]] && source ~/.env.local
 
-
 #start i3
 exec i3
