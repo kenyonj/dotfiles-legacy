@@ -1,5 +1,5 @@
 application/octet-stream ; echo %s "can be anything..."                            ; copiousoutput;
-text/html                ; mv %s %s.html && google-chrome-stable %s.html >/dev/null 2>/dev/null ; needsterminal;
+text/html                ; mv %s %s.html && chromium %s.html >/dev/null 2>/dev/null ; needsterminal;
 text/html                ; /usr/bin/w3m -I %{charset} -T text/html                 ; copiousoutput;
 application/pdf          ; /usr/bin/apvlv %s                                       ; copiousoutput;
 image/*                  ; /usr/bin/gpicview %s                                    ; copiousoutput;
