@@ -3,7 +3,7 @@
 [options]
 allow_bold = true
 audible_bell = false
-browser = google-chrome-stable
+browser = chromium
 clickable_url = true
 dynamic_title = true
 font = Source Code Pro 9

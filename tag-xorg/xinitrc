@@ -4,13 +4,9 @@ xrdb -merge ~/.Xresources
 
 #load xmodmap
 xmodmap ~/.Xmodmap
-xinput set-prop "ImPS/2 Generic Wheel Mouse" 288 0 0 1
 
 #create i3 config
 ~/.i3/create_config
-
-# Host specific env vars
-[[ -f ~/.env.local ]] && source ~/.env.local
 
 #start i3
 exec i3
