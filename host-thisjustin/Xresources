@@ -7,25 +7,12 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
-!-------------------------------------------------------------------------------
-! Xautolock
-!-------------------------------------------------------------------------------
-Xautolock.time: 20
-Xautolock.locker: /home/justin/.local/bin/autolock.sh lock
-Xautolock.killtime: 30
-Xautolock.killer: /home/justin/.local/bin/autolock.sh suspend
-Xautolock.notify: 30
-Xautolock.notifier: /home/justin/.local/bin/autolock.sh notify
-Xautolock.detectsleep: true
-Xautolock.secure: true
-Xautolock.noclose: true
-
 ! ------------------------------------------------------------------------------
 ! ROFI
 ! ------------------------------------------------------------------------------
 rofi.width:                           50
 rofi.lines:                           5
-rofi.font:                            Knack NF 15
+rofi.font:                            Source Code Pro 10
 rofi.color-normal:                    argb:00000000, #1aa, argb:11FFFFFF, #1aa,#333
 rofi.color-urgent:                    argb:00000000, #f99, argb:11FFFFFF, #f99,#333
 rofi.color-active:                    argb:00000000, #aa1, argb:11FFFFFF, #aa1,#333
