@@ -1,0 +1,9 @@
+export ANDROID_HOME="/home/kenyonj/Android/Sdk"
+export PATH="$PATH:`yarn global bin --offline`"
+
+#nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+eval $(dircolors ~/.dircolors)
+eval $(keychain --nogui --quiet --agents ssh,gpg --eval id_rsa 2538E93E)
