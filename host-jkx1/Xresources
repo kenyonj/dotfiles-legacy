@@ -7,6 +7,16 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
+Xautolock.time: 30
+Xautolock.locker: /home/justin/.local/bin/autolock.sh lock
+Xautolock.killtime: 30
+Xautolock.killer: /home/justin/.local/bin/autolock.sh suspend
+Xautolock.notify: 30
+Xautolock.notifier: /home/justin/.local/bin/autolock.sh notify
+Xautolock.detectsleep: true
+Xautolock.secure: true
+Xautolock.noclose: true
+
 ! ------------------------------------------------------------------------------
 ! ROFI
 ! ------------------------------------------------------------------------------
