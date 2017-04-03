@@ -5,4 +5,3 @@ export PATH="$PATH:`yarn global bin --offline`"
 source /usr/share/nvm/init-nvm.sh
 
 eval $(dircolors ~/.dircolors)
-eval $(keychain --nogui --quiet --agents ssh,gpg --eval id_rsa 2538E93E)
