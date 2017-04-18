@@ -1,16 +1,19 @@
 # vim: ft=muttrc
-set from          = "kenyonj@gmail.com"
-set sendmail      = "/usr/bin/muttdown -c $HOME/.mutt/muttdown.gmail.yaml"
+set from          = "Justin Kenyon <kenyonj@gmail.com>"
+set sendmail      = "/usr/bin/msmtp"
+set signature     = "~/.mutt/signature.personal"
 set mbox          = "+gmail/archive"
 set postponed     = "+gmail/drafts"
 set record        = "+gmail/sent"
 
-macro index       G   "<shell-escape>mbsync gmail<enter>" \
+macro index       G   "<shell-escape>offlineimap -a gmail<enter>" \
                       "refresh mailbox"
-macro index       gi  "<change-folder>+gmail/INBOX<enter>" \
-                      "go to the INBOX"
-macro index       gt  "<change-folder>+fastmail/INBOX<enter>" \
+macro index       gi  "<change-folder>+gmail/inbox<enter>" \
+                      "go to the inbox"
+macro index       gt  "<change-folder>+work/inbox<enter>" \
                       "next account"
+macro index       gT  "<change-folder>+fastmail/INBOX<enter>" \
+                      "previous account"
 macro index       ga   "<change-folder>+gmail/archive<enter>" \
                       "go to the archive"
 macro index       gs  "<change-folder>+gmail/sent<enter>" \

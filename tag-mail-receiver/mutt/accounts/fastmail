@@ -1,25 +1,28 @@
 # vim: ft=muttrc
-set from          = "justin@kenyon.me"
-set sendmail      = "/usr/bin/muttdown -c $HOME/.mutt/muttdown.fastmail.yaml"
-set mbox          = "+fastmail/archive"
-set postponed     = "+fastmail/drafts"
-set record        = "+fastmail/sent"
+set from          = "Justin Kenyon <justin@kenyon.me>"
+set sendmail      = "/usr/bin/msmtp"
+set signature     = "~/.mutt/signature.personal"
+set mbox          = "+fastmail/Archive"
+set postponed     = "+fastmail/Drafts"
+set record        = "+fastmail/Sent"
 
-macro index       G   "<shell-escape>mbsync fastmail<enter>" \
+macro index       G   "<shell-escape>offlineimap -a fastmail<enter>" \
                       "refresh mailbox"
 macro index       gi  "<change-folder>+fastmail/INBOX<enter>" \
-                      "go to the INBOX"
-macro index       gt  "<change-folder>+gmail/INBOX<enter>" \
+                      "go to the inbox"
+macro index       gt  "<change-folder>+gmail/inbox<enter>" \
                       "next account"
-macro index       ga   "<change-folder>+fastmail/archive<enter>" \
+macro index       gT  "<change-folder>+work/inbox<enter>" \
+                      "previous account"
+macro index       ga   "<change-folder>+fastmail/Archive<enter>" \
                       "go to the archive"
-macro index       gs  "<change-folder>+fastmail/sent<enter>" \
+macro index       gs  "<change-folder>+fastmail/Sent<enter>" \
                       "go to sent mail"
-macro index,pager \#  "<save-message>+fastmail/trash<enter>" \
+macro index,pager \#  "<save-message>+fastmail/Trash<enter>" \
                       "move message to the trash"
-macro index,pager !   "<save-message>+fastmail/spam<enter>" \
+macro index,pager !   "<save-message>+fastmail/Spam<enter>" \
                       "mark message as spam"
-macro index,pager e   "<save-message>+fastmail/archive<enter>" \
+macro index,pager e   "<save-message>+fastmail/Archive<enter>" \
                       "Archive the message"
-macro index,pager E   "<tag-thread>;s+fastmail/archive<enter>" \
+macro index,pager E   "<tag-thread>;s+fastmail/Archive<enter>" \
                       "Archive the thread"

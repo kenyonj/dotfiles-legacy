@@ -34,10 +34,9 @@ unset record
   set reverse_name
 unset sig_dashes
   set sig_on_top        = yes
-  set signature         = ~/.mutt/signature
   set sort              = threads
   set sort_aux          = reverse-last-date-received
-  set spoolfile         = "+gmail/INBOX"
+  set spoolfile         = "+gmail/inbox"
   set status_chars      = " *%A"
   set status_format     = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
   set strict_threads
@@ -47,7 +46,7 @@ unset sig_dashes
   set timeout           = 3
   set tmpdir            = ~/.mutt/temp
 
-alternates ^justin@kenyon\.me .*@justinkenyon\.com .*@thejpk\.com ^jpk@fastmail\.com
+alternates ^justin@kenyon\.me .*@justinkenyon\.com .*@thejpk\.com ^jpk@fastmail\.com ^kenyon@thelevelup\.com
 
 auto_view text/html
 auto_view text/calendar

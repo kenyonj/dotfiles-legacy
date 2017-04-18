@@ -1,5 +1,1 @@
-mailboxes \
-  "+gmail/INBOX" \
-  "+gmail/Band Email" \
-  "+gmail/Receipts" \
-  "+gmail/Shipped Items"
+mailboxes "+fastmail/Archive" "+fastmail/Drafts" "+fastmail/INBOX" "+fastmail/Sent" "+fastmail/Spam" "+fastmail/Trash" "+gmail/archive" "+gmail/drafts" "+gmail/inbox" "+gmail/starred" "+levelup/[Gmail].All Mail" "+levelup/[Gmail].Drafts" "+levelup/[Gmail].Important" "+levelup/[Gmail].Sent Mail" "+work/archive" "+work/drafts" "+work/inbox" "+work/starred"

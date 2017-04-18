@@ -1,0 +1,12 @@
+[oauth2]
+client_id_eval = get_secret("client_id@client_id.scvngr.com")
+client_secret_eval = get_secret("client_secret@client_secret.scvngr.com")
+request_url = https://accounts.google.com/o/oauth2/token
+
+[account work]
+address = smtp.gmail.com
+port = 465
+refresh_token_eval = get_secret("refresh_token@refresh_token.scvngr.com")
+use_ssl = True
+use_tls = False
+username = kenyon@thelevelup.com

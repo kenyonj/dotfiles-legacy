@@ -1,8 +1,8 @@
 [Unit]
-Description=mbsync timer
+Description=offlineimap timer
 
 [Timer]
-OnCalendar=*:0/2
+OnCalendar=*:0/1
 
 [Install]
 WantedBy=timers.target

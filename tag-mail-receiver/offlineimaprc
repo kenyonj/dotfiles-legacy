@@ -1,0 +1,103 @@
+#########################
+##  Constants Section  ##
+#########################
+
+[DEFAULT]
+gmailremotefolderfilter = lambda folder: folder in ['[Gmail]/Drafts',
+                                                    '[Gmail]/Starred',
+                                                    '[Gmail]/All Mail',
+                                                    'INBOX',
+                                                    ]
+####################
+##  Main Section  ##
+####################
+
+[general]
+accounts = gmail, fastmail, work
+maxsyncaccounts = 1
+pythonfile = ~/.local/bin/offlineimap.py
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+footer = "\n"
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+
+#####################
+##  Gmail Section  ##
+#####################
+
+[Account gmail]
+localrepository = gmail-local
+maxage = 365
+remoterepository = gmail-remote
+synclabels = yes
+
+[Repository gmail-local]
+localfolders = ~/mail/gmail
+type = GmailMaildir
+nametrans = nt_local
+
+[Repository gmail-remote]
+folderfilter = %(gmailremotefolderfilter)s
+nametrans = nt_remote
+remotepasseval = get_secret("kenyonj@gmail.com")
+remoteuser = kenyonj@gmail.com
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+type = Gmail
+
+####################
+##  Work Section  ##
+####################
+
+[Account work]
+localrepository = work-local
+maxage = 365
+postsynchook = ~/.local/bin/emailnotify.sh
+remoterepository = work-remote
+synclabels = yes
+
+[Repository work-local]
+localfolders = ~/mail/work
+type = GmailMaildir
+nametrans = nt_local
+
+[Repository work-remote]
+folderfilter = %(gmailremotefolderfilter)s
+nametrans = nt_remote
+oauth2_client_id_eval = get_secret("client_id@client_id.scvngr.com")
+oauth2_client_secret_eval = get_secret("client_secret@client_secret.scvngr.com")
+oauth2_refresh_token_eval = get_secret("refresh_token@refresh_token.scvngr.com")
+oauth2_request_url = https://accounts.google.com/o/oauth2/token
+remoteuser = justin.kenyon@scvngr.com
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+type = Gmail
+
+########################
+##  Fastmail Section  ##
+########################
+
+[Account fastmail]
+localrepository = fastmail-local
+maildir-windows-compatible = no
+maxage = 365
+remoterepository = fastmail-remote
+
+[Repository fastmail-local]
+localfolders = ~/.mail/fastmail
+nametrans = lambda folder: re.sub('^(?!INBOX)', 'INBOX.', folder)
+type = Maildir
+
+[Repository fastmail-remote]
+#createfolders = False
+cert_fingerprint = bddc89dae48629898af13421d7844f806ca33943
+nametrans = lambda folder: re.sub('^INBOX\.', '', folder)
+realdelete = no
+remotehost = mail.messagingengine.com
+remotepasseval = get_secret("jpk@fastmail.com")
+remoteport = 993
+remoteuser = jpk@fastmail.com
+ssl = yes
+type = IMAP

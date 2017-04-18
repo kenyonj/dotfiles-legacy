@@ -1,0 +1,28 @@
+# vim: ft=muttrc
+set from          = "Justin Kenyon <kenyon@thelevelup.com>"
+set sendmail      = "send.py --readfrommsg"
+set signature     = "~/.mutt/signature.work"
+set mbox          = "+work/archive"
+set postponed     = "+work/drafts"
+set record        = "+work/sent"
+
+macro index       G   "<shell-escape>offlineimap -a work<enter>" \
+                      "refresh mailbox"
+macro index       gi  "<change-folder>+work/inbox<enter>" \
+                      "go to the inbox"
+macro index       gt  "<change-folder>+fastmail/INBOX<enter>" \
+                      "next account"
+macro index       gT  "<change-folder>+gmail/inbox<enter>" \
+                      "previous account"
+macro index       ga   "<change-folder>+work/archive<enter>" \
+                      "go to the archive"
+macro index       gs  "<change-folder>+work/sent<enter>" \
+                      "go to sent mail"
+macro index,pager \#  "<save-message>+work/trash<enter>" \
+                      "move message to the trash"
+macro index,pager !   "<save-message>+work/spam<enter>" \
+                      "mark message as spam"
+macro index,pager e   "<save-message>+work/archive<enter>" \
+                      "Archive the message"
+macro index,pager E   "<tag-thread>;s+work/archive<enter>" \
+                      "Archive the thread"
