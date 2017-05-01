@@ -7,6 +7,8 @@ After=network.target
 Type=oneshot
 ExecStart=/usr/bin/offlineimap -o
 TimeoutStartSec=90s
+Restart=on-watchdog
+WatchdogSec=300
 
 [Install]
 WantedBy=default.target
