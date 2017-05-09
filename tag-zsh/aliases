@@ -77,3 +77,7 @@ alias steam="find ~/.steam/root/ \( -name 'libgcc_s.so*' -o -name 'libstdc++.so*
 
 # neovim
 alias vim="nvim"
+
+# heroku
+alias hpersonal="heroku accounts:set personal"
+alias hwork="heroku accounts:set work"
