@@ -1,10 +1,8 @@
 #!/bin/bash
 
-systemctl --user restart mopidy
+# systemctl --user restart mopidy
 
-export WS1="1:"
-
-i3-msg "workspace 1:; append_layout ~/.workspaces/music.json"
-i3-msg "workspace 1:; exec termite -t 'ncmpcpp' -e ncmpcpp"
-i3-msg "workspace 1:; exec termite -t 'visualizer' -e vis"
-i3-msg "workspace 1:; exec ~/.scripts/display_cover.sh"
+i3-msg "workspace 1:; append_layout ~/.workspaces/music.json"
+i3-msg "workspace 1:; exec termite -t 'ncmpcpp' -e ncmpcpp"
+i3-msg "workspace 1:; exec termite -t 'visualizer' -e cava"
+i3-msg "workspace 1:; exec ~/.scripts/display_cover.sh"

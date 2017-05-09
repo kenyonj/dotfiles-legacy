@@ -1311,7 +1311,7 @@ if [ -e ~/.jsawkrc ]; then
   . ~/.jsawkrc
 fi
 
-JSBIN=${js_arg:-${JS:-js17}}
+JSBIN=${js_arg:-${JS:-js24}}
 
 ret=$?
 res=$(cat $TMP2 2>/dev/null | $JSBIN $TMP1 $nlines "$@")

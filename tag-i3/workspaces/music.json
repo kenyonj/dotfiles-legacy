@@ -7,7 +7,7 @@
     "nodes": [
         {
             "name": "ncmpcpp",
-            "percent": 0.80,
+            "percent": 0.60,
             "swallows": [
                 {
                     "title": "^ncmpcpp$"
@@ -19,12 +19,12 @@
         {
             // splith split container with 2 children
             "layout": "splith",
-            "percent": 0.20,
+            "percent": 0.40,
             "type": "con",
             "nodes": [
                 {
                     "name": "visualizer",
-                    "percent": 0.88,
+                    "percent": 0.77,
                     "swallows": [
                         {
                             "title": "^visualizer$"
@@ -34,7 +34,7 @@
                 },
                 {
                     "name": "albumart",
-                    "percent": 0.12,
+                    "percent": 0.23,
                     "swallows": [
                         {
                             "title": "^albumart$"
