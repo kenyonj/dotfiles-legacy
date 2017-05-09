@@ -32,3 +32,6 @@ macro index,pager   \cV     "v/html<enter><return>q" \
 
 macro generic,pager ,m      ":source $HOME/.mutt/muttrc\r" \
                             "Resource .muttrc without restart"
+
+macro  index  <F10>  "<pipe-message>~/.local/bin/viewhtmlmail\n" "View HTML in browser"
+macro  pager  <F10>  "<pipe-message>~/.local/bin/viewhtmlmail\n" "View HTML in browser"
