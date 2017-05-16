@@ -4,7 +4,6 @@ Documentation=man:offlineimap(1)
 After=network.target
 
 [Service]
-Type=oneshot
 ExecStart=/usr/bin/offlineimap -o
 TimeoutStartSec=90s
 Restart=on-watchdog
