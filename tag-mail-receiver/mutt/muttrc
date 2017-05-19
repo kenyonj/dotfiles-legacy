@@ -46,7 +46,7 @@ unset sig_dashes
   set timeout           = 3
   set tmpdir            = ~/.mutt/temp
 
-alternates ^justin@kenyon\.me .*@justinkenyon\.com .*@thejpk\.com ^jpk@fastmail\.com ^kenyon@thelevelup\.com
+alternates ^justin@kenyon\.me ^jpk@fastmail\.com ^kenyon@thelevelup\.com
 
 auto_view text/html
 auto_view text/calendar

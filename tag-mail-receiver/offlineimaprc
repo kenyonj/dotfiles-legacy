@@ -17,14 +17,6 @@ accounts = gmail, fastmail, work
 maxsyncaccounts = 1
 pythonfile = ~/.local/bin/offlineimap.py
 
-[mbnames]
-enabled = yes
-filename = ~/.mutt/mailboxes
-footer = "\n"
-header = "mailboxes "
-peritem = "+%(accountname)s/%(foldername)s"
-sep = " "
-
 #####################
 ##  Gmail Section  ##
 #####################

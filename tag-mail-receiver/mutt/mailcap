@@ -2,7 +2,7 @@ application/octet-stream ; echo %s "can be anything..."                         
 text/html                ; mv %s %s.html && chromium %s.html >/dev/null 2>/dev/null ; needsterminal;
 text/html                ; /usr/bin/w3m -I %{charset} -T text/html                 ; copiousoutput;
 application/pdf          ; /usr/bin/atril %s                                       ; copiousoutput;
-image/*                  ; $HOME/.local/bin/muttimage.sh %s                        ; copiousoutput;
+image/*                  ; /usr/bin/gthumb '%s'                           ; test=test -n "$DISPLAY"
 audio/*                  ; /usr/bin/mplayer %s                                     ; copiousoutput;
 video/*                  ; /usr/bin/mplayer %s                                     ; copiousoutput;
 text/calendar            ; $HOME/.local/bin/icalview.py                            ; copiousoutput;
